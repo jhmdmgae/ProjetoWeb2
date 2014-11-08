@@ -1,0 +1,41 @@
+Como sindico eu quero cadastrar as informações do meu condomínio de modo que tenha quando precisar dos dados disponíveis
+Como sindico eu quero poder editar as informações do meu condomínio para que eu atualize o cadastro existente
+Como sindico eu quero poder excluir as informações do meu condomínio para que eu apague um cadastro existente
+Como usuário eu quero poder consultar as informações do meu condomínio para que eu tenha informação quando necessário
+
+Como sindico eu quero cadastrar os apartamentos do meu condomínio de modo que tenha quando precisar dos dados disponíveis
+Como sindico eu quero poder editar os apartamentos do meu condomínio para que eu atualize o cadastro existente
+Como sindico eu quero poder excluir os apartamentos do meu condomínio para que eu apague um cadastro existente
+
+como sindico eu quero cadastrar os usuários do sistema de modo que tenha quando precisar dos dados disponíveis
+Como sindico eu quero poder editar os usuários do sistema para que eu atualize o cadastro existente
+Como sindico eu quero poder excluir os usuários do sistema para que eu apague um cadastro existente
+
+como sindico eu quero cadastrar os funcionários do condomínio de modo que tenha quando precisar dos dados disponíveis
+Como sindico eu quero poder editar os funcionários do condomínio para que eu atualize o cadastro existente
+Como sindico eu quero poder excluir os funcionários do condomínio para que eu apague um cadastro existente
+Como usuário eu quero poder consultar as informações do meu condomínio para que eu tenha informação quando necessário
+
+como sindico eu quero cadastrar os fornecedores do condomínio de modo que tenha quando precisar dos dados disponíveis
+Como sindico eu quero poder editar os funcionários do condomínio para que eu atualize o cadastro existente
+Como sindico eu quero poder excluir os funcionários do condomínio para que eu apague um cadastro existente
+Como usuário eu quero poder consultar as informações do meu condomínio para que eu tenha informação quando necessário
+
+como sindico eu quero cadastrar documentos do condomínio de modo que tenha quando precisar dos dados disponíveis
+Como sindico eu quero poder editar os documentos do condomínio para que eu atualize o cadastro existente
+Como sindico eu quero poder excluir os documentos do condomínio para que eu apague um cadastro existente
+Como usuário eu quero poder consultar os documentos do condomínio para que eu tenha acesso aos documentos quando necessário
+
+como usuário eu quero cadastrar um visitante do condominio para que o porteiro tenha controle de acesso
+como usuário eu quero poder editar um visitante do condominio para que quando preciso eu atualize ou insira novas informações
+como usuário eu quero poder excluir um visitante do condominio para que quando preciso eu atualize ou insira novas informações
+
+como usuário eu quero cadastrar um veículo para que este tenha acesso ao estacionamento do prédio
+como usuário eu quero poder editar um veículo para quando precisar eu atualize ou insira novas informações
+como usuário eu quero poder excluir um veículo para quando precisar eu atualize ou insira novas informações
+
+como porteiro eu quero cadastrar uma encomenda para que possa informar ao dono
+como porteiro eu quero poder editar uma encomenda para quando precisar atualizar ou insirir novas informações
+como porteiro eu quero poder excluir uma encomenda para deletar quando necessário
+
+
