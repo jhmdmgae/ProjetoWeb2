@@ -1,0 +1,24 @@
+Entidades:
+
+Condominio - CNPJ, Nome, CEP, Endereço, Número, Complemento, Bairro, UF, Cidade, Quantidade de blocos, total de apartamentos, Foto, Telefone, E-mail
+
+
+Apartamentos - Número, Bloco, Proprietário, Locatário
+
+
+Usuários - Perfil, Nome, E-mail, Telefone
+
+
+Funcionários - Matrícula, Nome, Telefone Residencial, Telefone Celular, CEP, Endereço, Número, Complemento, Bairro, Cidade, UF, RG, CPF, Sexo, Data Contratação, Cargo, Tipo de Contrato, Turno, Foto, Observação
+
+
+Fornecedores - Razão Social, Contato, Email, Fornecimento Produto/Serveiço, CEP, Endereço, Número, Complemento, Bairro, Cidade, UF, Tipo de Empresa, CNPJ, Telefone Comercial, Telefone Celular, Observações, Status
+
+
+Documentos - Título, Descrição, Categorias, Autor, Arquivo, 
+
+
+Visitantes - Tipo de Visita, Apartamento, Motivo da visita, Data e Hora da Visita, Frequência, Observação
+
+
+Veículo - Tipo, Marca, Modelo, Cor, Placa, Apartamento
