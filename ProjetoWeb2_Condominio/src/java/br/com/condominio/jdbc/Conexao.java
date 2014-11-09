@@ -3,14 +3,12 @@ package br.com.condominio.jdbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import javax.servlet.ServletContext;
- 
 
 /**
  *
  * @author Lourivaldo
  */
-public class ConnectionMySql {
+public class Conexao {
 
     public static Connection getConnection() {
         String url = "jdbc:mysql://25.138.13.112:3306/web2_condominio";
@@ -19,7 +17,7 @@ public class ConnectionMySql {
         Connection connection = null;
 
         try {
-            System.out.println("Loading driver. ..");
+            System.out.println("Loading driver...");
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Driver loaded!");
         } catch (ClassNotFoundException e) {
