@@ -14,14 +14,14 @@ h4 {font-size: 13px;}
 h5 {font-size: 12px;}
 
 img{border: 0;}
-select {border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border: 1px solid #BBB;background: #92C6E7;}
+select {border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border: 1px solid #BBB;}
 select:hover {border: 1px solid #fff;}
 option:hover {border: 1px solid #fff;}
 label{width: 199px;float: left;font-size: 13px;}
 ul{list-style: none;}
 //li{float: left;padding-left: 20px;text-align: center;text-decoration: none;}
-input{margin-top: 5px;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #CCC;}
-textarea{border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;padding: 2px;border: 1px solid #CCC;}
+input{font-size: 12px;min-height: 20px;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #CCC;}
+textarea{font-size: 12px;border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;padding: 2px;border: 1px solid #CCC;}
 
 .geral{width: 960px;margin: 0 auto;}
 .cabecalho{float: left;width: 100%;}
@@ -37,16 +37,19 @@ textarea{border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;p
 .menu li:hover ul, .menu li.over ul{display:block;}
 .menu li ul li{border:1px solid #c0c0c0;display:block;width:150px;}
 
-.siderbar{padding: 5px 20px 50px 1px;float: left;width: 300px;margin-top: 21px;}
+.siderbar{padding: 5px;float: left;width: 300px;}
 
 .conteudo{width: 960px;float: left;}
 
 .menu2{width:600px;float: left;padding: 5px;}
 
 .div-table{display:table; border:1px solid #000;color: #fff}
-.div-table-caption{display:table-caption; background:#000;text-align: center;}
+.div-table-caption{display:table-caption; background:#000;text-align: center;padding: 5px;}
 .div-table-row{display:table-row;color: #000}
 .div-table-col{display:table-cell; padding: 5px; border: 1px solid #003399;text-align: center;}
 .div-table-coln{float: left;}
+
+
+.campo{width:100%;float: left;margin: 10px;}
 
 .rodape{float: left;width: 100%;color: #444;font-size: 11px;padding-bottom: 5px;text-align: center;border: none;margin: 0 auto;}

@@ -9,9 +9,41 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Apartamentos</title>
+        <link type="text/css" rel="stylesheet" href="../css/estilo.css" />
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <div class="geral">
+            <%@include file="cabecalho.jsp"%>
+            <%@include file="menu.jsp"%>
+            <div class="conteudo">
+                <%@include file="siderbar.jsp"%>
+                <form action='' method='post' name='formulario'>
+                    <fieldset>
+                        <legend>Cadastro de apartamento</legend>
+                        <div class="campo">
+                            <label for='numero'>Número:</label>
+                            <input type='text' id='numero' name='numero' value=''/>
+                        </div>
+                        <div class="campo">
+                            <label for='numero'>Bloco:</label>
+                            <input type='text' id='bloco' name='bloco' value=''/>
+                        </div>
+                        <div class="campo">
+                            <label for='numero'>Proprietário:</label>
+                            <input type='text' id='proprietario' name='proprietario' value=''/>
+                        </div>
+                        <div class="campo">
+                            <label for='numero'>Locatário:</label>
+                            <input type='text' id='locatario' name='locatario' value=''/>
+                        </div>
+                        <div class="campo">
+                            <input type='submit' value="Enviar"/>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <%@include file="rodape.jsp"%>
+        </div>
     </body>
 </html>

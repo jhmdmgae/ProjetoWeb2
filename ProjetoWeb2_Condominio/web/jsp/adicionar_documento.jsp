@@ -1,6 +1,6 @@
 <%-- 
-    Document   : adicionar_veiculo
-    Created on : 09/11/2014, 12:11:37
+    Document   : adicionar_documento
+    Created on : 09/11/2014, 13:51:02
     Author     : João Henrique 2
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Adicionar Veículo</title>
+        <title>Adicionar documento</title>
         <link type="text/css" rel="stylesheet" href="../css/estilo.css" />
     </head>
     <body>
@@ -20,30 +20,29 @@
                 <%@include file="siderbar.jsp"%>
                 <form action='' method='post' name='formulario'>
                     <fieldset>
-                        <legend>Cadastro de veículo</legend>
+                        <legend>Cadastro de documento</legend>
                         <div class="campo">
-                            <label for='tipo'>Tipo:</label>
-                            <input type='text' id='tipo' name='tipo' value=''/>
+                            <label for='numero'>Título:</label>
+                            <input type='text' id='numero' name='numero' value='' size="41"/>
                         </div>
                         <div class="campo">
-                            <label for='marca'>Marca:</label>
-                            <input type='text' id='marca' name='marca' value=''/>
+                            <label for='descricao'>Descrição:</label>
+                            <textarea id="descricao" name="descricao" Style="width: 267px;height: 100px;" ></textarea>
                         </div>
                         <div class="campo">
-                            <label for='modelo'>Modelo:</label>
-                            <input type='text' id='modelo' name='modelo' value=''/>
+                            <label for='categoria'>Categoria:</label>
+                            <select id="tipo" name="categoria" style="width:273px" >
+                                <option value="">Selecione</option>
+                                <option value="1">1</option>
+                            </select>
                         </div>
                         <div class="campo">
-                            <label for='numero'>Cor:</label>
-                            <input type='text' id='Cor' name='Cor' value=''/>
+                            <label for='autor'>Autor:</label>
+                            <input type='text' id='autor' name='autor' value='' size="41"/>
                         </div>
                         <div class="campo">
-                            <label for='placa'>Placa:</label>
-                            <input type='text' id='placa' name='placa' value=''/>
-                        </div>
-                        <div class="campo">
-                            <label for='apartamento'>Apartamento:</label>
-                            <input type='text' id='apartamento' name='apartamento' value=''/>
+                            <label for='arquivo'>Arquivo:</label>
+                            <input type='file' id='arquivo' name='arquivo' value='' size="39"/>
                         </div>
                         <div class="campo">
                             <input type='submit' value="Enviar"/>
