@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+ 
 /**
  *
  * @author LOURIVALDO
@@ -28,7 +28,7 @@ public class UsuarioController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String acao = request.getParameter("acao");
+        String acao = request.getParameter("acao" );
         UsuarioDAO usuarioDAO;
         usuarioDAO = new UsuarioDAO();
 
