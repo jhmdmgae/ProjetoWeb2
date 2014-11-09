@@ -141,7 +141,7 @@ public class UsuarioDAO {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, usuario.getLogin());
             ps.setString(2, usuario.getSenha());
-            
+
             ResultSet resultSet = ps.executeQuery();
 
             if (resultSet.next()) {
@@ -161,6 +161,14 @@ public class UsuarioDAO {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return usuarioRetorno;
+    }
+
+    public void salvar(Usuario usuario) {
+        if (usuario.getId() != null || usuario.getId() != 0) {
+            alterar(usuario);
+        } else {
+            cadastrar(usuario);
+        }
     }
 
 }

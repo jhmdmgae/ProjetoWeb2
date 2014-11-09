@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class TestUserDAO {
 
-    private static void cadastrar() {
+    private static void cadastrar() { 
         Usuario usuario = new Usuario();
         usuario.setNome("João Henrique Medeiros");
         usuario.setLogin("jogodavelha65565@gmail.com");
