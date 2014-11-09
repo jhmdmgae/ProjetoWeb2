@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+
+body{width: 100%;margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;font-family: "Helvetica", Arial, sans-serif;background: #f6f6f6;}
+a{text-decoration: none;color: #222;}
+//a:hover{background:#333;color:#fff;-moz-box-shadow:0 3px 10px 0 #CCC;-webkit-box-shadow:0 3px 10px 0 #ccc;text-shadow:0px 0px 5px #fff;}
+p{font-size: 12px}
+h1, h2, h3, h4, h5{font-weight: bold;text-shadow: none;text-transform: none;word-spacing: 0em;line-height: 1.0;}
+h1 {font-size: 17px;color: #B00;}
+h2 {font-size: 15px;color: #B00;}
+h3 {font-size: 14px;color: #FFF;margin: 2px;}
+h4 {font-size: 13px;}
+h5 {font-size: 12px;}
+
+img{border: 0;}
+select {border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border: 1px solid #BBB;background: #92C6E7;}
+select:hover {border: 1px solid #fff;}
+option:hover {border: 1px solid #fff;}
+label{width: 199px;float: left;font-size: 13px;}
+ul{list-style: none;}
+//li{float: left;padding-left: 20px;text-align: center;text-decoration: none;}
+input{margin-top: 5px;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border: 1px solid #CCC;}
+textarea{border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;padding: 2px;border: 1px solid #CCC;}
+
+.geral{width: 960px;margin: 0 auto;}
+.cabecalho{float: left;width: 100%;}
+
+.logomarca{width:600px;float: left;padding: 5px;}
+.navegacao-usuario{float: right;padding: 5px;}
+
+.menu{list-style:none; border:1px solid #c0c0c0; float:left;margin-bottom: 20px;}
+.menu li{position:relative;float:left;border-right:1px solid #c0c0c0;}
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+.menu li a:hover{background:#333;color:#fff;-moz-box-shadow:0 3px 10px 0 #CCC;-webkit-box-shadow:0 3px 10px 0 #ccc;text-shadow:0px 0px 5px #fff;}
+.menu li  ul{position:absolute;top:25px;left:0;background-color:#fff;display:none;} 
+.menu li:hover ul, .menu li.over ul{display:block;}
+.menu li ul li{border:1px solid #c0c0c0;display:block;width:150px;}
+
+.siderbar{padding: 5px 20px 50px 1px;float: left;width: 300px;margin-top: 21px;}
+
+.conteudo{width: 960px;float: left;}
+
+.menu2{width:600px;float: left;padding: 5px;}
+
+.div-table{display:table; border:1px solid #000;color: #fff}
+.div-table-caption{display:table-caption; background:#000;text-align: center;}
+.div-table-row{display:table-row;color: #000}
+.div-table-col{display:table-cell; padding: 5px; border: 1px solid #003399;text-align: center;}
+.div-table-coln{float: left;}
+
+.rodape{float: left;width: 100%;color: #444;font-size: 11px;padding-bottom: 5px;text-align: center;border: none;margin: 0 auto;}
