@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.servlet.ServletContext;
+ 
 
 /**
  *
@@ -18,7 +19,7 @@ public class ConnectionMySql {
         Connection connection = null;
 
         try {
-            System.out.println("Loading driver...");
+            System.out.println("Loading driver. ..");
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Driver loaded!");
         } catch (ClassNotFoundException e) {
