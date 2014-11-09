@@ -8,7 +8,7 @@ import java.sql.SQLException;
  *
  * @author Lourivaldo
  */
-public class ConnectionMySql {
+public class Conexao {
 
     public static Connection getConnection() {
         String url = "jdbc:mysql://25.138.13.112:3306/web2_condominio";
