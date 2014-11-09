@@ -49,7 +49,8 @@ public class UsuarioController extends HttpServlet {
             request.setAttribute("usuario", usuario);
             request.getRequestDispatcher("jsp/cadastro_usuario.jsp").forward(request, response);
 
-        } else {
+        } 
+       if (acao != null && acao.equals("list")) {
             request.setAttribute("lista", new UsuarioDAO().buscarTodos());
             request.getRequestDispatcher("jsp/listausuarios.jsp").forward(request, response);
         }
