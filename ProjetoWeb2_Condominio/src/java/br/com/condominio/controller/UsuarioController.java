@@ -1,10 +1,8 @@
-package br.com.condomnio.controller;
+package br.com.condominio.controller;
 
 import br.com.condominio.entidades.Usuario;
 import br.com.condominio.jdbc.UsuarioDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,7 +47,8 @@ public class UsuarioController extends HttpServlet {
             request.setAttribute("usuario", usuario);
             request.getRequestDispatcher("jsp/cadastro_usuario.jsp").forward(request, response);
 
-        } else {
+        } 
+       if (acao != null && acao.equals("list")) {
             request.setAttribute("lista", new UsuarioDAO().buscarTodos());
             request.getRequestDispatcher("jsp/listausuarios.jsp").forward(request, response);
         }

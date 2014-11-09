@@ -12,6 +12,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style type="text/css">
+            table, tr, th, td{
+                border: black solid 1px;
+                border-collapse: collapse;
+            } 
+            table{
+                width: 700px;
+            }
+        </style>
     </head>
     <body>
         <table>
