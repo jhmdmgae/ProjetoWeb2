@@ -6,6 +6,7 @@
             <div class="menu">
                 <ul>
                     <li><a href="usucontroller.do?acao=ListarUsuarios">Usuários</a></li>
+                    <li><a href="index.jsp">Home</a></li>
                     <li><a href="apartamentos.jsp">Apartamentos</a></li>
                     <li><a href="funcionarios.jsp">Funcionários</a></li>
                     <li><a href="documentos.jsp">Documentos </a></li>

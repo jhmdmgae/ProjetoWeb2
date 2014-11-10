@@ -18,39 +18,46 @@
                 border-collapse: collapse;
             } 
             table{
-                width: 700px;
+                /*width: 700px;*/
             }
         </style>
     </head>
     <body>
         <table>
             <tr>
-                <th>AÇÃO</th>
+                <th>Ação</th>
                 <th>ID</th>
-                <th>LOGIN</th>
-                <th>PERFIL</th>
-                <th>TELEFONE</th>
+                <th>Login</th>
+                <th>Nome</th>
+                <th>Perfil</th>
+                <th>Telefone</th>
+                <th>Senha</th>
             </tr>
             <%
                 List<Usuario> lista = (List<Usuario>) request.getAttribute("lista");
-                if(lista.equals(null)){
+                if (lista.equals(null)) {
                     response.getWriter().write("null");
                 }
                 for (Usuario usu : lista) {
             %>
             <tr>
                 <td>
-                    <a href="usucontroller.do?acao=exc&id=<%= usu.getId()%>">Excluir</a>
-                    <a href="usucontroller.do?acao=alt&id=<%= usu.getId()%>">Editar</a>
+                    <a href="usucontroller.do?acao=ExcluirUsuario&id=<%= usu.getId()%>">Excluir</a>
+                    <a href="usucontroller.do?acao=FormAlterarUsuario&id=<%= usu.getId()%>">Editar</a>
                 </td>
                 <td><%= usu.getId()%></td>
                 <td><%= usu.getLogin()%></td>
+                <td><%= usu.getNome()%></td>
                 <td><%= usu.getPerfil()%></td>
                 <td><%= usu.getTelefone()%></td>
+                 <td><%= usu.getSenha()%></td>
             </tr>
             <%
                 }
             %>
+            <tr>
+                <td colspan="7"><a href="usucontroller.do?acao=FormCadastroUsuario">Cadastar Novo Usuario</a></td>                    
+            </tr>
         </table>
     </body>
 </html>

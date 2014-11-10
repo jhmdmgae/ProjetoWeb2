@@ -133,6 +133,44 @@ public class UsuarioDAO {
         return usuario;
     }
 
+    /**
+     *
+     * @param email
+     * @return
+     */
+    public Usuario buscarEmail(String email) {
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM web2_condominio.usuario WHERE login=?";
+        Usuario usuario = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, email);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                usuario = new Usuario();
+
+                usuario.setId(resultSet.getInt("id_usuario"));
+                usuario.setNome(resultSet.getString("nome"));
+                usuario.setLogin(resultSet.getString("login"));
+                usuario.setSenhaHash(resultSet.getString("senha"));
+                usuario.setPerfil(resultSet.getString("perfil"));
+                usuario.setTelefone(resultSet.getString("telefone"));
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return usuario;
+    }
+
+    /**
+     *
+     * @param usuario
+     * @return
+     */
     public Usuario autenticar(Usuario usuario) {
         String sql = "SELECT * FROM web2_condominio.usuario WHERE login=? AND senha=?";
         Usuario usuarioRetorno = null;
