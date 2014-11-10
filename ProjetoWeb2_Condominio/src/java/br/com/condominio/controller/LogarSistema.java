@@ -20,7 +20,7 @@ public class LogarSistema implements Logica {
         if (login == null || senha == null) {
             return "html/login_error.html";
         }
-        
+
         Usuario novoUsuario;
         UsuarioDAO usuarioDAO;
         HttpSession session;
@@ -34,6 +34,9 @@ public class LogarSistema implements Logica {
             novoUsuario.setSenha(senha);
 
             Usuario usuAutenticado = usuarioDAO.autenticar(novoUsuario);
+            if (usuAutenticado == null) {
+                return "login.jsp";
+            }
             session = request.getSession();
             session.setAttribute("usuAutenticado", usuAutenticado);
 

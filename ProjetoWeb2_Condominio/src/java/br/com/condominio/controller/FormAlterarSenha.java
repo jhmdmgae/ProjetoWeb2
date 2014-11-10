@@ -1,6 +1,5 @@
 package br.com.condominio.controller;
 
-import br.com.condominio.entidades.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

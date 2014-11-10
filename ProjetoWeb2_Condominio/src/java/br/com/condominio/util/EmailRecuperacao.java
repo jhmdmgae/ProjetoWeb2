@@ -1,7 +1,5 @@
 package br.com.condominio.util;
 
-import br.com.condominio.entidades.Usuario;
-import br.com.condominio.jdbc.UsuarioDAO;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.mail.DefaultAuthenticator;
@@ -16,8 +14,6 @@ import org.apache.commons.mail.SimpleEmail;
  */
 public class EmailRecuperacao {
 
-//    private Usuario usuario;
-//    private UsuarioDAO usuarioDAO;
     private final Email email;
     private final HtmlEmail emailHtml;
 
