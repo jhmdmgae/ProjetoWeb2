@@ -10,13 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Apartamentos</title>
-        <link type="text/css" rel="stylesheet" href="../css/estilo.css" />
+        <link type="text/css" rel="stylesheet" href="css/estilo.css" />
     </head>
     <body>
         <div class="geral">
             <div class="cabecalho">
                 <div class="logomarca">
-                    <a href="index.jsp"><img src="../imagens/logo.png" width="420px" height="97px" title="" alt="" border="0"/></a>
+                    <a href="index.jsp"><img src="imagens/logo.png" width="420px" height="97px" title="" alt="" border="0"/></a>
                 </div>
                 <div class="navegacao-usuario">
                     <a href="login.jsp">Entrar</a>
@@ -34,7 +34,7 @@
             </div>
             <div class="conteudo">
                 <div class="siderbar">
-                     <a><img src="../imagens/edificio_sombra.jpg" width="256px" height="256px" title="" alt="" border="0"/></a>
+                     <a><img src="imagens/edificio_sombra.jpg" width="256px" height="256px" title="" alt="" border="0"/></a>
                      <ul>
                         <li>Nome: </li>
                         <li>Blocos</li>

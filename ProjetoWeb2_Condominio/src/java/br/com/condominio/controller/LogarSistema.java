@@ -38,7 +38,7 @@ public class LogarSistema implements Logica {
             session.setAttribute("usuAutenticado", usuAutenticado);
 
         }
-        return "jsp/index.jsp";
+        return "index.jsp";
     }
 
 }

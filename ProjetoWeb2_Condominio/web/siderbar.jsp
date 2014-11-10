@@ -4,7 +4,7 @@
     Author     : João Henrique 2
 --%>
                 <div class="siderbar">
-                    <a><img src="../imagens/edificio_sombra.jpg" width="256px" height="256px" title="" alt="" border="0"/></a>
+                    <a><img src="imagens/edificio_sombra.jpg" width="256px" height="256px" title="" alt="" border="0"/></a>
                     <ul>
                         <li>Nome: </li>
                         <li>Blocos</li>
