@@ -4,7 +4,7 @@
     Author     : João Henrique 2
 --%>
             <div class="menu">
-                <ul> 
+                <ul>
                     <li><a href="index.jsp">Home</a></li>
                     <li><a href="usucontroller.do?acao=ListarUsuarios">Usuários</a></li>
                     <li><a href="apartamentos.jsp">Apartamentos</a></li>
