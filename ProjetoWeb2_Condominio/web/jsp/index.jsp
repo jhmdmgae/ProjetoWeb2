@@ -9,29 +9,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+        <title>Apartamentos</title>
         <link type="text/css" rel="stylesheet" href="../css/estilo.css" />
     </head>
     <body>
         <div class="geral">
-            <div class="cabecalho">
-                <div class="logomarca">
-                    <a href="index.jsp"><img src="../imagens/logo.png" width="420px" height="97px" title="" alt="" border="0"/></a>
-                </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="listausuarios.jsp">Usuários</a></li>
-                        <li><a href="apartamentos.jsp">Apartamentos</a></li>
-                        <li><a href="funcionarios.jsp">Funcionários</a></li>
-                        <li><a href="documentos.jsp">Documentos </a></li>
-                        <li><a href="visitantes.jsp">Visitantes</a></li>
-                        <li><a href="veiculos.jsp">Veículo</a></li>
-                    </ul>
-                </div>
-                <div class="conteudo">
-                    
-                </div>
+            <%@include file="cabecalho.jsp"%>
+            <%@include file="menu.jsp"%>
+            <div class="conteudo">
+                <p>O Condomio é um Sistema Web muito útil para gestão de condomínios. Planejado para os mais diversos usuários como o síndico, moradores, porteiro e funcionários com restrinção de acesso de acordo com o perfil do usuário.
+Com ele é possível cadastrar encomendas, visitantes, funcionários, veículos entre tantas outras informações relevantes para uma gestão eficiente e segura dos condominios tanto pequenos quanto grandes.</p>
             </div>
+            <%@include file="rodape.jsp"%>
         </div>
     </body>
 </html>

@@ -5,6 +5,7 @@
 --%>
             <div class="menu">
                 <ul>
+                    <li><a href="index.jsp">Home</a></li>
                     <li><a href="usucontroller.do?acao=list">Usuários</a></li>
                     <li><a href="apartamentos.jsp">Apartamentos</a></li>
                     <li><a href="funcionarios.jsp">Funcionários</a></li>
