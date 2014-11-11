@@ -1,5 +1,6 @@
 package br.com.condominio.controller;
 
+
 import br.com.condominio.entidades.Usuario;
 import br.com.condominio.jdbc.UsuarioDAO;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +27,6 @@ public class AlterarSenha implements Logica {
         } else {
             return "codigo_expirou.html";
         }
-
         return "login.jsp";
     }
 }
