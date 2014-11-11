@@ -1,4 +1,4 @@
-ProjetoWeb2
+ProjetoWeb2 - Sistema Condomínio
 ===========
 
 O Condomio é um Sistema Web muito útil para gestão de condomínios. Planejado para os mais diversos usuários como o síndico, 
