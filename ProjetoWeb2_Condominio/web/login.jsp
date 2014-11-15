@@ -22,15 +22,16 @@
                     <div>
                         <div class="campo">
                             <label for='login'>Login:</label>
-                            <input type='text' id='login' name='login' value='loro.vasconcelos@gmail.com'/>
+                            <input type='text' id='login' name='login' value=''/>
                         </div>
                         <div class="campo">
                             <label for='senha'>Senha:</label>
-                            <input type='password' id='senha' name='senha' value='1234'/>
+                            <input type='password' id='senha' name='senha' value='' />
                         </div>
                         <div class="campo">
-                            <a href="usucontroller.do?acao=FormPedidoSenha">Esqueceu a senha ?</a><br/>
-                            <a href="#">Cadastre seu condomínio</a><br>
+                            <a href="usucontroller.do?acao=FormPedidoSenha">Esqueceu a senha ?</a>
+                        </div>
+                        <div class="campo">
                             <a href="usucontroller.do?acao=FormCadastroUsuario">Não é cadastrado ?</a>
                         </div>
                         <div class="campo">
