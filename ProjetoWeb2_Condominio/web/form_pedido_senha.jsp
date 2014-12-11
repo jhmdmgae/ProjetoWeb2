@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    String msg = (String) request.getAttribute("msg");
+    String msg = (String) request.getAttribute("msg");//mensagem de erro(e-mail nao cadastrado)
 %>  
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@
             <h1 align="center">Recuperar Login</h1>
             <h4 align="center">
                 Digite no campo abaixo o e-mail/login que você cadastrou anteriormente  
-                para que sua senha seja enviada para seu e-mail.
+                para receber um formulário de redefinição de senha por e-mail.
             </h4>
             <div>
                 <label for="email">Login/E-mail: </label>

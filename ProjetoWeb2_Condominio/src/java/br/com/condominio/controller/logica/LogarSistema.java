@@ -1,4 +1,4 @@
-package br.com.condominio.controller;
+package br.com.condominio.controller.logica;
 
 import br.com.condominio.entidades.Usuario;
 import br.com.condominio.jdbc.UsuarioDAO;

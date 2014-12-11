@@ -1,9 +1,7 @@
 package br.com.condominio.controller;
 
-import br.com.condominio.entidades.Usuario;
-import br.com.condominio.jdbc.UsuarioDAO;
+import br.com.condominio.controller.logica.Logica;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +20,7 @@ public class UsuarioController extends HttpServlet {
             throws ServletException, IOException {
 
         String parametro = request.getParameter("acao");
-        String nomeDaClasse = "br.com.condominio.controller." + parametro;
+        String nomeDaClasse = "br.com.condominio.controller.logica." + parametro;
 
         try {
             Class<?> classe = Class.forName(nomeDaClasse);

@@ -209,4 +209,62 @@ public class UsuarioDAO {
         }
     }
 
+    /**
+     * Retorna apenas o codigo mais recente, e exclui todos anteriores
+     *
+     * @param usuario
+     * @return null: se nao existe pedido de recuperaçao.
+     *
+     */
+    public String getCodigoRecuperacao(Usuario usuario) {
+
+        String sql = "SELECT id_codigo, codigo, data FROM web2_condominio.codigo_senha "
+                + "WHERE usuario_id_usuario=? ORDER BY data";
+//        ArrayList<Integer> list = new ArrayList<>();
+        String codigoRetorno = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, usuario.getId());
+
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+//                list.add(resultSet.getInt("id_codigo"));
+                codigoRetorno = resultSet.getString("codigo");
+            }
+
+            String sqlDelete = "DELETE FROM web2_condominio.codigo_senha WHERE usuario_id_usuario=?";
+
+//            PreparedStatement psDelete = con.prepareStatement(sqlDelete);
+//            psDelete.setInt(1, usuario.getId());
+//            psDelete.execute();
+
+            ps.close();
+//            psDelete.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return codigoRetorno;
+    }
+
+    public void setCodigoRecuperacao(Usuario usuario, String codigo) {
+
+        String sql = "INSERT INTO web2_condominio.codigo_senha (codigo,usuario_id_usuario) VALUES (?, ?)";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, codigo);
+            ps.setInt(2, usuario.getId());
+
+            ps.execute();
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

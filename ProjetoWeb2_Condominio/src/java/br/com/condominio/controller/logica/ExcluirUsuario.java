@@ -1,4 +1,4 @@
-package br.com.condominio.controller;
+package br.com.condominio.controller.logica;
 
 import br.com.condominio.entidades.Usuario;
 import br.com.condominio.jdbc.UsuarioDAO;
@@ -9,22 +9,22 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author LOURIVALDO
  */
-public class FormAlterarUsuario implements Logica {
+public class ExcluirUsuario implements Logica {
 
     @Override
     public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         UsuarioDAO usuarioDAO = new UsuarioDAO();
 
         String id = request.getParameter("id");
         Usuario usuario = usuarioDAO.buscar(Integer.parseInt(id));
 
-        if (usuario == null) {
-            return "usuario_nao_existe";
+        if (usuario != null) {
+            usuarioDAO.excluir(usuario);
         }
-        
-        request.setAttribute("usuarioAlterar", usuario);
 
-        return "alterar_usuario.jsp";
+        request.setAttribute("lista", new UsuarioDAO().buscarTodos());
+        return "listar_usuarios.jsp";
     }
 
 }

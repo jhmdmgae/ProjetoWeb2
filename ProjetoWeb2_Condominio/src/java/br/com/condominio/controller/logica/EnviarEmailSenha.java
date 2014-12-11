@@ -1,4 +1,4 @@
-package br.com.condominio.controller;
+package br.com.condominio.controller.logica;
 
 import br.com.condominio.entidades.Usuario;
 import br.com.condominio.jdbc.UsuarioDAO;
@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 public class EnviarEmailSenha implements Logica {
 
     @Override
-    public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public String executa(HttpServletRequest request, HttpServletResponse response) 
+            throws Exception {
         String email = request.getParameter("email");
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -21,13 +22,15 @@ public class EnviarEmailSenha implements Logica {
 
         if (usuario == null) {
             request.setAttribute("msg", "Email não cadastrado!");
-            request.getRequestDispatcher("form_pedido_senha.jsp").forward(request, response);
+             return "form_pedido_senha.jsp";
         } else {
             String codigo = getGerador();
+            String emailAdm = (String) request.getServletContext().getInitParameter("adm-email");
             
             request.setAttribute("usuario", usuario);
-            request.getServletContext().setAttribute(codigo, usuario);
-            String emailAdm = (String) request.getServletContext().getInitParameter("adm-email");
+            
+            //cadastrar codigo recuperação
+            usuarioDAO.setCodigoRecuperacao(usuario, codigo);
 
             EmailRecuperacao emailRecuperacao = new EmailRecuperacao();
 
@@ -82,7 +85,7 @@ public class EnviarEmailSenha implements Logica {
         sb.append("                                </tr>\n");
         sb.append("\n");
         sb.append("                                <tr>\n");
-        sb.append("                                    <td style=\"font-size:22px;font-weight:bold;padding-bottom:15px;color:#1f4f82\">› <a href=\"http://25.138.13.112:8084/ProjetoWeb2_Condominio/usucontroller.do?acao=FormAlterarSenha&email=");
+        sb.append("                                    <td style=\"font-size:22px;font-weight:bold;padding-bottom:15px;color:#1f4f82\">› <a href=\"http://localhost:8084/ProjetoWeb2_Condominio/usucontroller.do?acao=FormAlterarSenha&email=");
         sb.append(login);
         sb.append("&cod=");
         sb.append(cod);

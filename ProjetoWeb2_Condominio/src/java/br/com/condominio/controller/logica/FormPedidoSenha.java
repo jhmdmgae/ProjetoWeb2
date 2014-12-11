@@ -1,4 +1,4 @@
-package br.com.condominio.controller;
+package br.com.condominio.controller.logica;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
