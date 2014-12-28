@@ -3,7 +3,7 @@
     Created on : 09/11/2014, 10:14:12
     Author     : João Henrique 2
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,8 +14,8 @@
     </head>
     <body>
         <div class="geral">
-            <%@include file="cabecalho.jsp"%>
-            <%@include file="menu.jsp"%>
+            <c:import url="cabecalho.jsp"/>
+            <c:import url="menu.jsp"/>
             <div class="conteudo">
                 <%@include file="siderbar.jsp"%>
                 <div class="menu2">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <%@include file="rodape.jsp"%>
+            <c:import url="rodape.jsp"/>
         </div>
     </body>
 </html>

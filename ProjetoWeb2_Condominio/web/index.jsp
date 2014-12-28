@@ -3,7 +3,7 @@
     Created on : 09/11/2014, 09:38:09
     Author     : João Henrique 2
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,8 +14,8 @@
     </head>
     <body>
         <div class="geral">
-            <%@include file="cabecalho.jsp"%>
-            <%@include file="menu.jsp"%>
+            <c:import url="cabecalho.jsp"/>
+            <c:import url="menu.jsp"/>
             <div class="conteudo">
                 
                 <p>O Condomio é um Sistema Web muito útil para gestão de condomínios. Planejado para os mais diversos usuários como o síndico, moradores, porteiro e funcionários com restrinção de acesso de acordo com o perfil do usuário.
@@ -23,7 +23,7 @@
                 <br />
                 <p>Cadastre uma nova conta incluindo as informações do seu condomínio nesse <a href="login.jsp"><strong>Link</strong></a></p>
             </div>
-            <%@include file="rodape.jsp"%>
+            <c:import url="rodape.jsp"/>
         </div>
     </body>
 </html>

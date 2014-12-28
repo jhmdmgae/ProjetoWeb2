@@ -4,19 +4,12 @@
     Author     : LOURIVALDO
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    String msg = (String) request.getAttribute("msg");//mensagem de erro(e-mail nao cadastrado)
-%>  
 <!DOCTYPE html>
 <html>
     <head>
         <title>Recuperar Login</title>
-        <style type="text/css">
-            .erro{
-                color: red;
-            }
-        </style>
     </head>
     <body>
         <form name="formulario_email" method="post" action="usucontroller.do?acao=EnviarEmailSenha">  
@@ -28,21 +21,16 @@
             <div>
                 <label for="email">Login/E-mail: </label>
                 <input name="email" id="email" type="email" size="50" value="" onkeyup="limpar()"/>
-                <%
-                    if ((msg != null) && !msg.equals("")) {
-                %>  
-
-                <span class="erro" id="erroemail"><%= msg%></span>
-                <script type="text/javascript">
-                    function limpar() {
-                        var element = document.getElementById("erroemail");
-                        element.parentNode.removeChild(element);
-                    }
-                </script>
-                <%
-                    }
-                %>
+                <c:if test="${(msg != null) && !msg.equals('')}">
+                    <span style="color:red;" id="erroemail"><c:out value="${msg}"/></span>
+                </c:if>
             </div>
+            <script type="text/javascript">
+                function limpar() {
+                    var element = document.getElementById("erroemail");
+                    element.parentNode.removeChild(element);
+                }
+            </script>
             <input type="submit" name="op" value="Enviar" /> 
             <input name="reset" type="reset" id="reset" value="Voltar" onClick="location.href = 'login.jsp'" />  
         </form>  

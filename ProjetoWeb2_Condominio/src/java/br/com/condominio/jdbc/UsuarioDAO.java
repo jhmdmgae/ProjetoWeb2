@@ -17,9 +17,10 @@ import java.util.logging.Logger;
 public class UsuarioDAO {
 
     private Connection con = Conexao.getConnection();
+    private String tabela = "web2_condominio.usuario";
 
     public void cadastrar(Usuario usuario) {
-        String sql = "INSERT INTO web2_condominio.usuario ( nome, login, senha, perfil, telefone) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO " + this.tabela + " ( nome, login, senha, perfil, telefone) VALUES (?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -39,7 +40,7 @@ public class UsuarioDAO {
     }
 
     public void alterar(Usuario usuario) {
-        String sql = "UPDATE web2_condominio.usuario SET nome=?, login=?, senha= ?, perfil=?, telefone=? WHERE id_usuario = ?";
+        String sql = "UPDATE " + this.tabela + " SET nome=?, login=?, senha= ?, perfil=?, telefone=? WHERE id_usuario = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -60,7 +61,7 @@ public class UsuarioDAO {
     }
 
     public void excluir(Usuario usuario) {
-        String sql = "DELETE FROM web2_condominio.usuario WHERE id_usuario = ?";
+        String sql = "DELETE FROM " + this.tabela + " WHERE id_usuario = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -74,7 +75,7 @@ public class UsuarioDAO {
     }
 
     public List<Usuario> buscarTodos() {
-        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM web2_condominio.usuario";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM " + this.tabela;
 
         List<Usuario> usuarios = null;
 
@@ -106,7 +107,7 @@ public class UsuarioDAO {
     }
 
     public Usuario buscar(Integer idUsuario) {
-        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM web2_condominio.usuario WHERE id_usuario=?";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM " + this.tabela + " WHERE id_usuario=?";
         Usuario usuario = null;
 
         try {
@@ -139,7 +140,7 @@ public class UsuarioDAO {
      * @return
      */
     public Usuario buscarEmail(String email) {
-        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM web2_condominio.usuario WHERE login=?";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM " + this.tabela + " WHERE login=?";
         Usuario usuario = null;
 
         try {
@@ -172,7 +173,7 @@ public class UsuarioDAO {
      * @return
      */
     public Usuario autenticar(Usuario usuario) {
-        String sql = "SELECT * FROM web2_condominio.usuario WHERE login=? AND senha=?";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM " + this.tabela + " WHERE login=? AND senha=?";
         Usuario usuarioRetorno = null;
 
         try {
@@ -219,8 +220,7 @@ public class UsuarioDAO {
     public String getCodigoRecuperacao(Usuario usuario) {
 
         String sql = "SELECT id_codigo, codigo, data FROM web2_condominio.codigo_senha "
-                + "WHERE usuario_id_usuario=? ORDER BY data";
-//        ArrayList<Integer> list = new ArrayList<>();
+                + "WHERE usuario_id_usuario=?";
         String codigoRetorno = null;
 
         try {
@@ -229,17 +229,16 @@ public class UsuarioDAO {
 
             ResultSet resultSet = ps.executeQuery();
 
-            if (resultSet.next()) {
-//                list.add(resultSet.getInt("id_codigo"));
+            while (resultSet.next()) {
                 codigoRetorno = resultSet.getString("codigo");
+                System.out.println(codigoRetorno);
             }
 
-            String sqlDelete = "DELETE FROM web2_condominio.codigo_senha WHERE usuario_id_usuario=?";
-
+//            String sqlDelete = "DELETE FROM web2_condominio.codigo_senha WHERE usuario_id_usuario=?";
+//
 //            PreparedStatement psDelete = con.prepareStatement(sqlDelete);
 //            psDelete.setInt(1, usuario.getId());
 //            psDelete.execute();
-
             ps.close();
 //            psDelete.close();
 

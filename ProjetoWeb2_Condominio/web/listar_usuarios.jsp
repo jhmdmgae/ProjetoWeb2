@@ -3,7 +3,7 @@
     Created on : 09/11/2014, 00:44:17
     Author     : LOURIVALDO
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="br.com.condominio.entidades.Usuario"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -25,8 +25,8 @@
     </head>
     <body>
         <div class="geral">
-            <%@include file="cabecalho.jsp"%>
-            <%@include file="menu.jsp"%>
+            <c:import url="cabecalho.jsp"/>
+            <c:import url="menu.jsp"/>
             <div class="conteudo">
                 <table style="padding:5px">
                     <tr style="padding:5px">
@@ -64,6 +64,6 @@
                 </table>
             </div>
         </div>
-        <%@include file="rodape.jsp"%>
+        <c:import url="rodape.jsp"/>
     </body>
 </html>
