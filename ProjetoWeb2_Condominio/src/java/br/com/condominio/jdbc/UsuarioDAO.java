@@ -172,7 +172,7 @@ public class UsuarioDAO {
      * @return
      */
     public Usuario autenticar(Usuario usuario) {
-        String sql = "SELECT * FROM web2_condominio.usuario WHERE login=? AND senha=?";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM web2_condominio.usuario WHERE login=? AND senha=?";
         Usuario usuarioRetorno = null;
 
         try {
@@ -219,8 +219,7 @@ public class UsuarioDAO {
     public String getCodigoRecuperacao(Usuario usuario) {
 
         String sql = "SELECT id_codigo, codigo, data FROM web2_condominio.codigo_senha "
-                + "WHERE usuario_id_usuario=? ORDER BY data";
-//        ArrayList<Integer> list = new ArrayList<>();
+                + "WHERE usuario_id_usuario=?";
         String codigoRetorno = null;
 
         try {
@@ -229,13 +228,13 @@ public class UsuarioDAO {
 
             ResultSet resultSet = ps.executeQuery();
 
-            if (resultSet.next()) {
-//                list.add(resultSet.getInt("id_codigo"));
+            while (resultSet.next()) {
                 codigoRetorno = resultSet.getString("codigo");
+                System.out.println(codigoRetorno);
             }
 
-            String sqlDelete = "DELETE FROM web2_condominio.codigo_senha WHERE usuario_id_usuario=?";
-
+//            String sqlDelete = "DELETE FROM web2_condominio.codigo_senha WHERE usuario_id_usuario=?";
+//
 //            PreparedStatement psDelete = con.prepareStatement(sqlDelete);
 //            psDelete.setInt(1, usuario.getId());
 //            psDelete.execute();

@@ -4,8 +4,9 @@
     Author     : LOURIVALDO
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import = "javax.servlet.RequestDispatcher" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html> 
 <html>
     <head>
@@ -15,8 +16,8 @@
     </head>
     <body>
         <div class="geral">
-            <%@include file="cabecalho.jsp"%>
-            <%@include file="menu.jsp"%>
+            <c:import url="cabecalho.jsp"/>
+            <c:import url="menu.jsp"/>
             <div class="conteudo">
                 <form action='usucontroller.do?acao=LogarSistema' method='post' name='formulario'>
                     <div>
@@ -40,7 +41,7 @@
                     </div>
                 </form>
             </div>
-            <%@include file="rodape.jsp"%>
+            <c:import url="rodape.jsp"/>
         </div>
     </body>
 </html>

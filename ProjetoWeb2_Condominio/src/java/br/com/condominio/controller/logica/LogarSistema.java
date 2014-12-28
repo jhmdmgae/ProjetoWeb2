@@ -18,7 +18,7 @@ public class LogarSistema implements Logica {
         String senha = request.getParameter("senha");
 
         if (login == null || senha == null) {
-            return "html/login_error.html";
+            return "login_error.html";
         }
 
         Usuario novoUsuario;
@@ -33,11 +33,15 @@ public class LogarSistema implements Logica {
             novoUsuario.setLogin(login);
             novoUsuario.setSenha(senha);
 
-            Usuario usuAutenticado = usuarioDAO.autenticar(novoUsuario);
+//            Usuario usuAutenticado = usuarioDAO.autenticar(novoUsuario);
+            Usuario usuAutenticado = usuarioDAO.buscarEmail(login);
             if (usuAutenticado == null) {
                 return "login.jsp";
             }
             session = request.getSession();
+            if(usuAutenticado.getNome() == null){
+                return "login_error.html";
+            }
             session.setAttribute("usuAutenticado", usuAutenticado);
 
         }

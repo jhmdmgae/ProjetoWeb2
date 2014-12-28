@@ -23,16 +23,17 @@ public class FormAlterarSenha implements Logica {
 
         if (codigo != null
                 && email != null) {
-
+            
             UsuarioDAO usuarioDAO = new UsuarioDAO();
             Usuario usuario = usuarioDAO.buscarEmail(email);
 
             if (usuario != null) { //email cadastrado
                 String codigoRecuperacao = usuarioDAO.getCodigoRecuperacao(usuario);
-
+//                System.out.println(codigoRecuperacao);
                 if (codigo.equals(codigoRecuperacao)) {
                     request.setAttribute("cod",codigo);
                     request.setAttribute("email",email);
+//                    return "404.html";
                     return "nova_senha.jsp";
                 }
             }
