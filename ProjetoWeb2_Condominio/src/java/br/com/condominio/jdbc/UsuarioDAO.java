@@ -173,7 +173,7 @@ public class UsuarioDAO {
      * @return
      */
     public Usuario autenticar(Usuario usuario) {
-        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM " + this.tabela + " WHERE login=? AND senha=?";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM web2_condominio.usuario WHERE login=? AND senha=?";
         Usuario usuarioRetorno = null;
 
         try {
