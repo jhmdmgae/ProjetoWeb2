@@ -21,11 +21,12 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="usucontroller.do?acao=FormCadastroFuncionario">Adicionar funcionario</a>
+                            <a href="condocontroller.do?acao=FormCadastroFuncionario">Adicionar funcionario</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Funcionários</div>
                             <div class="div-table-row">
+                                <div class="div-table-col">Ação</div>
                                 <div class="div-table-col">Foto</div>
                                 <div class="div-table-col">Matrícula</div>
                                 <div class="div-table-col">Nome</div>
@@ -36,6 +37,10 @@
                             <jsp:useBean id="funcdao" class="br.com.condominio.jdbc.FuncionarioDAO"/>
                             <c:forEach items="${funcdao.buscarTodos()}" var="func">
                                 <div class="div-table-row">
+                                    <div class="div-table-col">
+                                        <a href="condocontroller.do?acao=ExcluirFuncionario&id=${func.id}">Excluir</a>
+                                        <a href="condocontroller.do?acao=FormAlterarFuncionario&id=${func.id}">Editar</a>
+                                    </div>
                                     <div class="div-table-col">${func.foto}</div>
                                     <div class="div-table-col">${func.matricula}</div>
                                     <div class="div-table-col">${func.nome}</div>

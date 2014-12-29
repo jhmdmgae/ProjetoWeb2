@@ -1,9 +1,9 @@
 package br.com.condominio.controller.logica;
 
-import br.com.condominio.entidades.Apartamento;
 import br.com.condominio.entidades.Funcionario;
-import br.com.condominio.jdbc.ApartamentoDAO;
 import br.com.condominio.jdbc.FuncionarioDAO;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -32,18 +32,40 @@ public class CadastrarFuncionario implements Logica {
         String rg = request.getParameter("rg");
         String cpf = request.getParameter("cpf");
         String sexo = request.getParameter("sexo");
-        String data_contratacao = request.getParameter("data_contratacao");
+        String dataContratacao = request.getParameter("data_contratacao");
         String cargo = request.getParameter("cargo");
-        String tipo_contrato = request.getParameter("tipo_contrato");
+        String tipoContrato = request.getParameter("tipo_contrato");
         String turno = request.getParameter("turno");
         String foto = request.getParameter("foto");
         String observacao = request.getParameter("observacao");
 
         Funcionario funcionario = new Funcionario();
-//        funcionario.setNumero(Integer.parseInt(numero));
 
-//        funcionarioDAO.cadastrar(funcionario);
+        funcionario.setMatricula(matricula);
+        funcionario.setNome(nome);
+        funcionario.setTelResidencial(telefoneResidencial);
+        funcionario.setTelCelular(telefoneCelular);
+        funcionario.setCep(cep);
+        funcionario.setEndereco(endereco);
+        funcionario.setNumero(Integer.parseInt(numero));
+        funcionario.setComplemento(complemento);
+        funcionario.setBairro(bairro);
+        funcionario.setCidade(cidade);
+        funcionario.setUf(uf);
+        funcionario.setRg(rg);
+        funcionario.setCpf(cpf);
+        funcionario.setSexo(sexo);
+        funcionario.setCargo(cargo);
+        funcionario.setTurno(turno);
+        funcionario.setFoto(foto);
+        funcionario.setTipoContrato(tipoContrato);
+        funcionario.setObservacao(observacao);
 
-        return "listar_apartamentos.jsp";
+//        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+//        funcionario.setDataContratacao(new java.util.Date(format.parse(dataContratacao).getTime()));
+
+        funcionarioDAO.cadastrar(funcionario);
+        
+        return "listar_funcionarios.jsp";
     }
 }

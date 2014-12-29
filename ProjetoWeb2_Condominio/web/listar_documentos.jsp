@@ -21,11 +21,12 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="adicionar_documento.jsp">Adicionar documento</a>
+                            <a href="condocontroller.do?acao=FormCadastroDocumento">Adicionar documento</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Documentos</div>
                             <div class="div-table-row">
+                                <div class="div-table-col">Ação</div>
                                 <div class="div-table-col">Título</div>
                                 <div class="div-table-col">Descrição</div>
                                 <div class="div-table-col">Categorias</div>
@@ -35,6 +36,10 @@
                             <jsp:useBean id="docdao" class="br.com.condominio.jdbc.DocumentoDAO"/>
                             <c:forEach items="${docdao.buscarTodos()}" var="doc">
                                 <div class="div-table-row">
+                                    <div class="div-table-col">
+                                        <a href="condocontroller.do?acao=ExcluirDocumento&id=${doc.id}">Excluir</a>
+                                        <a href="condocontroller.do?acao=FormAlterarDocumento&id=${doc.id}">Editar</a>
+                                    </div>
                                     <div class="div-table-col">${doc.titulo}</div>
                                     <div class="div-table-col">${doc.descricao}</div>
                                     <div class="div-table-col">${doc.categoria}</div>

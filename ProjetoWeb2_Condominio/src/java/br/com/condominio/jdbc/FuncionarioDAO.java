@@ -27,8 +27,8 @@ public class FuncionarioDAO {
 
             ps.setString(1, funcionario.getMatricula());
             ps.setString(2, funcionario.getNome());
-            ps.setString(3, funcionario.getTel_residencial());
-            ps.setString(4, funcionario.getTel_celular());
+            ps.setString(3, funcionario.getTelResidencial());
+            ps.setString(4, funcionario.getTelCelular());
             ps.setString(5, funcionario.getCep());
             ps.setString(6, funcionario.getEndereco());
             ps.setInt(7, funcionario.getNumero());
@@ -39,9 +39,9 @@ public class FuncionarioDAO {
             ps.setString(12, funcionario.getRg());
             ps.setString(13, funcionario.getCpf());
             ps.setString(14, funcionario.getSexo());
-            ps.setDate(15, (Date) funcionario.getData_contratacao());
+            ps.setDate(15, new java.sql.Date(funcionario.getDataContratacao().getTime()));
             ps.setString(16, funcionario.getCargo());
-            ps.setString(17, funcionario.getTipo_contrato());
+            ps.setString(17, funcionario.getTipoContrato());
             ps.setString(18, funcionario.getTurno());
             ps.setString(19, funcionario.getFoto());
             ps.setString(20, funcionario.getObservacao());
@@ -62,8 +62,8 @@ public class FuncionarioDAO {
 
             ps.setString(1, funcionario.getMatricula());
             ps.setString(1, funcionario.getNome());
-            ps.setString(1, funcionario.getTel_residencial());
-            ps.setString(1, funcionario.getTel_celular());
+            ps.setString(1, funcionario.getTelResidencial());
+            ps.setString(1, funcionario.getTelCelular());
             ps.setString(1, funcionario.getCep());
             ps.setString(1, funcionario.getEndereco());
             ps.setInt(1, funcionario.getNumero());
@@ -74,9 +74,9 @@ public class FuncionarioDAO {
             ps.setString(1, funcionario.getRg());
             ps.setString(1, funcionario.getCpf());
             ps.setString(1, funcionario.getSexo());
-            ps.setDate(1, (Date) funcionario.getData_contratacao());
+            ps.setDate(1, (Date) funcionario.getDataContratacao());
             ps.setString(1, funcionario.getCargo());
-            ps.setString(1, funcionario.getTipo_contrato());
+            ps.setString(1, funcionario.getTipoContrato());
             ps.setString(1, funcionario.getTurno());
             ps.setString(1, funcionario.getFoto());
             ps.setString(1, funcionario.getObservacao());
@@ -120,8 +120,8 @@ public class FuncionarioDAO {
                 funcionario.setId(resultSet.getInt("id_funcionario"));
                 funcionario.setMatricula(resultSet.getString("matricula"));
                 funcionario.setNome(resultSet.getString("nome"));
-                funcionario.setTel_residencial(resultSet.getString("telefone_residencial"));
-                funcionario.setTel_celular(resultSet.getString("telefone_comercial"));
+                funcionario.setTelResidencial(resultSet.getString("telefone_residencial"));
+                funcionario.setTelCelular(resultSet.getString("telefone_comercial"));
                 funcionario.setCep(resultSet.getString("cep"));
                 funcionario.setEndereco(resultSet.getString("endereco"));
                 funcionario.setNumero(resultSet.getInt("numero"));
@@ -132,9 +132,9 @@ public class FuncionarioDAO {
                 funcionario.setRg(resultSet.getString("rg"));
                 funcionario.setCpf(resultSet.getString("cpf"));
                 funcionario.setSexo(resultSet.getString("sexo"));
-                funcionario.setData_contratacao(resultSet.getDate("data_contratacao"));
+                funcionario.setDataContratacao(resultSet.getDate("data_contratacao"));
                 funcionario.setCargo(resultSet.getString("cargo"));
-                funcionario.setTipo_contrato(resultSet.getString("tipo_contrato"));
+                funcionario.setTipoContrato(resultSet.getString("tipo_contrato"));
                 funcionario.setTurno(resultSet.getString("turno"));
                 funcionario.setFoto(resultSet.getString("foto"));
                 funcionario.setObservacao(resultSet.getString("observacao"));
@@ -165,8 +165,8 @@ public class FuncionarioDAO {
                 funcionario.setId(resultSet.getInt("id_funcionario"));
                 funcionario.setMatricula(resultSet.getString("matricula"));
                 funcionario.setNome(resultSet.getString("nome"));
-                funcionario.setTel_residencial(resultSet.getString("telefone_residencial"));
-                funcionario.setTel_celular(resultSet.getString("telefone_comercial"));
+                funcionario.setTelResidencial(resultSet.getString("telefone_residencial"));
+                funcionario.setTelCelular(resultSet.getString("telefone_comercial"));
                 funcionario.setCep(resultSet.getString("cep"));
                 funcionario.setEndereco(resultSet.getString("endereco"));
                 funcionario.setNumero(resultSet.getInt("numero"));
@@ -177,9 +177,9 @@ public class FuncionarioDAO {
                 funcionario.setRg(resultSet.getString("rg"));
                 funcionario.setCpf(resultSet.getString("cpf"));
                 funcionario.setSexo(resultSet.getString("sexo"));
-                funcionario.setData_contratacao(resultSet.getDate("data_contratacao"));
+                funcionario.setDataContratacao(resultSet.getDate("data_contratacao"));
                 funcionario.setCargo(resultSet.getString("cargo"));
-                funcionario.setTipo_contrato(resultSet.getString("tipo_contrato"));
+                funcionario.setTipoContrato(resultSet.getString("tipo_contrato"));
                 funcionario.setTurno(resultSet.getString("turno"));
                 funcionario.setFoto(resultSet.getString("foto"));
                 funcionario.setObservacao(resultSet.getString("observacao"));
