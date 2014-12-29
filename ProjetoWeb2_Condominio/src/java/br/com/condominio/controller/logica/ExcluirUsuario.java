@@ -21,6 +21,7 @@ public class ExcluirUsuario implements Logica {
 
         if (usuario != null) {
             usuarioDAO.excluir(usuario);
+            
         }
 
         request.setAttribute("lista", new UsuarioDAO().buscarTodos());
