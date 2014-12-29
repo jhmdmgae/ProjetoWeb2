@@ -47,11 +47,13 @@ public class VisitanteDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, visitante.getNome());
-            ps.setInt(1, visitante.getTipo_visita());
-            ps.setInt(1, visitante.getApartamento());
-            ps.setString(1, visitante.getMotivo_visita());
-            ps.setDate(1, (Date) visitante.getData_hora());
-            ps.setString(1, visitante.getObservacao());
+            ps.setInt(2, visitante.getTipo_visita());
+            ps.setInt(3, visitante.getApartamento());
+            ps.setString(4, visitante.getMotivo_visita());
+            ps.setDate(5, (Date) visitante.getData_hora());
+            ps.setString(6, visitante.getObservacao());
+            
+            ps.setInt(7, visitante.getId());
 
             ps.execute();
             ps.close();
@@ -109,7 +111,7 @@ public class VisitanteDAO {
     }
 
     public Visitante buscar(Integer idVisitante) {
-        String sql = "SELECT * FROM web2_condominio.visitante WHERE id=?";
+        String sql = "SELECT * FROM web2_condominio.visitante WHERE id_visitante=?";
         Visitante visitante = null;
 
         try {
@@ -136,6 +138,56 @@ public class VisitanteDAO {
             Logger.getLogger(VisitanteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return visitante;
+    }
+    
+    public String buscarTipoVisita(int chave) {
+        
+        String sql = "SELECT tipo FROM web2_condominio.tipo_visita WHERE id_tipo_visita=?";
+        
+        String tipo = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                tipo = resultSet.getString("tipo"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tipo;
+    }
+    
+    public String buscarApartamento(int chave) {
+        
+        String sql = "SELECT numero FROM web2_condominio.apartamento WHERE idapartamento=?";
+        
+        String apt = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                apt = resultSet.getString("numero"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return apt;
     }
 
     public void salvar(Visitante visitante) {

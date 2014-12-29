@@ -4,7 +4,7 @@ import br.com.condominio.entidades.Condominio;
 import br.com.condominio.jdbc.CondominioDAO;
 import java.util.List;
 
-/**
+/**  Testado
  *
  * @author João Henrique 2
  */
@@ -35,22 +35,22 @@ public class TestCondominioDAO {
     private static void alterar() {
         Condominio condominio = new Condominio();
 
-        condominio.setCnpj("1");
-        condominio.setNome("1");
-        condominio.setCep("1");
-        condominio.setEndereco("1");
-        condominio.setNumero("1");
-        condominio.setComplemento("1");
-        condominio.setBairro("1");
-        condominio.setUf("1");
-        condominio.setCidade("1");
-        condominio.setQuant_blocos(1);
-        condominio.setQuant_apt(1);
-        condominio.setFoto("1");
-        condominio.setTelefone("1");
-        condominio.setEmail("1");
+        condominio.setCnpj("3");
+        condominio.setNome("2");
+        condominio.setCep("2");
+        condominio.setEndereco("2");
+        condominio.setNumero("2");
+        condominio.setComplemento("2");
+        condominio.setBairro("2");
+        condominio.setUf("2");
+        condominio.setCidade("2");
+        condominio.setQuant_blocos(2);
+        condominio.setQuant_apt(2);
+        condominio.setFoto("2");
+        condominio.setTelefone("2");
+        condominio.setEmail("2");
 
-        condominio.setId(5);
+        condominio.setId(3);
 
         CondominioDAO condominioDAO = new CondominioDAO();
         condominioDAO.alterar(condominio);
@@ -59,7 +59,7 @@ public class TestCondominioDAO {
     private static void excluir() {
         Condominio condominio = new Condominio();
 
-        condominio.setId(5);
+        condominio.setId(2);
 
         CondominioDAO condominioDAO = new CondominioDAO();
         condominioDAO.excluir(condominio);
@@ -85,10 +85,10 @@ public class TestCondominioDAO {
 
     public static void main(String[] args) {
 
-        cadastrar();
+//        cadastrar();
 //        alterar();
-//        buscarTodos();
-//        buscar(3);
+        buscarTodos();
+//        buscar(1);
 //        excluir();
 
     }

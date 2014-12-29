@@ -46,11 +46,13 @@ public class VeiculoDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, veiculo.getApartamento());
-            ps.setInt(1, veiculo.getTipo_veiculo());
-            ps.setString(1, veiculo.getModelo());
-            ps.setString(1, veiculo.getMarca());
-            ps.setInt(1, veiculo.getCor());
-            ps.setString(1, veiculo.getPlaca());
+            ps.setInt(2, veiculo.getTipo_veiculo());
+            ps.setString(3, veiculo.getModelo());
+            ps.setString(4, veiculo.getMarca());
+            ps.setInt(5, veiculo.getCor());
+            ps.setString(6, veiculo.getPlaca());
+            
+            ps.setInt(7, veiculo.getId());
 
             ps.execute();
             ps.close();
@@ -108,7 +110,7 @@ public class VeiculoDAO {
     }
 
     public Veiculo buscar(Integer idVeiculo) {
-        String sql = "SELECT * FROM web2_condominio.veiculo WHERE id=?";
+        String sql = "SELECT * FROM web2_condominio.veiculo WHERE id_veiculo=?";
         Veiculo veiculo = null;
 
         try {
@@ -135,6 +137,56 @@ public class VeiculoDAO {
             Logger.getLogger(VeiculoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return veiculo;
+    }
+    
+    public String buscarCor(int chave) {
+        
+        String sql = "SELECT nome FROM web2_condominio.cor WHERE id_cor=?";
+        
+        String cor = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                cor = resultSet.getString("nome"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cor;
+    }
+    
+    public String buscarTipoVeiculo(int chave) {
+        
+        String sql = "SELECT tipo FROM web2_condominio.tipo_veiculo WHERE id_tipo_veiculo=?";
+        
+        String tipo = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                tipo = resultSet.getString("tipo"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tipo;
     }
 
     public void salvar(Veiculo veiculo) {

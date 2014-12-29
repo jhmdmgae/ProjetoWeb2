@@ -61,25 +61,27 @@ public class FuncionarioDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, funcionario.getMatricula());
-            ps.setString(1, funcionario.getNome());
-            ps.setString(1, funcionario.getTel_residencial());
-            ps.setString(1, funcionario.getTel_celular());
-            ps.setString(1, funcionario.getCep());
-            ps.setString(1, funcionario.getEndereco());
-            ps.setInt(1, funcionario.getNumero());
-            ps.setString(1, funcionario.getComplemento());
-            ps.setString(1, funcionario.getBairro());
-            ps.setString(1, funcionario.getCidade());
-            ps.setString(1, funcionario.getUf());
-            ps.setString(1, funcionario.getRg());
-            ps.setString(1, funcionario.getCpf());
-            ps.setString(1, funcionario.getSexo());
-            ps.setDate(1, (Date) funcionario.getData_contratacao());
-            ps.setString(1, funcionario.getCargo());
-            ps.setString(1, funcionario.getTipo_contrato());
-            ps.setString(1, funcionario.getTurno());
-            ps.setString(1, funcionario.getFoto());
-            ps.setString(1, funcionario.getObservacao());
+            ps.setString(2, funcionario.getNome());
+            ps.setString(3, funcionario.getTel_residencial());
+            ps.setString(4, funcionario.getTel_celular());
+            ps.setString(5, funcionario.getCep());
+            ps.setString(6, funcionario.getEndereco());
+            ps.setInt(7, funcionario.getNumero());
+            ps.setString(8, funcionario.getComplemento());
+            ps.setString(9, funcionario.getBairro());
+            ps.setString(10, funcionario.getCidade());
+            ps.setString(11, funcionario.getUf());
+            ps.setString(12, funcionario.getRg());
+            ps.setString(13, funcionario.getCpf());
+            ps.setString(14, funcionario.getSexo());
+            ps.setDate(15, (Date) funcionario.getData_contratacao());
+            ps.setString(16, funcionario.getCargo());
+            ps.setString(17, funcionario.getTipo_contrato());
+            ps.setString(18, funcionario.getTurno());
+            ps.setString(19, funcionario.getFoto());
+            ps.setString(20, funcionario.getObservacao());
+            
+            ps.setInt(21, funcionario.getId());
 
             ps.execute();
             ps.close();
@@ -151,7 +153,7 @@ public class FuncionarioDAO {
     }
 
     public Funcionario buscar(Integer idFuncionario) {
-        String sql = "SELECT * FROM web2_condominio.funcionario WHERE id=?";
+        String sql = "SELECT * FROM web2_condominio.funcionario WHERE id_funcionario=?";
         Funcionario funcionario = null;
 
         try {
@@ -192,6 +194,56 @@ public class FuncionarioDAO {
             Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return funcionario;
+    }
+    
+    public String buscarTipoContrato(int chave) {
+        
+        String sql = "SELECT tipo_contrato FROM web2_condominio.tipo_contrato WHERE id_tipo_contrato=?";
+        
+        String tipo = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                tipo = resultSet.getString("tipo_contrato"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tipo;
+    }
+    
+    public String buscarTurno(int chave) {
+        
+        String sql = "SELECT turno FROM web2_condominio.turno WHERE id_turno=?";
+        
+        String turno = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                turno = resultSet.getString("turno"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return turno;
     }
 
     public void salvar(Funcionario funcionario) {

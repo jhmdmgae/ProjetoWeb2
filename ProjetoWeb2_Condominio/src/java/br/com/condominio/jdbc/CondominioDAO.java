@@ -67,6 +67,8 @@ public class CondominioDAO {
             ps.setString(12, condominio.getFoto());
             ps.setString(13, condominio.getTelefone());
             ps.setString(14, condominio.getEmail());
+            
+            ps.setInt(15, condominio.getId());
 
             ps.execute();
             ps.close();
