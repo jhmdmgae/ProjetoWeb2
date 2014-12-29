@@ -29,12 +29,15 @@
                         <div class="div-table-col">Proprietário</div>
                         <div class="div-table-col">Locatário</div>
                     </div>
-                    <div class="div-table-row">
-                        <div class="div-table-col">1</div>
-                        <div class="div-table-col">2</div>
-                        <div class="div-table-col">3</div>
-                        <div class="div-table-col">4</div>
-                    </div>
+                    <jsp:useBean id="aparts" class="br.com.condominio.jdbc.ApartamentoDAO"/>
+                    <c:forEach items="${aparts.buscarTodos()}" var="apt">
+                        <div class="div-table-row">
+                            <div class="div-table-col">${apt.numero}</div>
+                            <div class="div-table-col">${apt.bloco}</div>
+                            <div class="div-table-col">${apt.proprietario}</div>
+                            <div class="div-table-col">${apt.locatario}</div>
+                        </div>
+                    </c:forEach>
                 </div>
             </div>
             <c:import url="rodape.jsp"/>
