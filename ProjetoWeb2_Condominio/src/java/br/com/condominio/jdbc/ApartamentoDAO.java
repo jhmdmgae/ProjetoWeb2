@@ -19,7 +19,7 @@ public class ApartamentoDAO {
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Apartamento apartamento) {
-        String sql = "INSERT INTO `web2_condominio`.`apartamento` (`idapartamento`, `numero`, `bloco`, `proprietario`, `locatario`) VALUES (NULL, '?', '?', '?', '?')";
+        String sql = "INSERT INTO `web2_condominio`.`apartamento` (`numero`, `bloco`, `proprietario`, `locatario`) VALUES ( ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -136,6 +136,18 @@ public class ApartamentoDAO {
         } else {
             cadastrar(apartamento);
         }
+    }
+    
+    public static void main(String[] args) {
+        ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
+
+        Apartamento apartamento = new Apartamento();
+        apartamento.setNumero(123);
+        apartamento.setBloco(123);
+        apartamento.setProprietario("123");
+        apartamento.setLocatario("123");
+
+        apartamentoDAO.cadastrar(apartamento);
     }
     
 }

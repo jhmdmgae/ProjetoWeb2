@@ -17,8 +17,8 @@
             <c:import url="cabecalho.jsp"/>
             <c:import url="menu.jsp"/>
             <div class="conteudo">
-                <%@include file="siderbar.jsp"%>
-                <form action='' method='post' name='formulario'>
+                <c:import url="siderbar.jsp"/>
+                <form action='condocontroller.do?acao=CadastrarApartamento' method='post' name='formulario'>
                     <fieldset>
                         <legend>Cadastro de apartamento</legend>
                         <div class="campo">
