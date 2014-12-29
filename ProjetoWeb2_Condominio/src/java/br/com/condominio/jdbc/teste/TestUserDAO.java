@@ -40,7 +40,7 @@ public class TestUserDAO {
         Usuario usuario = new Usuario();
         usuario.setNome("João Henrique Medeiros");
         usuario.setLogin("jogodavelha@gmail.com");
-        usuario.setSenha("12345"); 
+        usuario.setSenha("12345");
         usuario.setPerfil("administrador");
         usuario.setTelefone("(81) 9999-0000");
 

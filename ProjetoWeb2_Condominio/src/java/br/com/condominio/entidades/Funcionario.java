@@ -23,7 +23,7 @@ public class Funcionario {
     private String uf;
     private String rg;
     private String cpf;
-    private boolean sexo;
+    private String sexo;
     private Date data_contratacao;
     private String cargo;
     private String tipo_contrato;
@@ -143,11 +143,11 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public boolean isSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -216,7 +216,7 @@ public class Funcionario {
         hash = 79 * hash + Objects.hashCode(this.uf);
         hash = 79 * hash + Objects.hashCode(this.rg);
         hash = 79 * hash + Objects.hashCode(this.cpf);
-        hash = 79 * hash + (this.sexo ? 1 : 0);
+        hash = 79 * hash + Objects.hashCode(this.sexo);
         hash = 79 * hash + Objects.hashCode(this.data_contratacao);
         hash = 79 * hash + Objects.hashCode(this.cargo);
         hash = 79 * hash + Objects.hashCode(this.tipo_contrato);
