@@ -9,35 +9,25 @@
         <li>
             <a href="index.jsp">Home</a>
         </li>
-        <li>
-            <c:if test="${sessionScope.usuAutenticado != null}">
+        <c:if test="${sessionScope.usuAutenticado != null}">
+            <li>
                 <a href="usucontroller.do?acao=ListarUsuarios">Usuários</a>
-            </c:if>
-        </li>
-        <li>
-            <c:if test="${sessionScope.usuAutenticado != null}">
+            </li>
+            <li>
                 <a href="apartamentos.jsp">Apartamentos</a>
-            </c:if>
-        </li>
-        <li>
-            <c:if test="${sessionScope.usuAutenticado != null}">
+            </li>
+            <li>
                 <a href="funcionarios.jsp">Funcionários</a>
-            </c:if>
-        </li>
-        <li>
-            <c:if test="${sessionScope.usuAutenticado != null}">
+            </li>
+            <li>
                 <a href="documentos.jsp">Documentos </a>
-            </c:if>
-        </li>
-        <li>
-            <c:if test="${sessionScope.usuAutenticado != null}">
+            </li>
+            <li>
                 <a href="visitantes.jsp">Visitantes</a>
-            </c:if>
-        </li>
-        <li>
-            <c:if test="${sessionScope.usuAutenticado != null}">
+            </li>
+            <li>
                 <a href="veiculos.jsp">Veículo</a>
-            </c:if>
-        </li>
+            </li>
+        </c:if>
     </ul>
 </div>

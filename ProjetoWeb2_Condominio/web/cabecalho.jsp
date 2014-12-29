@@ -11,8 +11,8 @@
     </div>
     <div class="navegacao-usuario">
         <a><img src="imagens/usuario/foto-usuario.png" width="40px" height="40px" title="" alt="" border="0"/></a>
-        <c:choose>
-            <c:when test="${sessionScope.usuAutenticado != null}">
+            <c:choose>
+                <c:when test="${sessionScope.usuAutenticado != null}">
                 <p>Bem vindo, <c:out value="${sessionScope.usuAutenticado.nome}"/></p>
                 <a href="usucontroller.do?acao=LogoutSistema">Sair</a>
             </c:when>            
