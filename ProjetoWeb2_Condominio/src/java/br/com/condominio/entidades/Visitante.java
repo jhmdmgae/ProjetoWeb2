@@ -11,10 +11,10 @@ public class Visitante {
     
     private int id;
     private String nome;
-    private int tipo_visita;
+    private int tipoVisita;
     private int apartamento;
-    private String motivo_visita;
-    private Date data_hora;
+    private String motivoVisita;
+    private Date dataHora;
     private String observacao;
     
     public int getId() {
@@ -33,12 +33,12 @@ public class Visitante {
         this.nome = nome;
     }
 
-    public int getTipo_visita() {
-        return tipo_visita;
+    public int getTipoVisita() {
+        return tipoVisita;
     }
 
-    public void setTipo_visita(int tipo_visita) {
-        this.tipo_visita = tipo_visita;
+    public void setTipoVisita(int tipoVisita) {
+        this.tipoVisita = tipoVisita;
     }
 
     public int getApartamento() {
@@ -49,20 +49,20 @@ public class Visitante {
         this.apartamento = apartamento;
     }
 
-    public String getMotivo_visita() {
-        return motivo_visita;
+    public String getMotivoVisita() {
+        return motivoVisita;
     }
 
-    public void setMotivo_visita(String motivo_visita) {
-        this.motivo_visita = motivo_visita;
+    public void setMotivoVisita(String motivoVisita) {
+        this.motivoVisita = motivoVisita;
     }
 
-    public Date getData_hora() {
-        return data_hora;
+    public Date getDataHora() {
+        return dataHora;
     }
 
-    public void setData_hora(Date data_hora) {
-        this.data_hora = data_hora;
+    public void setDataHhora(Date dataHora) {
+        this.dataHora = dataHora;
     }
 
     public String getObservacao() {
@@ -78,10 +78,10 @@ public class Visitante {
         int hash = 7;
         hash = 53 * hash + Objects.hashCode(this.id);
         hash = 53 * hash + Objects.hashCode(this.nome);
-        hash = 53 * hash + Objects.hashCode(this.tipo_visita);
+        hash = 53 * hash + Objects.hashCode(this.tipoVisita);
         hash = 53 * hash + this.apartamento;
-        hash = 53 * hash + Objects.hashCode(this.motivo_visita);
-        hash = 53 * hash + Objects.hashCode(this.data_hora);
+        hash = 53 * hash + Objects.hashCode(this.motivoVisita);
+        hash = 53 * hash + Objects.hashCode(this.dataHora);
         hash = 53 * hash + Objects.hashCode(this.observacao);
         return hash;
     }
@@ -101,16 +101,16 @@ public class Visitante {
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
-        if (!Objects.equals(this.tipo_visita, other.tipo_visita)) {
+        if (!Objects.equals(this.tipoVisita, other.tipoVisita)) {
             return false;
         }
         if (this.apartamento != other.apartamento) {
             return false;
         }
-        if (!Objects.equals(this.motivo_visita, other.motivo_visita)) {
+        if (!Objects.equals(this.motivoVisita, other.motivoVisita)) {
             return false;
         }
-        if (!Objects.equals(this.data_hora, other.data_hora)) {
+        if (!Objects.equals(this.dataHora, other.dataHora)) {
             return false;
         }
         if (!Objects.equals(this.observacao, other.observacao)) {

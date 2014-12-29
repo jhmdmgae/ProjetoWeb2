@@ -10,7 +10,7 @@ public class Veiculo {
     
     private int id;
     private int apartamento;
-    private int tipo_veiculo;
+    private int tipoVeiculo;
     private String modelo;
     private String marca;
     private int cor;
@@ -32,12 +32,12 @@ public class Veiculo {
         this.apartamento = apartamento;
     }
 
-    public int getTipo_veiculo() {
-        return tipo_veiculo;
+    public int getTipoVeiculo() {
+        return tipoVeiculo;
     }
 
-    public void setTipo_veiculo(int tipo_veiculo) {
-        this.tipo_veiculo = tipo_veiculo;
+    public void setTipoVeiculo(int tipoVeiculo) {
+        this.tipoVeiculo = tipoVeiculo;
     }
 
     public String getModelo() {
@@ -77,7 +77,7 @@ public class Veiculo {
         int hash = 5;
         hash = 61 * hash + this.id;
         hash = 61 * hash + Objects.hashCode(this.apartamento);
-        hash = 61 * hash + Objects.hashCode(this.tipo_veiculo);
+        hash = 61 * hash + Objects.hashCode(this.tipoVeiculo);
         hash = 61 * hash + Objects.hashCode(this.modelo);
         hash = 61 * hash + Objects.hashCode(this.marca);
         hash = 61 * hash + Objects.hashCode(this.cor);
@@ -100,7 +100,7 @@ public class Veiculo {
         if (!Objects.equals(this.apartamento, other.apartamento)) {
             return false;
         }
-        if (!Objects.equals(this.tipo_veiculo, other.tipo_veiculo)) {
+        if (!Objects.equals(this.tipoVeiculo, other.tipoVeiculo)) {
             return false;
         }
         if (!Objects.equals(this.modelo, other.modelo)) {

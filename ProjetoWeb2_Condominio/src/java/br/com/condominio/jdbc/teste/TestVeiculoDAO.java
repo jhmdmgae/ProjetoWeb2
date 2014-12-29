@@ -14,7 +14,7 @@ public class TestVeiculoDAO {
         Veiculo veiculo = new Veiculo();
 
         veiculo.setApartamento(1);
-        veiculo.setTipo_veiculo(1);
+        veiculo.setTipoVeiculo(1);
         veiculo.setModelo("1");
         veiculo.setMarca("1");
         veiculo.setCor(1);
@@ -28,7 +28,7 @@ public class TestVeiculoDAO {
         Veiculo veiculo = new Veiculo();
 
         veiculo.setApartamento(1);
-        veiculo.setTipo_veiculo(1);
+        veiculo.setTipoVeiculo(1);
         veiculo.setModelo("1");
         veiculo.setMarca("1");
         veiculo.setCor(1);

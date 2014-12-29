@@ -26,10 +26,10 @@ public class VisitanteDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, visitante.getNome());
-            ps.setInt(2, visitante.getTipo_visita());
+            ps.setInt(2, visitante.getTipoVisita());
             ps.setInt(3, visitante.getApartamento());
-            ps.setString(4, visitante.getMotivo_visita());
-            ps.setDate(5, (Date) visitante.getData_hora());
+            ps.setString(4, visitante.getMotivoVisita());
+            ps.setDate(5, (Date) visitante.getDataHora());
             ps.setString(6, visitante.getObservacao());
 
             ps.execute();
@@ -47,10 +47,10 @@ public class VisitanteDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, visitante.getNome());
-            ps.setInt(1, visitante.getTipo_visita());
+            ps.setInt(1, visitante.getTipoVisita());
             ps.setInt(1, visitante.getApartamento());
-            ps.setString(1, visitante.getMotivo_visita());
-            ps.setDate(1, (Date) visitante.getData_hora());
+            ps.setString(1, visitante.getMotivoVisita());
+            ps.setDate(1, (Date) visitante.getDataHora());
             ps.setString(1, visitante.getObservacao());
 
             ps.execute();
@@ -91,10 +91,10 @@ public class VisitanteDAO {
 
                 visitante.setId(resultSet.getInt("id_visitante"));
                 visitante.setNome(resultSet.getString("nome"));
-                visitante.setTipo_visita(resultSet.getInt("tipo_visita"));
+                visitante.setTipoVisita(resultSet.getInt("tipo_visita"));
                 visitante.setApartamento(resultSet.getInt("apartamento"));
-                visitante.setMotivo_visita(resultSet.getString("motivo_visita"));
-                visitante.setData_hora(resultSet.getDate("data_hora"));
+                visitante.setMotivoVisita(resultSet.getString("motivo_visita"));
+                visitante.setDataHhora(resultSet.getDate("data_hora"));
                 visitante.setObservacao(resultSet.getString("observacao"));
 
                 visitantes.add(visitante);
@@ -122,10 +122,10 @@ public class VisitanteDAO {
 
                 visitante.setId(resultSet.getInt("id_visitante"));
                 visitante.setNome(resultSet.getString("nome"));
-                visitante.setTipo_visita(resultSet.getInt("tipo_visita"));
+                visitante.setTipoVisita(resultSet.getInt("tipo_visita"));
                 visitante.setApartamento(resultSet.getInt("apartamento"));
-                visitante.setMotivo_visita(resultSet.getString("motivo_visita"));
-                visitante.setData_hora(resultSet.getDate("data_hora"));
+                visitante.setMotivoVisita(resultSet.getString("motivo_visita"));
+                visitante.setDataHhora(resultSet.getDate("data_hora"));
                 visitante.setObservacao(resultSet.getString("observacao"));
 
             }
