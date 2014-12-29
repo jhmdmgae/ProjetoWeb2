@@ -38,7 +38,7 @@ public class ApartamentoDAO {
     }
 
     public void alterar(Apartamento apartamento) {
-        String sql = "UPDATE `web2_condominio`.`apartamento` SET `numero` = '?', `bloco` = '?', `proprietario` = '?', `locatario` = '?' WHERE `apartamento`.`idapartamento` = ?;";
+        String sql = "UPDATE `web2_condominio`.`apartamento` SET `numero` = ?, `bloco` = ?, `proprietario` = ?, `locatario` = ? WHERE `apartamento`.`idapartamento` = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);

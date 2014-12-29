@@ -13,10 +13,10 @@ public class TestApartamentoDAO {
     private static void cadastrar() {
         Apartamento apartamento = new Apartamento();
 
-        apartamento.setNumero(1);
-        apartamento.setBloco(1);
-        apartamento.setProprietario("1");
-        apartamento.setLocatario("1");
+        apartamento.setNumero(3);
+        apartamento.setBloco(3);
+        apartamento.setProprietario("3");
+        apartamento.setLocatario("3");
 
         ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
         apartamentoDAO.cadastrar(apartamento);
@@ -25,12 +25,12 @@ public class TestApartamentoDAO {
     private static void alterar() {
         Apartamento apartamento = new Apartamento();
 
-        apartamento.setNumero(1);
-        apartamento.setBloco(1);
-        apartamento.setProprietario("1");
-        apartamento.setLocatario("1");
+        apartamento.setNumero(4);
+        apartamento.setBloco(4);
+        apartamento.setProprietario("4");
+        apartamento.setLocatario("4");
 
-        apartamento.setId(1);
+        apartamento.setId(5);
 
         ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
         apartamentoDAO.alterar(apartamento);
@@ -39,7 +39,7 @@ public class TestApartamentoDAO {
     private static void excluir() {
         Apartamento apartamento = new Apartamento();
 
-        apartamento.setId(1);
+        apartamento.setId(5);
 
         ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
         apartamentoDAO.excluir(apartamento);
@@ -65,11 +65,11 @@ public class TestApartamentoDAO {
 
     public static void main(String[] args) {
 
-        cadastrar();
-        alterar();
-        buscarTodos();
-        buscar(1);
-        excluir();
+//        cadastrar();
+//        alterar();
+//        buscarTodos();
+        buscar(3);
+//        excluir();
 
     }
 

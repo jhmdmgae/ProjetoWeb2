@@ -15,11 +15,11 @@ import java.util.logging.Logger;
  * @author João Henrique 2
  */
 public class CondominioDAO {
-    
+
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Condominio condominio) {
-        String sql = "INSERT INTO `condominio`(`id`, `cnpj`, `nome`, `cep`, `endereco`, `numero`, `complemetento`, `bairro`, `uf`, `cidade`, `quant_blocos`, `total_apartamentos`, `foto`, `telefone`, `email`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?')";
+        String sql = "INSERT INTO `condominio` (`cnpj`, `nome`, `cep`, `endereco`, `numero`, `complemetento`, `bairro`, `uf`, `cidade`, `quant_blocos`, `total_apartamentos`, `foto`, `telefone`, `email`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?')";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -28,13 +28,13 @@ public class CondominioDAO {
             ps.setString(2, condominio.getNome());
             ps.setString(3, condominio.getCep());
             ps.setString(4, condominio.getEndereco());
-            ps.setInt(5, condominio.getNumero());
+            ps.setString(5, condominio.getNumero());
             ps.setString(6, condominio.getComplemento());
             ps.setString(7, condominio.getBairro());
             ps.setString(8, condominio.getUf());
             ps.setString(9, condominio.getCidade());
             ps.setInt(10, condominio.getQuant_blocos());
-            ps.setInt(11, condominio.getQuant_apt());
+            ps.setInt(11, condominio.getQuant_apt());//mudar no banco de dados para int
             ps.setString(12, condominio.getFoto());
             ps.setString(13, condominio.getTelefone());
             ps.setString(14, condominio.getEmail());
@@ -49,7 +49,6 @@ public class CondominioDAO {
 
     public void alterar(Condominio condominio) {
         String sql = "UPDATE `condominio` SET `cnpj`=?,`nome`=?,`cep`=?,`endereco`=?,`numero`=?,`complemetento`=?,`bairro`=?,`uf`=?,`cidade`=?,`quant_blocos`=?,`total_apartamentos`=?,`foto`=?,`telefone`=?,`email`=? WHERE `condominio`.`id` = ?";
-        
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -58,7 +57,7 @@ public class CondominioDAO {
             ps.setString(2, condominio.getNome());
             ps.setString(3, condominio.getCep());
             ps.setString(4, condominio.getEndereco());
-            ps.setInt(5, condominio.getNumero());
+            ps.setString(5, condominio.getNumero());
             ps.setString(6, condominio.getComplemento());
             ps.setString(7, condominio.getBairro());
             ps.setString(8, condominio.getUf());
@@ -104,13 +103,13 @@ public class CondominioDAO {
 
             while (resultSet.next()) {
                 Condominio condominio = new Condominio();
-                
+
                 condominio.setId(resultSet.getInt("id"));
                 condominio.setCnpj(resultSet.getString("cnpj"));
                 condominio.setNome(resultSet.getString("nome"));
                 condominio.setCep(resultSet.getString("cep"));
                 condominio.setEndereco(resultSet.getString("endereco"));
-                condominio.setNumero(resultSet.getInt("numero"));
+                condominio.setNumero(resultSet.getString("numero"));
                 condominio.setComplemento(resultSet.getString("complemetento"));
                 condominio.setBairro(resultSet.getString("bairro"));
                 condominio.setUf(resultSet.getString("uf"));
@@ -120,7 +119,7 @@ public class CondominioDAO {
                 condominio.setFoto(resultSet.getString("foto"));
                 condominio.setTelefone(resultSet.getString("telefone"));
                 condominio.setEmail(resultSet.getString("email"));
-                
+
                 condominios.add(condominio);
             }
 
@@ -149,7 +148,7 @@ public class CondominioDAO {
                 condominio.setNome(resultSet.getString("nome"));
                 condominio.setCep(resultSet.getString("cep"));
                 condominio.setEndereco(resultSet.getString("endereco"));
-                condominio.setNumero(resultSet.getInt("numero"));
+                condominio.setNumero(resultSet.getString("numero"));
                 condominio.setComplemento(resultSet.getString("complemetento"));
                 condominio.setBairro(resultSet.getString("bairro"));
                 condominio.setUf(resultSet.getString("uf"));
@@ -159,7 +158,7 @@ public class CondominioDAO {
                 condominio.setFoto(resultSet.getString("foto"));
                 condominio.setTelefone(resultSet.getString("telefone"));
                 condominio.setEmail(resultSet.getString("email"));
-                
+
             }
 
             ps.close();
@@ -177,5 +176,5 @@ public class CondominioDAO {
             cadastrar(condominio);
         }
     }
-    
+
 }
