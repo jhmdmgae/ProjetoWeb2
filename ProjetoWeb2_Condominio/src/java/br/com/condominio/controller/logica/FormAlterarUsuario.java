@@ -18,13 +18,13 @@ public class FormAlterarUsuario implements Logica {
         String id = request.getParameter("id");
         Usuario usuario = usuarioDAO.buscar(Integer.parseInt(id));
 
-        if (usuario == null) {
-            return "usuario_nao_existe";
+        if (usuario != null) {
+            request.setAttribute("usuarioAlterar", usuario);
+            return "alterar_usuario.jsp";
         }
-        
-        request.setAttribute("usuarioAlterar", usuario);
 
-        return "alterar_usuario.jsp";
+        return "listar_usuarios.jsp";
+
     }
 
 }

@@ -44,6 +44,6 @@ public class CadastrarFuncionario implements Logica {
 
 //        funcionarioDAO.cadastrar(funcionario);
 
-        return "apartamentos.jsp";
+        return "listar_apartamentos.jsp";
     }
 }

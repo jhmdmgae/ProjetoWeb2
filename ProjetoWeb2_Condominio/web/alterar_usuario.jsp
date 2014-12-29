@@ -8,6 +8,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:choose>
     <c:when test="${sessionScope.usuAutenticado != null}">
+        <c:set var="usuario" value="${requestScope.usuarioAlterar}" />
         <!DOCTYPE html>
         <html>
             <head>
@@ -20,56 +21,68 @@
                     <c:import url="cabecalho.jsp"/>
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
-                        <%
-                            Usuario usu = (Usuario) request.getAttribute("usuarioAlterar");
-                        %>
                         <!--***************************** Alterar passagem de senha e verificaçao null-->
                         <div>
-                            <form method="POST" action="usucontroller.do?acao=AlterarUsuario&id=<%= usu.getId()%>">
-                                <input type="email" name="login" value="<%= usu == null ? "alguem@mail.com" : usu.getLogin()%>" /><br />
-                                <input type="password" name="senhaAtual" value="1234" /><br />
-                                <input type="password" name="senha" value="1234" /><br />
-                                <input type="password" name="confirmar" value="1234" /><br />
-                                <input type="text" name="nome" value="<%=usu == null ? "alguem" : usu.getNome()%>" /><br />
-                                <input type="text" name="telefone" value="<%=usu == null ? "8888888999" : usu.getTelefone()%>" /><br />
-                                <select name="perfil" >
-                                    <%
-                                        Usuario usuAdmin = (Usuario) session.getAttribute("usuAutenticado");
-                                        if (usuAdmin != null && usuAdmin.getPerfil().equalsIgnoreCase("administrador")) {
-                                    %>
-                                    <option>Administrador</option>
-                                    <%
-                                        }
-                                    %>
-                                    <%
-                                        if (usu.getPerfil().equalsIgnoreCase("Sindico")) {
-                                    %>
-                                    <option selected="selected">Sindico</option>
-                                    <%
-                                    } else {
-                                    %>
-                                    %>
-                                    <option>Sindico</option>
-                                    <%
-                                        }
-                                    %><%
-                                        if (usu.getPerfil().equalsIgnoreCase("Morador")) {
-                                    %>
-                                    <option selected="selected">Morador</option>
-                                    <%
-                                    } else {
-                                    %>
-                                    %>
-                                    <option>Morador</option>
-                                    <%
-                                        }
-                                    %>
-                                </select>
-                                <input type="submit" value="cadastrar" />           
+                            <form method="POST" action="usucontroller.do?acao=AlterarUsuario&id=${usuario.id}">
+                                <fieldset>
+                                    <legend>Cadastro de Funcionário</legend>
+                                    <div class="campo">
+                                        <label for='login'>Login:</label>
+                                        <input type="email" id="login" name="login" value="${usuario.login}" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for='senhaAtual'>Senha Atual:</label>
+                                        <input type="password" id="senhaAtual" name="senhaAtual" value="1234" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for='senha'>Nova Senha:</label>
+                                        <input type="password" id="senha" name="senha" value="1234" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for='confirmar'>Confirmar Senha:</label>
+                                        <input type="password" id="confirmar" name="confirmar" value="1234" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for='nome'>Nome:</label>
+                                        <input type="text" id="nome" name="nome" value="${usuario.nome}" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for='telefone'>Telefone:</label>
+                                        <input type="text" id="telefone" name="telefone" value="${usuario.telefone}" />
+                                    </div>
+                                    <div class="campo">
+                                        <label for='perfil'>Perfil:</label>
+                                        <select id="perfil" name="perfil" >
+                                            <c:if test="${usuario.perfil.equalsIgnoreCase('administrador')}">
+                                                <option>Administrador</option>
+                                            </c:if>
+                                            <c:choose>
+                                                <c:when test="${usuario.perfil.equalsIgnoreCase('Sindico') }">
+                                                    <option selected="selected">Sindico</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option>Sindico</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                            <c:choose>
+                                                <c:when test="${usuario.perfil.equalsIgnoreCase('Morador') }">
+                                                    <option selected="selected">Morador</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option>Morador</option>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </select>
+                                    </div>
+                                    <div class="campo">
+                                        <input type="submit" value="Alterar" /> 
+                                    </div>
+                                </fieldset>
                             </form>
                         </div>
                         <c:import url="rodape.jsp"/>
                     </div>
+                </div>
             </body>
         </html>
     </c:when>            

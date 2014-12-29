@@ -14,7 +14,7 @@
                 <a href="usucontroller.do?acao=ListarUsuarios">Usuários</a>
             </li>
             <li>
-                <a href="apartamentos.jsp">Apartamentos</a>
+                <a href="condocontroller.do?acao=ListarApartamentos">Apartamentos</a>
             </li>
             <li>
                 <a href="funcionarios.jsp">Funcionários</a>
