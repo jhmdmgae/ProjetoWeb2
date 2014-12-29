@@ -1,12 +1,14 @@
 package br.com.condominio.entidades;
 
+import java.util.Objects;
+
 /**
  *
  * @author João Henrique 2
  */
 public class Veiculo {
     
-    private Long id;
+    private int id;
     private String apartamento;
     private String tipo_veiculo;
     private String modelo;
@@ -14,11 +16,11 @@ public class Veiculo {
     private String cor;
     private String placa;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -72,19 +74,45 @@ public class Veiculo {
 
     @Override
     public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
+        int hash = 5;
+        hash = 61 * hash + this.id;
+        hash = 61 * hash + Objects.hashCode(this.apartamento);
+        hash = 61 * hash + Objects.hashCode(this.tipo_veiculo);
+        hash = 61 * hash + Objects.hashCode(this.modelo);
+        hash = 61 * hash + Objects.hashCode(this.marca);
+        hash = 61 * hash + Objects.hashCode(this.cor);
+        hash = 61 * hash + Objects.hashCode(this.placa);
         return hash;
     }
 
     @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Veiculo)) {
+    public boolean equals(Object obj) {
+        if (obj == null) {
             return false;
         }
-        Veiculo other = (Veiculo) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Veiculo other = (Veiculo) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        if (!Objects.equals(this.apartamento, other.apartamento)) {
+            return false;
+        }
+        if (!Objects.equals(this.tipo_veiculo, other.tipo_veiculo)) {
+            return false;
+        }
+        if (!Objects.equals(this.modelo, other.modelo)) {
+            return false;
+        }
+        if (!Objects.equals(this.marca, other.marca)) {
+            return false;
+        }
+        if (!Objects.equals(this.cor, other.cor)) {
+            return false;
+        }
+        if (!Objects.equals(this.placa, other.placa)) {
             return false;
         }
         return true;

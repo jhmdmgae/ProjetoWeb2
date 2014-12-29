@@ -6,7 +6,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="br.com.condominio.entidades.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,16 +19,16 @@
             <c:import url="menu.jsp"/>
             <div class="conteudo">
                 <form method="POST" action="usucontroller.do?acao=CadastrarUsuario">
-                    <label for='senha'>Login:</label>
+                    <label for='login'>Login:</label>
                     <input type="email" name="login" value="" /><br />
                     <label for='senha'>Senha:</label>
                     <input type="password" name="senha" value="" /><br />
-                    <label for='senha'>Comfirmar senha:</label>
+                    <label for='confirmar'>Confirmar senha:</label>
                     <input type="password" name="confirmar" value="" /><br />
-                    <label for='senha'>Nome:</label>
+                    <label for='nome'>Nome:</label>
                     <input type="text" name="nome" value="" /><br />
-                    <label for='senha'>Telefone:</label>
-                    <input type="text" name="telefone" value="" /><br />
+                    <label for='telefone'>Telefone:</label>
+                    <input type="tel" name="telefone" value="" /><br />
                     <select name="perfil" >
                         <%
                             //caso haja uma sessão em que o usuario e administrador
@@ -49,3 +48,4 @@
             </div>
     </body>
 </html>
+
