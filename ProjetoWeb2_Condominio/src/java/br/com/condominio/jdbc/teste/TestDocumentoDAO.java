@@ -9,14 +9,15 @@ import java.util.List;
  * @author João Henrique 2
  */
 public class TestDocumentoDAO {
-    
+
     private static void cadastrar() {
         Documento documento = new Documento();
 
-        documento.setNumero(3);
-        documento.setBloco(3);
-        documento.setProprietario("3");
-        documento.setLocatario("3");
+        documento.setTitulo("1");
+        documento.setDescricao("1");
+        documento.setCategoria("1");
+        documento.setAutor("9");
+        documento.setArquivo("1");
 
         DocumentoDAO documentoDAO = new DocumentoDAO();
         documentoDAO.cadastrar(documento);
@@ -25,10 +26,11 @@ public class TestDocumentoDAO {
     private static void alterar() {
         Documento documento = new Documento();
 
-        documento.setNumero(4);
-        documento.setBloco(4);
-        documento.setProprietario("4");
-        documento.setLocatario("4");
+        documento.setTitulo("");
+        documento.setDescricao("");
+        documento.setCategoria("");
+        documento.setAutor("");
+        documento.setArquivo("");
 
         documento.setId(5);
 
@@ -59,18 +61,18 @@ public class TestDocumentoDAO {
         Documento documento = documentoDAO.buscar(id);
 
         if (documento != null) {
-            System.out.println("Achado " + documento.getNumero());
+            System.out.println("Achado " + documento.getAutor());
         }
     }
 
     public static void main(String[] args) {
 
-//        cadastrar();
+        cadastrar();
 //        alterar();
 //        buscarTodos();
-        buscar(3);
+//        buscar(3);
 //        excluir();
 
     }
-    
+
 }

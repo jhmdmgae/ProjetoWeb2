@@ -11,7 +11,7 @@ public class Visitante {
     
     private int id;
     private String nome;
-    private String tipo_visita;
+    private int tipo_visita;
     private int apartamento;
     private String motivo_visita;
     private Date data_hora;
@@ -33,11 +33,11 @@ public class Visitante {
         this.nome = nome;
     }
 
-    public String getTipo_visita() {
+    public int getTipo_visita() {
         return tipo_visita;
     }
 
-    public void setTipo_visita(String tipo_visita) {
+    public void setTipo_visita(int tipo_visita) {
         this.tipo_visita = tipo_visita;
     }
 

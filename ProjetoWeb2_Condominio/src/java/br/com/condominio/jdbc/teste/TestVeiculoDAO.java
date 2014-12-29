@@ -9,14 +9,16 @@ import java.util.List;
  * @author João Henrique 2
  */
 public class TestVeiculoDAO {
-    
+
     private static void cadastrar() {
         Veiculo veiculo = new Veiculo();
 
-        veiculo.setNumero(3);
-        veiculo.setBloco(3);
-        veiculo.setProprietario("3");
-        veiculo.setLocatario("3");
+        veiculo.setApartamento(1);
+        veiculo.setTipo_veiculo(1);
+        veiculo.setModelo("1");
+        veiculo.setMarca("1");
+        veiculo.setCor(1);
+        veiculo.setPlaca("1");
 
         VeiculoDAO veiculoDAO = new VeiculoDAO();
         veiculoDAO.cadastrar(veiculo);
@@ -25,10 +27,12 @@ public class TestVeiculoDAO {
     private static void alterar() {
         Veiculo veiculo = new Veiculo();
 
-        veiculo.setNumero(4);
-        veiculo.setBloco(4);
-        veiculo.setProprietario("4");
-        veiculo.setLocatario("4");
+        veiculo.setApartamento(1);
+        veiculo.setTipo_veiculo(1);
+        veiculo.setModelo("1");
+        veiculo.setMarca("1");
+        veiculo.setCor(1);
+        veiculo.setPlaca("1");
 
         veiculo.setId(5);
 
@@ -59,18 +63,18 @@ public class TestVeiculoDAO {
         Veiculo veiculo = veiculoDAO.buscar(id);
 
         if (veiculo != null) {
-            System.out.println("Achado " + veiculo.getNumero());
+            System.out.println("Achado " + veiculo.getMarca());
         }
     }
 
     public static void main(String[] args) {
 
-//        cadastrar();
+        cadastrar();
 //        alterar();
 //        buscarTodos();
-        buscar(3);
+//        buscar(3);
 //        excluir();
 
     }
-    
+
 }

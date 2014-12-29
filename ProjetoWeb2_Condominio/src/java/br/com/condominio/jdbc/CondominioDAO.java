@@ -19,7 +19,7 @@ public class CondominioDAO {
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Condominio condominio) {
-        String sql = "INSERT INTO `condominio` (`cnpj`, `nome`, `cep`, `endereco`, `numero`, `complemetento`, `bairro`, `uf`, `cidade`, `quant_blocos`, `total_apartamentos`, `foto`, `telefone`, `email`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?')";
+        String sql = "INSERT INTO condominio (cnpj, nome, cep, endereco, numero, complemetento, bairro, uf, cidade, quant_blocos, total_apartamentos, foto, telefone, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -48,7 +48,7 @@ public class CondominioDAO {
     }
 
     public void alterar(Condominio condominio) {
-        String sql = "UPDATE `condominio` SET `cnpj`=?,`nome`=?,`cep`=?,`endereco`=?,`numero`=?,`complemetento`=?,`bairro`=?,`uf`=?,`cidade`=?,`quant_blocos`=?,`total_apartamentos`=?,`foto`=?,`telefone`=?,`email`=? WHERE `condominio`.`id` = ?";
+        String sql = "UPDATE condominio SET cnpj=?,nome=?,cep=?,endereco=?,numero=?,complemetento=?,bairro=?,uf=?,cidade=?,quant_blocos=?,total_apartamentos=?,foto=?,telefone=?,email=? WHERE condominio.id = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);

@@ -14,6 +14,7 @@ public class Conexao {
 //        String url = "jdbc:mysql://25.138.13.112:3306/web2_condominio";
         String url = "jdbc:mysql://localhost:3306/web2_condominio";
         String username = "root";
+//        String password = "Cq3nep%";
         String password = "";
         Connection connection = null;
 
@@ -31,7 +32,7 @@ public class Conexao {
             System.out.println("Database connected!");
         } catch (SQLException e) {
             throw new RuntimeException("Cannot connect the database!", e);
-        } 
+        }
 //        finally {
 //            System.out.println("Closing the connection.");
 //            if (connection != null) {

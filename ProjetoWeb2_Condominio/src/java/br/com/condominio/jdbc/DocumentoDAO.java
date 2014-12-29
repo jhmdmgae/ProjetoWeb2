@@ -19,16 +19,16 @@ public class DocumentoDAO {
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Documento documento) {
-        String sql = "INSERT INTO `web2_condominio`.`documento` (`id_documento`, `titulo`, `descricao`, `categorias`, `autor`, `arquivo`) VALUES (NULL, '?', '?', '?', '?', '?')";
+        String sql = "INSERT INTO web2_condominio.documento (id_documento, titulo, descricao, categorias, autor, arquivo) VALUES (NULL, ?, ?, ?, ?, ?)";
         
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, documento.getTitulo());
-            ps.setString(1, documento.getDescricao());
-            ps.setString(1, documento.getCategoria());
-            ps.setString(1, documento.getAutor());
-            ps.setString(1, documento.getArquivo());
+            ps.setString(2, documento.getDescricao());
+            ps.setString(3, documento.getCategoria());
+            ps.setString(4, documento.getAutor());
+            ps.setString(5, documento.getArquivo());
                     
             ps.execute();
             ps.close();
@@ -39,7 +39,7 @@ public class DocumentoDAO {
     }
 
     public void alterar(Documento documento) {
-        String sql = "UPDATE `documento` SET `titulo`=?,`descricao`=?,`categorias`=?,`autor`=?,`arquivo`=? WHERE `documento`.`id_documento` = ?";
+        String sql = "UPDATE documento SET titulo=?,descricao=?,categorias=?,autor=?,arquivo=? WHERE documento.id_documento = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);

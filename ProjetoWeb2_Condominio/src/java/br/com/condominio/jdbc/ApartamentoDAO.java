@@ -19,7 +19,7 @@ public class ApartamentoDAO {
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Apartamento apartamento) {
-        String sql = "INSERT INTO `web2_condominio`.`apartamento` (`numero`, `bloco`, `proprietario`, `locatario`) VALUES ( ?, ?, ?, ?)";
+        String sql = "INSERT INTO web2_condominio.apartamento (numero, bloco, proprietario, locatario) VALUES ( ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -38,7 +38,7 @@ public class ApartamentoDAO {
     }
 
     public void alterar(Apartamento apartamento) {
-        String sql = "UPDATE `web2_condominio`.`apartamento` SET `numero` = ?, `bloco` = ?, `proprietario` = ?, `locatario` = ? WHERE `apartamento`.`idapartamento` = ?";
+        String sql = "UPDATE web2_condominio.apartamento SET numero = ?, bloco = ?, proprietario = ?, locatario = ? WHERE apartamento.idapartamento = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);

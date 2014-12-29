@@ -9,11 +9,11 @@ import java.util.Objects;
 public class Veiculo {
     
     private int id;
-    private String apartamento;
-    private String tipo_veiculo;
+    private int apartamento;
+    private int tipo_veiculo;
     private String modelo;
     private String marca;
-    private String cor;
+    private int cor;
     private String placa;
 
     public int getId() {
@@ -24,19 +24,19 @@ public class Veiculo {
         this.id = id;
     }
 
-    public String getApartamento() {
+    public int getApartamento() {
         return apartamento;
     }
 
-    public void setApartamento(String apartamento) {
+    public void setApartamento(int apartamento) {
         this.apartamento = apartamento;
     }
 
-    public String getTipo_veiculo() {
+    public int getTipo_veiculo() {
         return tipo_veiculo;
     }
 
-    public void setTipo_veiculo(String tipo_veiculo) {
+    public void setTipo_veiculo(int tipo_veiculo) {
         this.tipo_veiculo = tipo_veiculo;
     }
 
@@ -56,11 +56,11 @@ public class Veiculo {
         this.marca = marca;
     }
 
-    public String getCor() {
+    public int getCor() {
         return cor;
     }
 
-    public void setCor(String cor) {
+    public void setCor(int cor) {
         this.cor = cor;
     }
 

@@ -20,17 +20,17 @@ public class VisitanteDAO {
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Visitante visitante) {
-        String sql = "INSERT INTO `visitante`(`id_visitante`, `nome`, `tipo_visita`, `apartamento`, `motivo_visita`, `data_hora`, `observacao`) VALUES (NULL, '?', '?', '?', '?', '?', '?')";
+        String sql = "INSERT INTO visitante(nome, tipo_visita, apartamento, motivo_visita, data_hora, observacao) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, visitante.getNome());
-            ps.setString(1, visitante.getTipo_visita());
-            ps.setInt(1, visitante.getApartamento());
-            ps.setString(1, visitante.getMotivo_visita());
-            ps.setDate(1, (Date) visitante.getData_hora());
-            ps.setString(1, visitante.getObservacao());
+            ps.setInt(2, visitante.getTipo_visita());
+            ps.setInt(3, visitante.getApartamento());
+            ps.setString(4, visitante.getMotivo_visita());
+            ps.setDate(5, (Date) visitante.getData_hora());
+            ps.setString(6, visitante.getObservacao());
 
             ps.execute();
             ps.close();
@@ -41,13 +41,13 @@ public class VisitanteDAO {
     }
 
     public void alterar(Visitante visitante) {
-        String sql = "UPDATE `visitante` SET `nome`=?,`tipo_visita`=?,`apartamento`=?,`motivo_visita`=?,`data_hora`=?,`observacao`=? WHERE `visitante`.`id_visitante` = ?";
+        String sql = "UPDATE visitante SET nome=?,tipo_visita=?,apartamento=?,motivo_visita=?,data_hora=?,observacao=? WHERE visitante.id_visitante = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, visitante.getNome());
-            ps.setString(1, visitante.getTipo_visita());
+            ps.setInt(1, visitante.getTipo_visita());
             ps.setInt(1, visitante.getApartamento());
             ps.setString(1, visitante.getMotivo_visita());
             ps.setDate(1, (Date) visitante.getData_hora());
@@ -91,7 +91,7 @@ public class VisitanteDAO {
 
                 visitante.setId(resultSet.getInt("id_visitante"));
                 visitante.setNome(resultSet.getString("nome"));
-                visitante.setTipo_visita(resultSet.getString("tipo_visita"));
+                visitante.setTipo_visita(resultSet.getInt("tipo_visita"));
                 visitante.setApartamento(resultSet.getInt("apartamento"));
                 visitante.setMotivo_visita(resultSet.getString("motivo_visita"));
                 visitante.setData_hora(resultSet.getDate("data_hora"));
@@ -122,7 +122,7 @@ public class VisitanteDAO {
 
                 visitante.setId(resultSet.getInt("id_visitante"));
                 visitante.setNome(resultSet.getString("nome"));
-                visitante.setTipo_visita(resultSet.getString("tipo_visita"));
+                visitante.setTipo_visita(resultSet.getInt("tipo_visita"));
                 visitante.setApartamento(resultSet.getInt("apartamento"));
                 visitante.setMotivo_visita(resultSet.getString("motivo_visita"));
                 visitante.setData_hora(resultSet.getDate("data_hora"));

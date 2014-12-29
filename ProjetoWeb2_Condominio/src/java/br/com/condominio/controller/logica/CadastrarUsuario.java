@@ -31,7 +31,6 @@ public class CadastrarUsuario implements Logica {
 
         usuarioDAO.cadastrar(usuario);
 
-        request.setAttribute("lista", new UsuarioDAO().buscarTodos());
         return "listar_usuarios.jsp";
     }
 }

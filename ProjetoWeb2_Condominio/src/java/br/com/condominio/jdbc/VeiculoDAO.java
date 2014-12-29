@@ -19,17 +19,17 @@ public class VeiculoDAO {
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Veiculo veiculo) {
-        String sql = "INSERT INTO `veiculo`(`id_veiculo`, `veiculo_apartamento`, `tipo_veiculo`, `modelo`, `marca`, `cor`, `placa`) VALUES (NULL, '?', '?', '?', '?', '?', '?')";
+        String sql = "INSERT INTO veiculo(veiculo_apartamento, tipo_veiculo, modelo, marca, cor, placa) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
-            ps.setString(1, veiculo.getApartamento());
-            ps.setString(1, veiculo.getTipo_veiculo());
-            ps.setString(1, veiculo.getModelo());
-            ps.setString(1, veiculo.getMarca());
-            ps.setString(1, veiculo.getCor());
-            ps.setString(1, veiculo.getPlaca());
+            ps.setInt(1, veiculo.getApartamento());
+            ps.setInt(2, veiculo.getTipo_veiculo());
+            ps.setString(3, veiculo.getModelo());
+            ps.setString(4, veiculo.getMarca());
+            ps.setInt(5, veiculo.getCor());
+            ps.setString(6, veiculo.getPlaca());
 
             ps.execute();
             ps.close();
@@ -40,16 +40,16 @@ public class VeiculoDAO {
     }
 
     public void alterar(Veiculo veiculo) {
-        String sql = "UPDATE `veiculo` SET `veiculo_apartamento`=?,`tipo_veiculo`=?,`modelo`=?,`marca`=?,`cor`=?,`placa`=? WHERE `veiculo`.`id_veiculo` = ?";
+        String sql = "UPDATE veiculo SET veiculo_apartamento=?,tipo_veiculo=?,modelo=?,marca=?,cor=?,placa=? WHERE veiculo.id_veiculo = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
-            ps.setString(1, veiculo.getApartamento());
-            ps.setString(1, veiculo.getTipo_veiculo());
+            ps.setInt(1, veiculo.getApartamento());
+            ps.setInt(1, veiculo.getTipo_veiculo());
             ps.setString(1, veiculo.getModelo());
             ps.setString(1, veiculo.getMarca());
-            ps.setString(1, veiculo.getCor());
+            ps.setInt(1, veiculo.getCor());
             ps.setString(1, veiculo.getPlaca());
 
             ps.execute();
@@ -89,11 +89,11 @@ public class VeiculoDAO {
                 Veiculo veiculo = new Veiculo();
 
                 veiculo.setId(resultSet.getInt("id_veiculo"));
-                veiculo.setApartamento(resultSet.getString("veiculo_apartamento"));
-                veiculo.setTipo_veiculo(resultSet.getString("tipo_veiculo"));
+                veiculo.setApartamento(resultSet.getInt("veiculo_apartamento"));
+                veiculo.setTipo_veiculo(resultSet.getInt("tipo_veiculo"));
                 veiculo.setModelo(resultSet.getString("modelo"));
                 veiculo.setMarca(resultSet.getString("marca"));
-                veiculo.setCor(resultSet.getString("cor"));
+                veiculo.setCor(resultSet.getInt("cor"));
                 veiculo.setPlaca(resultSet.getString("placa"));
 
                 veiculos.add(veiculo);
@@ -120,11 +120,11 @@ public class VeiculoDAO {
                 veiculo = new Veiculo();
 
                 veiculo.setId(resultSet.getInt("id_veiculo"));
-                veiculo.setApartamento(resultSet.getString("veiculo_apartamento"));
-                veiculo.setTipo_veiculo(resultSet.getString("tipo_veiculo"));
+                veiculo.setApartamento(resultSet.getInt("veiculo_apartamento"));
+                veiculo.setTipo_veiculo(resultSet.getInt("tipo_veiculo"));
                 veiculo.setModelo(resultSet.getString("modelo"));
                 veiculo.setMarca(resultSet.getString("marca"));
-                veiculo.setCor(resultSet.getString("cor"));
+                veiculo.setCor(resultSet.getInt("cor"));
                 veiculo.setPlaca(resultSet.getString("placa"));
 
             }

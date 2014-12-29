@@ -2,6 +2,8 @@ package br.com.condominio.jdbc.teste;
 
 import br.com.condominio.entidades.Visitante;
 import br.com.condominio.jdbc.VisitanteDAO;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -9,14 +11,19 @@ import java.util.List;
  * @author João Henrique 2
  */
 public class TestVisitanteDAO {
-    
+
     private static void cadastrar() {
         Visitante visitante = new Visitante();
 
-        visitante.setNumero(3);
-        visitante.setBloco(3);
-        visitante.setProprietario("3");
-        visitante.setLocatario("3");
+        visitante.setNome("1");
+        visitante.setTipo_visita(1);
+        visitante.setApartamento(1);
+        visitante.setMotivo_visita("1");
+        
+        java.util.Date today = new java.util.Date();
+        visitante.setData_hora(new java.sql.Date(today.getTime()));//problema conversão de datas
+        
+        visitante.setObservacao("1");
 
         VisitanteDAO visitanteDAO = new VisitanteDAO();
         visitanteDAO.cadastrar(visitante);
@@ -25,10 +32,12 @@ public class TestVisitanteDAO {
     private static void alterar() {
         Visitante visitante = new Visitante();
 
-        visitante.setNumero(4);
-        visitante.setBloco(4);
-        visitante.setProprietario("4");
-        visitante.setLocatario("4");
+        visitante.setNome("1");
+        visitante.setTipo_visita(1);
+        visitante.setApartamento(1);
+        visitante.setMotivo_visita("1");
+        visitante.setData_hora(null);
+        visitante.setObservacao("1");
 
         visitante.setId(5);
 
@@ -59,18 +68,18 @@ public class TestVisitanteDAO {
         Visitante visitante = visitanteDAO.buscar(id);
 
         if (visitante != null) {
-            System.out.println("Achado " + visitante.getNumero());
+            System.out.println("Achado " + visitante.getNome());
         }
     }
 
     public static void main(String[] args) {
 
-//        cadastrar();
+        cadastrar();
 //        alterar();
 //        buscarTodos();
-        buscar(3);
+//        buscar(3);
 //        excluir();
 
     }
-    
+
 }

@@ -20,31 +20,31 @@ public class FuncionarioDAO {
     private Connection con = Conexao.getConnection();
 
     public void cadastrar(Funcionario funcionario) {
-        String sql = "INSERT INTO `funcionario`(`id_funcionario`, `matricula`, `nome`, `telefone_residencial`, `telefone_comercial`, `cep`, `endereco`, `numero`, `complemento`, `bairro`, `cidade`, `uf`, `rg`, `cpf`, `sexo`, `data_contratacao`, `cargo`, `tipo_contrato`, `turno`, `foto`, `observacao`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?', '?')";
+        String sql = "INSERT INTO funcionario (id_funcionario, matricula, nome, telefone_residencial, telefone_comercial, cep, endereco, numero, complemento, bairro, cidade, uf, rg, cpf, sexo, data_contratacao, cargo, tipo_contrato, turno, foto, observacao) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, funcionario.getMatricula());
-            ps.setString(1, funcionario.getNome());
-            ps.setString(1, funcionario.getTel_residencial());
-            ps.setString(1, funcionario.getTel_celular());
-            ps.setString(1, funcionario.getCep());
-            ps.setString(1, funcionario.getEndereco());
-            ps.setInt(1, funcionario.getNumero());
-            ps.setString(1, funcionario.getComplemento());
-            ps.setString(1, funcionario.getBairro());
-            ps.setString(1, funcionario.getCidade());
-            ps.setString(1, funcionario.getUf());
-            ps.setString(1, funcionario.getRg());
-            ps.setString(1, funcionario.getCpf());
-            ps.setString(1, funcionario.getSexo());
-            ps.setDate(1, (Date) funcionario.getData_contratacao());
-            ps.setString(1, funcionario.getCargo());
-            ps.setString(1, funcionario.getTipo_contrato());
-            ps.setString(1, funcionario.getTurno());
-            ps.setString(1, funcionario.getFoto());
-            ps.setString(1, funcionario.getObservacao());
+            ps.setString(2, funcionario.getNome());
+            ps.setString(3, funcionario.getTel_residencial());
+            ps.setString(4, funcionario.getTel_celular());
+            ps.setString(5, funcionario.getCep());
+            ps.setString(6, funcionario.getEndereco());
+            ps.setInt(7, funcionario.getNumero());
+            ps.setString(8, funcionario.getComplemento());
+            ps.setString(9, funcionario.getBairro());
+            ps.setString(10, funcionario.getCidade());
+            ps.setString(11, funcionario.getUf());
+            ps.setString(12, funcionario.getRg());
+            ps.setString(13, funcionario.getCpf());
+            ps.setString(14, funcionario.getSexo());
+            ps.setDate(15, (Date) funcionario.getData_contratacao());
+            ps.setString(16, funcionario.getCargo());
+            ps.setString(17, funcionario.getTipo_contrato());
+            ps.setString(18, funcionario.getTurno());
+            ps.setString(19, funcionario.getFoto());
+            ps.setString(20, funcionario.getObservacao());
 
             ps.execute();
             ps.close();
@@ -55,7 +55,7 @@ public class FuncionarioDAO {
     }
 
     public void alterar(Funcionario funcionario) {
-        String sql = "UPDATE `funcionario` SET `matricula`=?,`nome`=?,`telefone_residencial`=?,`telefone_comercial`=?,`cep`=?,`endereco`=?,`numero`=?,`complemento`=?,`bairro`=?,`cidade`=?,`uf`=?,`rg`=?,`cpf`=?,`sexo`=?,`data_contratacao`=?,`cargo`=?,`tipo_contrato`=?,`turno`=?,`foto`=?,`observacao`=? WHERE `funcionario`.`id_funcionario` = ?";
+        String sql = "UPDATE funcionario SET matricula=?,nome=?,telefone_residencial=?,telefone_comercial=?,cep=?,endereco=?,numero=?,complemento=?,bairro=?,cidade=?,uf=?,rg=?,cpf=?,sexo=?,data_contratacao=?,cargo=?,tipo_contrato=?,turno=?,foto=?,observacao=? WHERE funcionario.id_funcionario = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
