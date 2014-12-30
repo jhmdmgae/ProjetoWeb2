@@ -21,7 +21,7 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="condocontroller.do?acao=FormCadastroVisitante">Adicionar visitante</a>
+                            <a href="visitcontroller.do?acao=forcadastrar">Adicionar visitante</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Visitantes</div>
@@ -32,17 +32,17 @@
                                 <div class="div-table-col">Apartamento</div>
                                 <div class="div-table-col">Data e Hora da Visita</div>
                             </div>
-                            <jsp:useBean id="visidao" class="br.com.condominio.jdbc.dao.VisitanteDAO"/>
-                            <c:forEach items="${visidao.buscarTodos()}" var="visi">
+                            <jsp:useBean id="visitdao" class="br.com.condominio.jdbc.dao.VisitanteDAO"/>
+                            <c:forEach items="${visitdao.buscarTodos()}" var="visit">
                                 <div class="div-table-row">
                                     <div class="div-table-col">
-                                        <a href="condocontroller.do?acao=ExcluirVisitante&id=${visi.id}">Excluir</a>
-                                        <a href="condocontroller.do?acao=FormAlterarVisitante&id=${visi.id}">Editar</a>
+                                        <a href="visitcontroller.do?acao=excluir&id=${visit.id}">Excluir</a>
+                                        <a href="visitcontroller.do?acao=foreditar&id=${visit.id}">Editar</a>
                                     </div>
-                                    <div class="div-table-col">${visi.nome}</div>
-                                    <div class="div-table-col">${visi.tipo_visita}</div>
-                                    <div class="div-table-col">${visi.apartamento}</div>
-                                    <div class="div-table-col">${visi.data_hora}</div>
+                                    <div class="div-table-col">${visit.nome}</div>
+                                    <div class="div-table-col">${visit.tipoVisita}</div>
+                                    <div class="div-table-col">${visit.apartamento}</div>
+                                    <div class="div-table-col">${visit.dataHora}</div>
                                 </div>
                             </c:forEach>
                         </div>

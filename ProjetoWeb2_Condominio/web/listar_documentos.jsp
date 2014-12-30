@@ -21,7 +21,7 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="condocontroller.do?acao=FormCadastroDocumento">Adicionar documento</a>
+                            <a href="doccontroller.do?acao=forcadastrar">Adicionar documento</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Documentos</div>
@@ -37,8 +37,8 @@
                             <c:forEach items="${docdao.buscarTodos()}" var="doc">
                                 <div class="div-table-row">
                                     <div class="div-table-col">
-                                        <a href="condocontroller.do?acao=ExcluirDocumento&id=${doc.id}">Excluir</a>
-                                        <a href="condocontroller.do?acao=FormAlterarDocumento&id=${doc.id}">Editar</a>
+                                        <a href="doccontroller.do?acao=excluir&id=${doc.id}">Excluir</a>
+                                        <a href="doccontroller.do?acao=foreditar&id=${doc.id}">Editar</a>
                                     </div>
                                     <div class="div-table-col">${doc.titulo}</div>
                                     <div class="div-table-col">${doc.descricao}</div>

@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:choose>
     <c:when test="${sessionScope.usuAutenticado != null}">
+        <c:set var="visitante" value="${requestScope.visitanteAlterar}" />
         <!DOCTYPE html>
         <html>
             <head>
@@ -21,32 +22,32 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <jsp:useBean id="func" class="br.com.condominio.jdbc.dao.VisitanteDAO"/>
-                        <form action='visitcontroller.do?acao=cadastrar' method='post' name='formulario'>
+                        <form action='visitcontroller.do?acao=editar&id=${visitante.id}' method='post' name='formulario'>
                             <fieldset>
-                                <legend>Cadastro de visitante</legend>
+                                <legend>Alterar de visitante</legend>
                                 <div class="campo">
                                     <label for='nome'>Nome:</label>
-                                    <input type='text' id='nome' name='nome' value=''/>
+                                    <input type='text' id='nome' name='nome' value='${visitante.nome}'/>
                                 </div>
                                 <div class="campo">
-                                    <label for='numero'>Tipo de Visita:</label>
-                                    <input type='text' id='bloco' name='bloco' value=''/>
+                                    <label for='tipoVisita'>Tipo de Visita:</label>
+                                    <input type='text' id='tipoVisita' name='bloco' value='${visitante.tipoVisita}'/>
                                 </div>
                                 <div class="campo">
-                                    <label for='numero'>Apartamento:</label>
-                                    <input type='text' id='proprietario' name='proprietario' value=''/>
+                                    <label for='apartamento'>Apartamento:</label>
+                                    <input type='text' id='apartamento' name='apartamento' value='${visitante.apartamento}'/>
                                 </div>
                                 <div class="campo">
                                     <label for='motivo_visita'>Motivo da visita:</label>
-                                    <input type='text' id='motivo_visita' name='motivo_visita' value=''/>
+                                    <input type='text' id='motivo_visita' name='motivo_visita' value='${visitante.motivoVisita}'/>
                                 </div>
                                 <div class="campo">
                                     <label for='data_hora'>Data e Hora da Visita:</label>
-                                    <input type='text' id='data_hora' name='data_hora' value=''/>
+                                    <input type='text' id='data_hora' name='data_hora' value='${visitante.dataHora}'/>
                                 </div>
                                 <div class="campo">
                                     <label for='observacao'>Observação:</label>
-                                    <input type='text' id='observacao' name='observacao' value=''/>
+                                    <input type='text' id='observacao' name='observacao' value='${visitante.observacao}'/>
                                 </div>
                                 <div class="campo">
                                     <input type='submit' value="Enviar"/>

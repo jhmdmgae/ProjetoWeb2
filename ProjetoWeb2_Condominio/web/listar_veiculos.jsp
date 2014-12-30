@@ -21,7 +21,7 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="condocontroller.do?acao=FormCadastroVeiculo">Adicionar Veículo</a>
+                            <a href="veiccontroller.do?acao=forcadastrar">Adicionar Veículo</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Veículos</div>
@@ -38,10 +38,10 @@
                             <c:forEach items="${veicdao.buscarTodos()}" var="veic">
                                 <div class="div-table-row">
                                     <div class="div-table-col">
-                                        <a href="condocontroller.do?acao=ExcluirVeiculo&id=${veic.id}">Excluir</a>
-                                        <a href="condocontroller.do?acao=FormAlterarVeiculo&id=${veic.id}">Editar</a>
+                                        <a href="veiccontroller.do?acao=excluir&id=${veic.id}">Excluir</a>
+                                        <a href="veiccontroller.do?acao=foreditar&id=${veic.id}">Editar</a>
                                     </div>
-                                    <div class="div-table-col">${veic.tipo}</div>
+                                    <div class="div-table-col">${veic.tipoVeiculo}</div>
                                     <div class="div-table-col">${veic.marca}</div>
                                     <div class="div-table-col">${veic.modelo}</div>
                                     <div class="div-table-col">${veic.cor}</div>

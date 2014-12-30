@@ -20,13 +20,13 @@
                 <a href="funccontroller.do?acao=listar">Funcionários</a>
             </li>
             <li>
-                <a href="doccontroller.do?acao=ListarDocumentos">Documentos</a>
+                <a href="doccontroller.do?acao=listar">Documentos</a>
             </li>
             <li>
-                <a href="visitcontroller.do?acao=ListarVisitantes">Visitantes</a>
+                <a href="visitcontroller.do?acao=listar">Visitantes</a>
             </li>
             <li>
-                <a href="veiccontroller.do?acao=ListarVeiculos">Veículo</a>
+                <a href="veiccontroller.do?acao=listar">Veículo</a>
             </li>
         </c:if>
     </ul>

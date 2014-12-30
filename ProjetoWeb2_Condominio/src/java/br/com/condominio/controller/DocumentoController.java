@@ -1,23 +1,12 @@
 package br.com.condominio.controller;
 
-import br.com.condominio.controller.logica.usuario.AlterarSenha;
-import br.com.condominio.controller.logica.usuario.AlterarUsuario;
-import br.com.condominio.controller.logica.usuario.CadastrarUsuario;
-import br.com.condominio.controller.logica.usuario.EnviarEmailSenha;
-import br.com.condominio.controller.logica.usuario.ExcluirUsuario;
-import br.com.condominio.controller.logica.usuario.FormAlterarUsuario;
-import br.com.condominio.controller.logica.usuario.FormCadastroUsuario;
-import br.com.condominio.controller.logica.usuario.FormPedidoSenha;
-import br.com.condominio.controller.logica.usuario.ListarUsuarios;
-import br.com.condominio.controller.logica.usuario.LogarSistema;
 import br.com.condominio.controller.logica.Logica;
-import br.com.condominio.controller.logica.apartamento.AlterarApartamento;
-import br.com.condominio.controller.logica.apartamento.CadastrarApartamento;
-import br.com.condominio.controller.logica.apartamento.ExcluirApartamento;
-import br.com.condominio.controller.logica.apartamento.FormAlterarApartamento;
-import br.com.condominio.controller.logica.apartamento.FormCadastroApartamento;
-import br.com.condominio.controller.logica.apartamento.ListarApartamentos;
-import br.com.condominio.controller.logica.usuario.LogoutSistema;
+import br.com.condominio.controller.logica.documento.AlterarDocumento;
+import br.com.condominio.controller.logica.documento.CadastrarDocumento;
+import br.com.condominio.controller.logica.documento.ExcluirDocumento;
+import br.com.condominio.controller.logica.documento.FormAlterarDocumento;
+import br.com.condominio.controller.logica.documento.FormCadastroDocumento;
+import br.com.condominio.controller.logica.documento.ListarDocumentos;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,12 +28,12 @@ public class DocumentoController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        logicas.put("AlterarApartamento", new AlterarApartamento());
-        logicas.put("CadastrarApartamento", new CadastrarApartamento());
-        logicas.put("ExcluirApartamento", new ExcluirApartamento());
-        logicas.put("FormAlterarApartamento", new FormAlterarApartamento());
-        logicas.put("FormCadastroApartamento", new FormCadastroApartamento());
-        logicas.put("ListarApartamentos", new ListarApartamentos());
+        logicas.put("alterar", new AlterarDocumento());
+        logicas.put("cadastrar", new CadastrarDocumento());
+        logicas.put("excluir", new ExcluirDocumento());
+        logicas.put("foreditar", new FormAlterarDocumento());
+        logicas.put("forcadastrar", new FormCadastroDocumento());
+        logicas.put("listar", new ListarDocumentos());
         
         String parametro = request.getParameter("acao");
 

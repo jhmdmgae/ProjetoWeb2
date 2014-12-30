@@ -1,10 +1,8 @@
 package br.com.condominio.controller.logica.visitantes;
 
-import br.com.condominio.controller.logica.veiculo.*;
-import br.com.condominio.controller.logica.veiculo.*;
 import br.com.condominio.controller.logica.Logica;
-import br.com.condominio.entidades.Veiculo;
-import br.com.condominio.jdbc.dao.VeiculoDAO;
+import br.com.condominio.entidades.Visitante;
+import br.com.condominio.jdbc.dao.VisitanteDAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,17 +15,17 @@ public class FormAlterarVisitante implements Logica {
     @Override
     public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-        VeiculoDAO veiculoDAO = new VeiculoDAO();
+        VisitanteDAO visitanteDAO = new VisitanteDAO();
 
         String id = request.getParameter("id");
-        Veiculo veiculo = veiculoDAO.buscar(Integer.parseInt(id));
+        Visitante visitante = visitanteDAO.buscar(Integer.parseInt(id));
 
-        if (veiculo != null) {
-            request.setAttribute("veiculoAlterar", veiculo);
-            return "alterar_veiculo.jsp";
+        if (visitante != null) {
+            request.setAttribute("visitanteAlterar", visitante);
+            return "alterar_visitante.jsp";
         }
 
-        return "listar_veiculos.jsp";
+        return "listar_visitantes.jsp";
     }
 
 }

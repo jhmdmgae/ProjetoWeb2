@@ -21,7 +21,7 @@ public class FormAlterarFuncionario implements Logica {
 
         if (funcionario != null) {
             request.setAttribute("funcionarioAlterar", funcionario);
-            return "alterar_funcionario.jsp";
+            return "alterar_funcionariojsp";
         }
 
         return "listar_funcionarios.jsp";

@@ -28,12 +28,12 @@ public class VisitanteController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        logicas.put("AlterarVisitante", new AlterarVisitante());
-        logicas.put("CadastrarVisitante", new CadastrarVisitante());
-        logicas.put("ExcluirVisitante", new ExcluirVisitante());
-        logicas.put("FormAlterarVisitante", new FormAlterarVisitante());
-        logicas.put("FormCadastroVisitante", new FormCadastroVisitante());
-        logicas.put("ListarVisitantes", new ListarVisitantes());
+        logicas.put("editar", new AlterarVisitante());
+        logicas.put("cadastrar", new CadastrarVisitante());
+        logicas.put("excluir", new ExcluirVisitante());
+        logicas.put("foreditar", new FormAlterarVisitante());
+        logicas.put("forcadastrar", new FormCadastroVisitante());
+        logicas.put("listar", new ListarVisitantes());
 
         String parametro = request.getParameter("acao");
 
