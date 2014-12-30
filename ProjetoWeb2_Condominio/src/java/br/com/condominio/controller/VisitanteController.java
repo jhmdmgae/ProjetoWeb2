@@ -1,17 +1,12 @@
 package br.com.condominio.controller;
 
-import br.com.condominio.controller.logica.usuario.AlterarSenha;
-import br.com.condominio.controller.logica.usuario.AlterarUsuario;
-import br.com.condominio.controller.logica.usuario.CadastrarUsuario;
-import br.com.condominio.controller.logica.usuario.EnviarEmailSenha;
-import br.com.condominio.controller.logica.usuario.ExcluirUsuario;
-import br.com.condominio.controller.logica.usuario.FormAlterarUsuario;
-import br.com.condominio.controller.logica.usuario.FormCadastroUsuario;
-import br.com.condominio.controller.logica.usuario.FormPedidoSenha;
-import br.com.condominio.controller.logica.usuario.ListarUsuarios;
-import br.com.condominio.controller.logica.usuario.LogarSistema;
 import br.com.condominio.controller.logica.Logica;
-import br.com.condominio.controller.logica.usuario.LogoutSistema;
+import br.com.condominio.controller.logica.visitantes.AlterarVisitante;
+import br.com.condominio.controller.logica.visitantes.CadastrarVisitante;
+import br.com.condominio.controller.logica.visitantes.ExcluirVisitante;
+import br.com.condominio.controller.logica.visitantes.FormAlterarVisitante;
+import br.com.condominio.controller.logica.visitantes.FormCadastroVisitante;
+import br.com.condominio.controller.logica.visitantes.ListarVisitantes;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,17 +28,12 @@ public class VisitanteController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        logicas.put("entrar", new LogarSistema());
-        logicas.put("sair", new LogoutSistema());
-        logicas.put("forpedirsenha", new FormPedidoSenha());
-        logicas.put("email", new EnviarEmailSenha());
-        logicas.put("listar", new ListarUsuarios());
-        logicas.put("excluir", new ExcluirUsuario());
-        logicas.put("foreditar", new FormAlterarUsuario());
-        logicas.put("editar", new AlterarUsuario());
-        logicas.put("forcadastrar", new FormCadastroUsuario());
-        logicas.put("cadastrar", new CadastrarUsuario());
-        logicas.put("altsenha", new AlterarSenha());
+        logicas.put("AlterarVisitante", new AlterarVisitante());
+        logicas.put("CadastrarVisitante", new CadastrarVisitante());
+        logicas.put("ExcluirVisitante", new ExcluirVisitante());
+        logicas.put("FormAlterarVisitante", new FormAlterarVisitante());
+        logicas.put("FormCadastroVisitante", new FormCadastroVisitante());
+        logicas.put("ListarVisitantes", new ListarVisitantes());
 
         String parametro = request.getParameter("acao");
 

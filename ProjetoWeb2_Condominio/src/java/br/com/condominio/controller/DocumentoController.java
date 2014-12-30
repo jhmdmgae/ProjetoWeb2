@@ -11,6 +11,12 @@ import br.com.condominio.controller.logica.usuario.FormPedidoSenha;
 import br.com.condominio.controller.logica.usuario.ListarUsuarios;
 import br.com.condominio.controller.logica.usuario.LogarSistema;
 import br.com.condominio.controller.logica.Logica;
+import br.com.condominio.controller.logica.apartamento.AlterarApartamento;
+import br.com.condominio.controller.logica.apartamento.CadastrarApartamento;
+import br.com.condominio.controller.logica.apartamento.ExcluirApartamento;
+import br.com.condominio.controller.logica.apartamento.FormAlterarApartamento;
+import br.com.condominio.controller.logica.apartamento.FormCadastroApartamento;
+import br.com.condominio.controller.logica.apartamento.ListarApartamentos;
 import br.com.condominio.controller.logica.usuario.LogoutSistema;
 import java.io.IOException;
 import java.util.HashMap;
@@ -33,7 +39,12 @@ public class DocumentoController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        logicas.put("entrar", new LogarSistema());
+        logicas.put("AlterarApartamento", new AlterarApartamento());
+        logicas.put("CadastrarApartamento", new CadastrarApartamento());
+        logicas.put("ExcluirApartamento", new ExcluirApartamento());
+        logicas.put("FormAlterarApartamento", new FormAlterarApartamento());
+        logicas.put("FormCadastroApartamento", new FormCadastroApartamento());
+        logicas.put("ListarApartamentos", new ListarApartamentos());
         
         String parametro = request.getParameter("acao");
 
