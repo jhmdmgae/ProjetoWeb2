@@ -14,7 +14,7 @@
                 <a href="usucontroller.do?acao=listar">Usuários</a>
             </li>
             <li>
-                <a href="apartcontroller.do?acao=ListarApartamentos">Apartamentos</a>
+                <a href="apartcontroller.do?acao=listar">Apartamentos</a>
             </li>
             <li>
                 <a href="funccontroller.do?acao=listar">Funcionários</a>

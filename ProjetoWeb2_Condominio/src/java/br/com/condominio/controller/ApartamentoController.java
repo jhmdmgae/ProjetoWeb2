@@ -28,13 +28,12 @@ public class ApartamentoController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        
-        logicas.put("AlterarApartamento", new AlterarApartamento());
-        logicas.put("CadastrarApartamento", new CadastrarApartamento());
-        logicas.put("ExcluirApartamento", new ExcluirApartamento());
-        logicas.put("FormAlterarApartamento", new FormAlterarApartamento());
-        logicas.put("FormCadastroApartamento", new FormCadastroApartamento());
-        logicas.put("ListarApartamentos", new ListarApartamentos());
+        logicas.put("editar", new AlterarApartamento());
+        logicas.put("cadastrar", new CadastrarApartamento());
+        logicas.put("excluir", new ExcluirApartamento());
+        logicas.put("foreditar", new FormAlterarApartamento());
+        logicas.put("forcadastrar", new FormCadastroApartamento());
+        logicas.put("listar", new ListarApartamentos());
 
         String parametro = request.getParameter("acao");
 
