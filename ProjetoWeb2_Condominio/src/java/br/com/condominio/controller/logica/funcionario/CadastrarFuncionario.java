@@ -48,7 +48,12 @@ public class CadastrarFuncionario implements Logica {
         funcionario.setTelCelular(telefoneCelular);
         funcionario.setCep(cep);
         funcionario.setEndereco(endereco);
-        funcionario.setNumero(Integer.parseInt(numero));
+
+        try {
+            funcionario.setNumero(Integer.parseInt(numero));
+        } catch (Exception e) {
+        }
+
         funcionario.setComplemento(complemento);
         funcionario.setBairro(bairro);
         funcionario.setCidade(cidade);
@@ -62,9 +67,10 @@ public class CadastrarFuncionario implements Logica {
         funcionario.setTipoContrato(tipoContrato);
         funcionario.setObservacao(observacao);
 
+        String data = "08/01/1995";
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            funcionario.setDataContratacao(new java.sql.Date(format.parse(dataContratacao).getTime()));//problema conversão de datas
+            funcionario.setDataContratacao(new java.sql.Date(format.parse(data).getTime()));//problema conversão de datas
         } catch (ParseException ex) {
         }
 

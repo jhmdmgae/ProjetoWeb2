@@ -45,6 +45,7 @@ public class FuncionarioController extends HttpServlet {
             request.getRequestDispatcher(pagina).forward(request, response);
         } catch (Exception e) {
             response.sendRedirect("404.html");
+            System.out.println("opa");
             System.out.println("A lógica de negócios causou uma exceção ");
             e.printStackTrace();
         }

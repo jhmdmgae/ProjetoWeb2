@@ -89,11 +89,16 @@
                                     <label for='data_contratacao'>Data Contratação:</label>
                                     <input type='date' id='data_contratacao' name='data_contratacao' value='' size="41"/>
                                 </div>
+                                <jsp:useBean id="func" class="br.com.condominio.jdbc.dao.FuncionarioDAO"/>
                                 <div class="campo">
                                     <label for='cargo'>Cargo:</label>
-                                    <input type='text' id='cargo' name='cargo' value='' size="41"/>
+                                    <select id="cargo" name="cargo" style="width:273px" >
+                                        <option value="">Selecione</option>
+                                        <c:forEach items="${func.buscarCargo()}" var="cargo">
+                                            <option value="1">${cargo}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
-                                <jsp:useBean id="func" class="br.com.condominio.jdbc.dao.FuncionarioDAO"/>
                                 <div class="campo">
                                     <label for='tipo_contrato'>Tipo de Contrato:</label>
                                     <select id="tipo_contrato" name="tipo_contrato" style="width:273px" >
@@ -104,8 +109,8 @@
                                     </select>
                                 </div>
                                 <div class="campo">
-                                    <label for='tipo_contrato'>Tipo de Contrato:</label>
-                                    <select id="tipo_contrato" name="tipo_contrato" style="width:273px" >
+                                    <label for='turno'>Turno:</label>
+                                    <select id="turno" name="turno" style="width:273px" >
                                         <option value="">Selecione</option>
                                         <c:forEach items="${func.buscarTurno()}" var="turno">
                                             <option value="1">${turno}</option>
