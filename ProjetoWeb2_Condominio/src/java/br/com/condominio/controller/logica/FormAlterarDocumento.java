@@ -1,9 +1,7 @@
 package br.com.condominio.controller.logica;
 
 import br.com.condominio.entidades.Documento;
-import br.com.condominio.entidades.Usuario;
 import br.com.condominio.jdbc.DocumentoDAO;
-import br.com.condominio.jdbc.UsuarioDAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

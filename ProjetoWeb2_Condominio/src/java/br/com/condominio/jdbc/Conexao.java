@@ -15,7 +15,6 @@ public class Conexao {
 //        String url = "jdbc:mysql://localhost:3306/web2_condominio";
         String url = "jdbc:mysql://192.168.200.102:3306/web2_condominio";
         String username = "root";
-//        String password = "Cq3nep%";
         String password = "ljfcv08011994";
         Connection connection = null;
 
