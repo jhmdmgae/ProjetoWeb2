@@ -21,7 +21,7 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="condocontroller.do?acao=FormCadastroFuncionario">Adicionar funcionario</a>
+                            <a href="funccontroller.do?acao=forcadastrar">Adicionar funcionario</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Funcionários</div>
@@ -38,8 +38,8 @@
                             <c:forEach items="${funcdao.buscarTodos()}" var="func">
                                 <div class="div-table-row">
                                     <div class="div-table-col">
-                                        <a href="condocontroller.do?acao=ExcluirFuncionario&id=${func.id}">Excluir</a>
-                                        <a href="condocontroller.do?acao=FormAlterarFuncionario&id=${func.id}">Editar</a>
+                                        <a href="funccontroller.do?acao=excluir&id=${func.id}">Excluir</a>
+                                        <a href="funccontroller.do?acao=foreditar&id=${func.id}">Editar</a>
                                     </div>
                                     <div class="div-table-col">${func.foto}</div>
                                     <div class="div-table-col">${func.matricula}</div>
