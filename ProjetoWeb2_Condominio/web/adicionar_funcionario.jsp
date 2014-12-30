@@ -22,7 +22,7 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
-                        <form action='funccontroller.do?acao=CadastrarFuncionario' method='post' name='formulario'>
+                        <form action='funccontroller.do?acao=cadastrar' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de Funcionário</legend>
                                 <div class="campo">

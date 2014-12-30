@@ -1,13 +1,12 @@
 package br.com.condominio.controller;
 
-import br.com.condominio.controller.logica.usuario.LogarSistema;
 import br.com.condominio.controller.logica.Logica;
-import br.com.condominio.controller.logica.apartamento.AlterarApartamento;
-import br.com.condominio.controller.logica.apartamento.CadastrarApartamento;
-import br.com.condominio.controller.logica.apartamento.ExcluirApartamento;
-import br.com.condominio.controller.logica.apartamento.FormAlterarApartamento;
-import br.com.condominio.controller.logica.apartamento.FormCadastroApartamento;
-import br.com.condominio.controller.logica.apartamento.ListarApartamentos;
+import br.com.condominio.controller.logica.funcionario.AlterarFuncionario;
+import br.com.condominio.controller.logica.funcionario.CadastrarFuncionario;
+import br.com.condominio.controller.logica.funcionario.ExcluirFuncionario;
+import br.com.condominio.controller.logica.funcionario.FormAlterarFuncionario;
+import br.com.condominio.controller.logica.funcionario.FormCadastroFuncionario;
+import br.com.condominio.controller.logica.funcionario.ListarFuncionarios;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,12 +28,12 @@ public class FuncionarioController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        logicas.put("AlterarApartamento", new AlterarApartamento());
-        logicas.put("CadastrarApartamento", new CadastrarApartamento());
-        logicas.put("ExcluirApartamento", new ExcluirApartamento());
-        logicas.put("FormAlterarApartamento", new FormAlterarApartamento());
-        logicas.put("FormCadastroApartamento", new FormCadastroApartamento());
-        logicas.put("ListarApartamentos", new ListarApartamentos());
+        logicas.put("alterar", new AlterarFuncionario());
+        logicas.put("cadastrar", new CadastrarFuncionario());
+        logicas.put("excluir", new ExcluirFuncionario());
+        logicas.put("foreditar", new FormAlterarFuncionario());
+        logicas.put("forcadastrar", new FormCadastroFuncionario());
+        logicas.put("listar", new ListarFuncionarios());
         
         String parametro = request.getParameter("acao");
 
