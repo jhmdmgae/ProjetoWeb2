@@ -17,16 +17,16 @@
                 <a href="apartcontroller.do?acao=ListarApartamentos">Apartamentos</a>
             </li>
             <li>
-                <a href="condocontroller.do?acao=ListarFuncionarios">Funcionários</a>
+                <a href="funccontroller.do?acao=ListarFuncionarios">Funcionários</a>
             </li>
             <li>
-                <a href="condocontroller.do?acao=ListarDocumentos">Documentos </a>
+                <a href="doccontroller.do?acao=ListarDocumentos">Documentos</a>
             </li>
             <li>
-                <a href="listar_visitantes.jsp">Visitantes</a>
+                <a href="visitcontroller.do?acao=ListarVisitantes">Visitantes</a>
             </li>
             <li>
-                <a href="listar_veiculos.jsp">Veículo</a>
+                <a href="veiccontroller.do?acao=ListarVeiculos">Veículo</a>
             </li>
         </c:if>
     </ul>
