@@ -4,7 +4,7 @@ import br.com.condominio.entidades.Apartamento;
 import br.com.condominio.jdbc.ApartamentoDAO;
 import java.util.List;
 
-/**
+/** Testado
  *
  * @author João Henrique 2
  */
@@ -13,10 +13,10 @@ public class TestApartamentoDAO {
     private static void cadastrar() {
         Apartamento apartamento = new Apartamento();
 
-        apartamento.setNumero(3);
-        apartamento.setBloco(3);
-        apartamento.setProprietario("3");
-        apartamento.setLocatario("3");
+        apartamento.setNumero(4);
+        apartamento.setBloco(4);
+        apartamento.setProprietario("4");
+        apartamento.setLocatario("4");
 
         ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
         apartamentoDAO.cadastrar(apartamento);
@@ -25,12 +25,12 @@ public class TestApartamentoDAO {
     private static void alterar() {
         Apartamento apartamento = new Apartamento();
 
-        apartamento.setNumero(4);
-        apartamento.setBloco(4);
-        apartamento.setProprietario("4");
-        apartamento.setLocatario("4");
+        apartamento.setNumero(5);
+        apartamento.setBloco(5);
+        apartamento.setProprietario("5");
+        apartamento.setLocatario("5");
 
-        apartamento.setId(5);
+        apartamento.setId(6);
 
         ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
         apartamentoDAO.alterar(apartamento);
@@ -39,7 +39,7 @@ public class TestApartamentoDAO {
     private static void excluir() {
         Apartamento apartamento = new Apartamento();
 
-        apartamento.setId(5);
+        apartamento.setId(6);
 
         ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
         apartamentoDAO.excluir(apartamento);
@@ -65,10 +65,10 @@ public class TestApartamentoDAO {
 
     public static void main(String[] args) {
 
-//        cadastrar();
+        cadastrar();
 //        alterar();
 //        buscarTodos();
-        buscar(3);
+//        buscar(1);
 //        excluir();
 
     }

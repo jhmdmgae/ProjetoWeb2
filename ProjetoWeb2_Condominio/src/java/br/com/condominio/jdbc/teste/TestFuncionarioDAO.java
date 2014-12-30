@@ -5,11 +5,12 @@ import br.com.condominio.jdbc.FuncionarioDAO;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
+/** Testado
  *
  * @author João Henrique 2
  */
@@ -18,7 +19,7 @@ public class TestFuncionarioDAO {
     private static void cadastrar() {
         Funcionario funcionario = new Funcionario();
 
-        funcionario.setMatricula("1");
+        funcionario.setMatricula("3");
         funcionario.setNome("1");
         funcionario.setTelResidencial("1");
         funcionario.setTelCelular("1");
@@ -54,7 +55,7 @@ public class TestFuncionarioDAO {
     private static void alterar() {
         Funcionario funcionario = new Funcionario();
 
-        funcionario.setMatricula("1");
+        funcionario.setMatricula("4");
         funcionario.setNome("1");
         funcionario.setTelResidencial("1");
         funcionario.setTelCelular("1");
@@ -68,6 +69,10 @@ public class TestFuncionarioDAO {
         funcionario.setRg("1");
         funcionario.setCpf("1");
         funcionario.setSexo("1");
+
+        java.util.Date today = new java.util.Date();
+        funcionario.setDataContratacao(new java.sql.Date(today.getTime()));//problema conversão de datas
+
 //        funcionario.setData_contratacao(11/11/2011);
         funcionario.setCargo("1");
         funcionario.setTipoContrato("1");
@@ -75,7 +80,7 @@ public class TestFuncionarioDAO {
         funcionario.setFoto("1");
         funcionario.setObservacao("1");
 
-        funcionario.setId(5);
+        funcionario.setId(3);
 
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         funcionarioDAO.alterar(funcionario);
@@ -84,7 +89,7 @@ public class TestFuncionarioDAO {
     private static void excluir() {
         Funcionario funcionario = new Funcionario();
 
-        funcionario.setId(5);
+        funcionario.setId(3);
 
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
         funcionarioDAO.excluir(funcionario);
@@ -107,6 +112,15 @@ public class TestFuncionarioDAO {
             System.out.println("Achado " + funcionario.getNumero());
         }
     }
+    
+    private static void buscarTipoContrato() {
+        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+        List<String> TipoContrato = funcionarioDAO.buscarTipoContrato();
+
+        for (String tipo : TipoContrato) {
+            System.out.println(tipo);
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -115,6 +129,8 @@ public class TestFuncionarioDAO {
 //        buscarTodos();
 //        buscar(3);
 //        excluir();
+//        buscarTurno(1);
+//        buscarTipoContrato();
 
     }
 

@@ -4,7 +4,7 @@ import br.com.condominio.entidades.Documento;
 import br.com.condominio.jdbc.DocumentoDAO;
 import java.util.List;
 
-/**
+/** Testado
  *
  * @author João Henrique 2
  */
@@ -13,9 +13,9 @@ public class TestDocumentoDAO {
     private static void cadastrar() {
         Documento documento = new Documento();
 
-        documento.setTitulo("1");
-        documento.setDescricao("1");
-        documento.setCategoria("1");
+        documento.setTitulo("2");
+        documento.setDescricao("2");
+        documento.setCategoria("2");
         documento.setAutor("9");
         documento.setArquivo("1");
 
@@ -26,13 +26,13 @@ public class TestDocumentoDAO {
     private static void alterar() {
         Documento documento = new Documento();
 
-        documento.setTitulo("");
-        documento.setDescricao("");
-        documento.setCategoria("");
-        documento.setAutor("");
-        documento.setArquivo("");
+        documento.setTitulo("6");
+        documento.setDescricao("6");
+        documento.setCategoria("6");
+        documento.setAutor("9");
+        documento.setArquivo("1");
 
-        documento.setId(5);
+        documento.setId(6);
 
         DocumentoDAO documentoDAO = new DocumentoDAO();
         documentoDAO.alterar(documento);
@@ -41,7 +41,7 @@ public class TestDocumentoDAO {
     private static void excluir() {
         Documento documento = new Documento();
 
-        documento.setId(5);
+        documento.setId(6);
 
         DocumentoDAO documentoDAO = new DocumentoDAO();
         documentoDAO.excluir(documento);
@@ -64,14 +64,24 @@ public class TestDocumentoDAO {
             System.out.println("Achado " + documento.getAutor());
         }
     }
+    
+    private static void buscarCategoria(int id) {
+        DocumentoDAO documentoDAO = new DocumentoDAO();
+        String nome = documentoDAO.buscarCategoria(id);
+
+        if (nome != null) {
+            System.out.println("Nome da categoria: " + nome);
+        }
+    }
 
     public static void main(String[] args) {
 
-        cadastrar();
+//        cadastrar();
 //        alterar();
 //        buscarTodos();
-//        buscar(3);
+//        buscar(6);
 //        excluir();
+        buscarCategoria(6);
 
     }
 

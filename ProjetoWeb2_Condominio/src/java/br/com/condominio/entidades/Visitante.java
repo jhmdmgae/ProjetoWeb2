@@ -61,7 +61,7 @@ public class Visitante {
         return dataHora;
     }
 
-    public void setDataHhora(Date dataHora) {
+    public void setDataHora(Date dataHora) {
         this.dataHora = dataHora;
     }
 

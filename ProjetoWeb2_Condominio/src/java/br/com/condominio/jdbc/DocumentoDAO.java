@@ -45,10 +45,12 @@ public class DocumentoDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, documento.getTitulo());
-            ps.setString(1, documento.getDescricao());
-            ps.setString(1, documento.getCategoria());
-            ps.setString(1, documento.getAutor());
-            ps.setString(1, documento.getArquivo());
+            ps.setString(2, documento.getDescricao());
+            ps.setString(3, documento.getCategoria());
+            ps.setString(4, documento.getAutor());
+            ps.setString(5, documento.getArquivo());
+            
+            ps.setInt(6, documento.getId());
 
             ps.execute();
             ps.close();
@@ -105,7 +107,7 @@ public class DocumentoDAO {
     }
 
     public Documento buscar(Integer idDocumento) {
-        String sql = "SELECT * FROM web2_condominio.documento WHERE id=?";
+        String sql = "SELECT * FROM web2_condominio.documento WHERE id_documento=?";
         Documento documento = null;
 
         try {
@@ -131,6 +133,110 @@ public class DocumentoDAO {
             Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return documento;
+    }
+    
+    public List<String> buscarCategoria() {
+
+        String sql = "SELECT nome FROM web2_condominio.categoria_documentos";
+
+        List<String> nomes = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            nomes = new ArrayList();
+
+            while (resultSet.next()) {
+
+                nomes.add(resultSet.getString("nome"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nomes;
+    }
+    
+    public String buscarCategoria(int chave) {
+        
+        String sql = "SELECT nome FROM web2_condominio.categoria_documentos WHERE id_categoria_documentos=?";
+        
+        String nome = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                nome = resultSet.getString("nome"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nome;
+    }
+    
+    public List<String> buscarAutor() {
+
+        String sql = "SELECT nome FROM web2_condominio.usuario";
+
+        List<String> nomes = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            nomes = new ArrayList();
+
+            while (resultSet.next()) {
+
+                nomes.add(resultSet.getString("nome"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nomes;
+    }
+    
+    public String buscarAutor(int chave) {
+        
+        String sql = "SELECT nome FROM web2_condominio.usuario WHERE id_usuario=?";
+        
+        String nome = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                nome = resultSet.getString("nome"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nome;
     }
 
     public void salvar(Documento documento) {

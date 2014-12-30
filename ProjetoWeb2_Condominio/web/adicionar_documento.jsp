@@ -20,6 +20,7 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
+                        <jsp:useBean id="doc" class="br.com.condominio.jdbc.DocumentoDAO"/>
                         <form action='' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de documento</legend>
@@ -33,14 +34,21 @@
                                 </div>
                                 <div class="campo">
                                     <label for='categoria'>Categoria:</label>
-                                    <select id="tipo" name="categoria" style="width:273px" >
+                                    <select id="categoria" name="categoria" style="width:273px" >
                                         <option value="">Selecione</option>
-                                        <option value="1">1</option>
+                                        <c:forEach items="${doc.buscarCategoria()}" var="doc">
+                                            <option value="1">${doc}</option>
+                                        </c:forEach>
                                     </select>
                                 </div>
                                 <div class="campo">
                                     <label for='autor'>Autor:</label>
-                                    <input type='text' id='autor' name='autor' value='' size="41"/>
+                                    <select id="autor" name="autor" style="width:273px" >
+                                        <option value="">Selecione</option>
+                                        <c:forEach items="${doc.buscarAutor()}" var="autor">
+                                            <option value="1">${autor}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
                                 <div class="campo">
                                     <label for='arquivo'>Arquivo:</label>
