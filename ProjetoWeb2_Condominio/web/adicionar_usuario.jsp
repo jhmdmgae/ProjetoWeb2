@@ -18,7 +18,7 @@
             <c:import url="cabecalho.jsp"/>
             <c:import url="menu.jsp"/>
             <div class="conteudo">
-                <form method="POST" action="usucontroller.do?acao=CadastrarUsuario">
+                <form method="POST" action="usucontroller.do?acao=cadastrar">
                     <div class="campo">
                         <label for='login'>Login:</label>
                         <input type="email" id="login" name="login" value="" />

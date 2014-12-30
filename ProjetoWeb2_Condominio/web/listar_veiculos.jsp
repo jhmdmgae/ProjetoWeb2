@@ -34,12 +34,12 @@
                                 <div class="div-table-col">Placa</div>
                                 <div class="div-table-col">Apartamento</div>
                             </div>
-                            <jsp:useBean id="veicdao" class="br.com.condominio.jdbc.VeiculoDAO"/>
+                            <jsp:useBean id="veicdao" class="br.com.condominio.jdbc.dao.VeiculoDAO"/>
                             <c:forEach items="${veicdao.buscarTodos()}" var="veic">
                                 <div class="div-table-row">
                                     <div class="div-table-col">
-                                        <a href="usucontroller.do?acao=ExcluirVeiculo&id=${veic.id}">Excluir</a>
-                                        <a href="usucontroller.do?acao=FormAlterarVeiculo&id=${veic.id}">Editar</a>
+                                        <a href="condocontroller.do?acao=ExcluirVeiculo&id=${veic.id}">Excluir</a>
+                                        <a href="condocontroller.do?acao=FormAlterarVeiculo&id=${veic.id}">Editar</a>
                                     </div>
                                     <div class="div-table-col">${veic.tipo}</div>
                                     <div class="div-table-col">${veic.marca}</div>

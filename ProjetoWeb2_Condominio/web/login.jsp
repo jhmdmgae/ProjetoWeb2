@@ -19,7 +19,7 @@
             <c:import url="cabecalho.jsp"/>
             <c:import url="menu.jsp"/>
             <div class="conteudo">
-                <form action='usucontroller.do?acao=LogarSistema' method='post' name='formulario'>
+                <form action='usucontroller.do?acao=entrar' method='post' name='formulario'>
                     <div>
                         <div class="campo">
                             <label for='login'>Login:</label>
@@ -30,10 +30,10 @@
                             <input type='password' id='senha' name='senha' value='' />
                         </div>
                         <div class="campo">
-                            <a href="usucontroller.do?acao=FormPedidoSenha">Esqueceu a senha ?</a>
+                            <a href="usucontroller.do?acao=forpedirsenha">Esqueceu a senha ?</a>
                         </div>
                         <div class="campo">
-                            <a href="usucontroller.do?acao=FormCadastroUsuario">Não é cadastrado ?</a>
+                            <a href="usucontroller.do?acao=forcadastrar">Não é cadastrado ?</a>
                         </div>
                         <div class="campo">
                             <input type='submit' value="Entrar"/>

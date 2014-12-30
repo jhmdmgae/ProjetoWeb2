@@ -12,7 +12,7 @@
         <title>Recuperar Login</title>
     </head>
     <body>
-        <form name="formulario_email" method="post" action="usucontroller.do?acao=EnviarEmailSenha">  
+        <form name="formulario_email" method="post" action="usucontroller.do?acao=email">  
             <h1 align="center">Recuperar Login</h1>
             <h4 align="center">
                 Digite no campo abaixo o e-mail/login que você cadastrou anteriormente  

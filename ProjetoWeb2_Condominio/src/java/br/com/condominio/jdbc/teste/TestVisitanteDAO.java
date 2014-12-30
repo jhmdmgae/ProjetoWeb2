@@ -1,7 +1,7 @@
 package br.com.condominio.jdbc.teste;
 
 import br.com.condominio.entidades.Visitante;
-import br.com.condominio.jdbc.VisitanteDAO;
+import br.com.condominio.jdbc.dao.VisitanteDAO;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.List;

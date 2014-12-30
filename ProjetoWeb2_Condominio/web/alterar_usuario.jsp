@@ -23,7 +23,7 @@
                     <div class="conteudo">
                         <!--***************************** Alterar passagem de senha e verificaçao null-->
                         <div>
-                            <form method="POST" action="usucontroller.do?acao=AlterarUsuario&id=${usuario.id}">
+                            <form method="POST" action="usucontroller.do?acao=editar&id=${usuario.id}">
                                 <fieldset>
                                     <legend>Cadastro de Funcionário</legend>
                                     <div class="campo">
