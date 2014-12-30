@@ -28,12 +28,12 @@ public class VeiculoController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        logicas.put("AlterarVeiculo", new AlterarVeiculo());
-        logicas.put("CadastrarVeiculo", new CadastrarVeiculo());
-        logicas.put("ExcluirVeiculo", new ExcluirVeiculo());
-        logicas.put("FormAlterarVeiculo", new FormAlterarVeiculo());
-        logicas.put("FormCadastroVeiculo", new FormCadastroVeiculo());
-        logicas.put("ListarVeiculos", new ListarVeiculos());
+        logicas.put("alterar", new AlterarVeiculo());
+        logicas.put("cadastrar", new CadastrarVeiculo());
+        logicas.put("excluir", new ExcluirVeiculo());
+        logicas.put("foreditar", new FormAlterarVeiculo());
+        logicas.put("forcadastrar", new FormCadastroVeiculo());
+        logicas.put("listar", new ListarVeiculos());
 
         String parametro = request.getParameter("acao");
 

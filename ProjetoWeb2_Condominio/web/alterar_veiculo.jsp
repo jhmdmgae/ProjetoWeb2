@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:choose>
     <c:when test="${sessionScope.usuAutenticado != null}">
+        <c:set var="veiculo" value="${requestScope.veiculoAlterar}" />
         <!DOCTYPE html>
         <html>
             <head>
@@ -21,7 +22,7 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <jsp:useBean id="veic" class="br.com.condominio.jdbc.dao.VeiculoDAO"/>
-                        <form action='usucontroller.do?acao=cadastrar' method='post' name='formulario'>
+                        <form action='veiccontroller.do?acao=alterar&id=${veiculo.id}' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de veículo</legend>
                                 <div class="campo">
@@ -35,11 +36,11 @@
                                 </div>
                                 <div class="campo">
                                     <label for='marca'>Marca:</label>
-                                    <input type='text' id='marca' name='marca' value=''/>
+                                    <input type='text' id='marca' name='marca' value='${veiculo.marca}'/>
                                 </div>
                                 <div class="campo">
                                     <label for='modelo'>Modelo:</label>
-                                    <input type='text' id='modelo' name='modelo' value=''/>
+                                    <input type='text' id='modelo' name='modelo' value='${veiculo.modelo}'/>
                                 </div>
                                 <div class="campo">
                                     <label for='cor'>Cor:</label>
@@ -52,11 +53,11 @@
                                 </div>
                                 <div class="campo">
                                     <label for='placa'>Placa:</label>
-                                    <input type='text' id='placa' name='placa' value=''/>
+                                    <input type='text' id='placa' name='placa' value='${veiculo.placa}'/>
                                 </div>
                                 <div class="campo">
                                     <label for='apartamento'>Apartamento:</label>
-                                    <input type='text' id='apartamento' name='apartamento' value=''/>
+                                    <input type='text' id='apartamento' name='apartamento' value='${veiculo.apartamento}'/>
                                 </div>
                                 <div class="campo">
                                     <input type='submit' value="Enviar"/>

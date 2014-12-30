@@ -21,16 +21,16 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
-                        <form action='condocontroller.do?acao=AlterarDocumento&id=${documento.id}' method='post' name='formulario'>
+                        <form action='doccontroller.do?acao=alterar&id=${documento.id}' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de documento</legend>
                                 <div class="campo">
                                     <label for='numero'>Título:</label>
-                                    <input type='text' id='titulo' name='titulo' value='' size="41"/>
+                                    <input type='text' id='titulo' name='titulo' value='${documento.titulo}' size="41"/>
                                 </div>
                                 <div class="campo">
                                     <label for='descricao'>Descrição:</label>
-                                    <textarea id="descricao" name="descricao" Style="width:267px;height:100px;" ></textarea>
+                                    <textarea id="descricao" name="descricao" Style="width:267px;height:100px;" >${documento.descricao}</textarea>
                                 </div>
                                 <div class="campo">
                                     <label for='categoria'>Categoria:</label>
@@ -41,11 +41,11 @@
                                 </div>
                                 <div class="campo">
                                     <label for='autor'>Autor:</label>
-                                    <input type='text' id='autor' name='autor' value='' size="41"/>
+                                    <input type='text' id='autor' name='autor' value='${documento.autor}' size="41"/>
                                 </div>
                                 <div class="campo">
                                     <label for='arquivo'>Arquivo:</label>
-                                    <input type='file' id='arquivo' name='arquivo' value='' size="39"/>
+                                    <input type='file' id='arquivo' name='arquivo' value='${documento.arquivo}' size="39"/>
                                 </div>
                                 <div class="campo">
                                     <input type='submit' value="Enviar"/>
