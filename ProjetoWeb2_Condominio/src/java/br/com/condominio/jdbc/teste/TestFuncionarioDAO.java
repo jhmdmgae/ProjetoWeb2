@@ -20,8 +20,8 @@ public class TestFuncionarioDAO {
         Funcionario funcionario = new Funcionario();
 
         funcionario.setMatricula("3");
-        funcionario.setNome("1");
-        funcionario.setTelResidencial("1");
+        funcionario.setNome("3");
+        funcionario.setTelResidencial("4");
         funcionario.setTelCelular("1");
         funcionario.setCep("1");
         funcionario.setEndereco("1");
@@ -34,7 +34,7 @@ public class TestFuncionarioDAO {
         funcionario.setCpf("1");
         funcionario.setSexo("1");
 
-        String data = "08/01/1994";
+        String data = "08/01/1995";
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");  
         try {
             funcionario.setDataContratacao(new java.sql.Date(format.parse(data).getTime()));//problema conversão de datas
