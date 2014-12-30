@@ -21,11 +21,12 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="adicionar_visitante.jsp">Adicionar visitante</a>
+                            <a href="condocontroller.do?acao=FormCadastroVisitante">Adicionar visitante</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Visitantes</div>
                             <div class="div-table-row">
+                                <div class="div-table-col">Ação</div>
                                 <div class="div-table-col">Nome</div>
                                 <div class="div-table-col">Tipo de Visita</div>
                                 <div class="div-table-col">Apartamento</div>
@@ -34,6 +35,10 @@
                             <jsp:useBean id="visidao" class="br.com.condominio.jdbc.VisitanteDAO"/>
                             <c:forEach items="${visidao.buscarTodos()}" var="visi">
                                 <div class="div-table-row">
+                                    <div class="div-table-col">
+                                        <a href="usucontroller.do?acao=ExcluirVisitante&id=${visi.id}">Excluir</a>
+                                        <a href="usucontroller.do?acao=FormAlterarVisitante&id=${visi.id}">Editar</a>
+                                    </div>
                                     <div class="div-table-col">${visi.nome}</div>
                                     <div class="div-table-col">${visi.tipo_visita}</div>
                                     <div class="div-table-col">${visi.apartamento}</div>

@@ -21,7 +21,7 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="adicionar_apartamento.jsp">Adicionar Apartamento</a>
+                            <a href="usucontroller.do?acao=FormCadastroApartamento">Adicionar Apartamento</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Apartamentos</div>

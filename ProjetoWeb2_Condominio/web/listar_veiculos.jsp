@@ -11,7 +11,7 @@
         <html>
             <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <title>Apartamentos</title>
+                <title>Veículos</title>
                 <link type="text/css" rel="stylesheet" href="css/estilo.css" />
             </head>
             <body>
@@ -21,11 +21,12 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="adicionar_apartamento.jsp">Adicionar Veículo</a>
+                            <a href="condocontroller.do?acao=FormCadastroVeiculo">Adicionar Veículo</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Veículos</div>
                             <div class="div-table-row">
+                                <div class="div-table-col">Ação</div>
                                 <div class="div-table-col">Tipo</div>
                                 <div class="div-table-col">Marca</div>
                                 <div class="div-table-col">Modelo</div>
@@ -36,6 +37,10 @@
                             <jsp:useBean id="veicdao" class="br.com.condominio.jdbc.VeiculoDAO"/>
                             <c:forEach items="${veicdao.buscarTodos()}" var="veic">
                                 <div class="div-table-row">
+                                    <div class="div-table-col">
+                                        <a href="usucontroller.do?acao=ExcluirVeiculo&id=${veic.id}">Excluir</a>
+                                        <a href="usucontroller.do?acao=FormAlterarVeiculo&id=${veic.id}">Editar</a>
+                                    </div>
                                     <div class="div-table-col">${veic.tipo}</div>
                                     <div class="div-table-col">${veic.marca}</div>
                                     <div class="div-table-col">${veic.modelo}</div>
