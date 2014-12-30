@@ -14,7 +14,7 @@
             <c:choose>
                 <c:when test="${sessionScope.usuAutenticado != null}">
                 <p>Bem vindo, <c:out value="${sessionScope.usuAutenticado.nome}"/></p>
-                <a href="usucontroller.do?acao=sair">Sair</a>
+                <a href="usucontroller.do?acao=LogoutSistema">Sair</a>
             </c:when>            
             <c:otherwise>
                 <p>Não logado, <a href="login.jsp">clique para entrar</a></p>

@@ -34,7 +34,7 @@
                                 <div class="div-table-col">Cargo</div>
                                 <div class="div-table-col">Turno</div>
                             </div>
-                            <jsp:useBean id="funcdao" class="br.com.condominio.jdbc.dao.FuncionarioDAO"/>
+                            <jsp:useBean id="funcdao" class="br.com.condominio.jdbc.FuncionarioDAO"/>
                             <c:forEach items="${funcdao.buscarTodos()}" var="func">
                                 <div class="div-table-row">
                                     <div class="div-table-col">

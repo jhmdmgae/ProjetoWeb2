@@ -21,7 +21,7 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <c:import url="siderbar.jsp"/>
-                        <form action='apartcontroller.do?acao=AlterarApartamento&id=${apartamento.id}' method='post' name='formulario'>
+                        <form action='condocontroller.do?acao=AlterarApartamento&id=${apartamento.id}' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Alteração de apartamento</legend>
                                 <div class="campo">

@@ -32,12 +32,12 @@
                                 <div class="div-table-col">Apartamento</div>
                                 <div class="div-table-col">Data e Hora da Visita</div>
                             </div>
-                            <jsp:useBean id="visidao" class="br.com.condominio.jdbc.dao.VisitanteDAO"/>
+                            <jsp:useBean id="visidao" class="br.com.condominio.jdbc.VisitanteDAO"/>
                             <c:forEach items="${visidao.buscarTodos()}" var="visi">
                                 <div class="div-table-row">
                                     <div class="div-table-col">
-                                        <a href="condocontroller.do?acao=ExcluirVisitante&id=${visi.id}">Excluir</a>
-                                        <a href="condocontroller.do?acao=FormAlterarVisitante&id=${visi.id}">Editar</a>
+                                        <a href="usucontroller.do?acao=ExcluirVisitante&id=${visi.id}">Excluir</a>
+                                        <a href="usucontroller.do?acao=FormAlterarVisitante&id=${visi.id}">Editar</a>
                                     </div>
                                     <div class="div-table-col">${visi.nome}</div>
                                     <div class="div-table-col">${visi.tipo_visita}</div>
