@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author LOURIVALDO
  */
-public class ListarUsuarios implements Logica {
+public class ListarDocumentos implements Logica {
 
     @Override
     public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        return "listar_usuarios.jsp";
+        return "listar_documentos.jsp";
     }
 
 }

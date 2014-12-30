@@ -16,12 +16,12 @@ public class TestVisitanteDAO {
         Visitante visitante = new Visitante();
 
         visitante.setNome("2");
-        visitante.setTipo_visita(1);
+        visitante.setTipoVisita(1);
         visitante.setApartamento(1);
-        visitante.setMotivo_visita("2");
+        visitante.setMotivoVisita("2");
         
         java.util.Date today = new java.util.Date();
-        visitante.setData_hora(new java.sql.Date(today.getTime()));//problema conversão de datas
+        visitante.setDataHora(new java.sql.Date(today.getTime()));//problema conversão de datas
         
         visitante.setObservacao("2");
 
@@ -33,12 +33,12 @@ public class TestVisitanteDAO {
         Visitante visitante = new Visitante();
 
         visitante.setNome("3");
-        visitante.setTipo_visita(1);
+        visitante.setTipoVisita(1);
         visitante.setApartamento(1);
-        visitante.setMotivo_visita("3");
+        visitante.setMotivoVisita("3");
         
         java.util.Date today = new java.util.Date();
-        visitante.setData_hora(new java.sql.Date(today.getTime()));//problema conversão de datas
+        visitante.setDataHora(new java.sql.Date(today.getTime()));//problema conversão de datas
         
         visitante.setObservacao("3");
 

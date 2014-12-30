@@ -65,11 +65,11 @@ public class TestApartamentoDAO {
 
     public static void main(String[] args) {
 
-//        cadastrar();
+        cadastrar();
 //        alterar();
 //        buscarTodos();
 //        buscar(1);
-        excluir();
+//        excluir();
 
     }
 

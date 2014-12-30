@@ -3,6 +3,7 @@
     Created on : 09/11/2014, 15:35:00
     Author     : João Henrique 2
 --%>
+<!--#############################333333Upload de fotos-->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <c:choose>

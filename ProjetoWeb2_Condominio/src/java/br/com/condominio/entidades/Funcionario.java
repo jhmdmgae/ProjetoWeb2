@@ -8,12 +8,12 @@ import java.util.Objects;
  * @author João Henrique 2
  */
 public class Funcionario {
-    
-    private int id;    
-    private String matricula;    
+
+    private int id;
+    private String matricula;
     private String nome;
-    private String tel_residencial;
-    private String tel_celular;
+    private String telResidencial;
+    private String telCelular;
     private String cep;
     private String endereco;
     private int numero;
@@ -24,9 +24,9 @@ public class Funcionario {
     private String rg;
     private String cpf;
     private String sexo;
-    private Date data_contratacao;
+    private Date dataContratacao;
     private String cargo;
-    private String tipo_contrato;
+    private String tipoContrato;
     private String turno;
     private String foto;
     private String observacao;
@@ -38,7 +38,7 @@ public class Funcionario {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getMatricula() {
         return matricula;
     }
@@ -55,20 +55,20 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public String getTel_residencial() {
-        return tel_residencial;
+    public String getTelResidencial() {
+        return telResidencial;
     }
 
-    public void setTel_residencial(String tel_residencial) {
-        this.tel_residencial = tel_residencial;
+    public void setTelResidencial(String telResidencial) {
+        this.telResidencial = telResidencial;
     }
 
-    public String getTel_celular() {
-        return tel_celular;
+    public String getTelCelular() {
+        return telCelular;
     }
 
-    public void setTel_celular(String tel_celular) {
-        this.tel_celular = tel_celular;
+    public void setTelCelular(String telCelular) {
+        this.telCelular = telCelular;
     }
 
     public String getCep() {
@@ -151,12 +151,12 @@ public class Funcionario {
         this.sexo = sexo;
     }
 
-    public Date getData_contratacao() {
-        return data_contratacao;
+    public Date getDataContratacao() {
+        return dataContratacao;
     }
 
-    public void setData_contratacao(Date data_contratacao) {
-        this.data_contratacao = data_contratacao;
+    public void setDataContratacao(Date dataContratacao) {
+        this.dataContratacao = dataContratacao;
     }
 
     public String getCargo() {
@@ -167,12 +167,12 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
-    public String getTipo_contrato() {
-        return tipo_contrato;
+    public String getTipoContrato() {
+        return tipoContrato;
     }
 
-    public void setTipo_contrato(String tipo_contrato) {
-        this.tipo_contrato = tipo_contrato;
+    public void setTipoContrato(String tipoContrato) {
+        this.tipoContrato = tipoContrato;
     }
 
     public String getTurno() {
@@ -205,8 +205,8 @@ public class Funcionario {
         hash = 79 * hash + Objects.hashCode(this.id);
         hash = 79 * hash + Objects.hashCode(this.matricula);
         hash = 79 * hash + Objects.hashCode(this.nome);
-        hash = 79 * hash + Objects.hashCode(this.tel_residencial);
-        hash = 79 * hash + Objects.hashCode(this.tel_celular);
+        hash = 79 * hash + Objects.hashCode(this.telResidencial);
+        hash = 79 * hash + Objects.hashCode(this.telCelular);
         hash = 79 * hash + Objects.hashCode(this.cep);
         hash = 79 * hash + Objects.hashCode(this.endereco);
         hash = 79 * hash + this.numero;
@@ -217,9 +217,9 @@ public class Funcionario {
         hash = 79 * hash + Objects.hashCode(this.rg);
         hash = 79 * hash + Objects.hashCode(this.cpf);
         hash = 79 * hash + Objects.hashCode(this.sexo);
-        hash = 79 * hash + Objects.hashCode(this.data_contratacao);
+        hash = 79 * hash + Objects.hashCode(this.dataContratacao);
         hash = 79 * hash + Objects.hashCode(this.cargo);
-        hash = 79 * hash + Objects.hashCode(this.tipo_contrato);
+        hash = 79 * hash + Objects.hashCode(this.tipoContrato);
         hash = 79 * hash + Objects.hashCode(this.turno);
         hash = 79 * hash + Objects.hashCode(this.foto);
         hash = 79 * hash + Objects.hashCode(this.observacao);
@@ -244,10 +244,10 @@ public class Funcionario {
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
-        if (!Objects.equals(this.tel_residencial, other.tel_residencial)) {
+        if (!Objects.equals(this.telResidencial, other.telResidencial)) {
             return false;
         }
-        if (!Objects.equals(this.tel_celular, other.tel_celular)) {
+        if (!Objects.equals(this.telCelular, other.telCelular)) {
             return false;
         }
         if (!Objects.equals(this.cep, other.cep)) {
@@ -280,13 +280,13 @@ public class Funcionario {
         if (this.sexo != other.sexo) {
             return false;
         }
-        if (!Objects.equals(this.data_contratacao, other.data_contratacao)) {
+        if (!Objects.equals(this.dataContratacao, other.dataContratacao)) {
             return false;
         }
         if (!Objects.equals(this.cargo, other.cargo)) {
             return false;
         }
-        if (!Objects.equals(this.tipo_contrato, other.tipo_contrato)) {
+        if (!Objects.equals(this.tipoContrato, other.tipoContrato)) {
             return false;
         }
         if (!Objects.equals(this.turno, other.turno)) {
@@ -305,5 +305,5 @@ public class Funcionario {
     public String toString() {
         return "Model.Funcionario[ id=" + id + " ]";
     }
-    
+
 }

@@ -137,17 +137,4 @@ public class ApartamentoDAO {
             cadastrar(apartamento);
         }
     }
-    
-    public static void main(String[] args) {
-        ApartamentoDAO apartamentoDAO = new ApartamentoDAO();
-
-        Apartamento apartamento = new Apartamento();
-        apartamento.setNumero(123);
-        apartamento.setBloco(123);
-        apartamento.setProprietario("123");
-        apartamento.setLocatario("123");
-
-        apartamentoDAO.cadastrar(apartamento);
-    }
-    
 }

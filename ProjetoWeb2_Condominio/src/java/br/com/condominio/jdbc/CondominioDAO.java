@@ -33,8 +33,8 @@ public class CondominioDAO {
             ps.setString(7, condominio.getBairro());
             ps.setString(8, condominio.getUf());
             ps.setString(9, condominio.getCidade());
-            ps.setInt(10, condominio.getQuant_blocos());
-            ps.setInt(11, condominio.getQuant_apt());//mudar no banco de dados para int
+            ps.setInt(10, condominio.getQuantBlocos());
+            ps.setInt(11, condominio.getQuantApt());//mudar no banco de dados para int
             ps.setString(12, condominio.getFoto());
             ps.setString(13, condominio.getTelefone());
             ps.setString(14, condominio.getEmail());
@@ -62,8 +62,8 @@ public class CondominioDAO {
             ps.setString(7, condominio.getBairro());
             ps.setString(8, condominio.getUf());
             ps.setString(9, condominio.getCidade());
-            ps.setInt(10, condominio.getQuant_blocos());
-            ps.setInt(11, condominio.getQuant_apt());
+            ps.setInt(10, condominio.getQuantBlocos());
+            ps.setInt(11, condominio.getQuantApt());
             ps.setString(12, condominio.getFoto());
             ps.setString(13, condominio.getTelefone());
             ps.setString(14, condominio.getEmail());
@@ -116,8 +116,8 @@ public class CondominioDAO {
                 condominio.setBairro(resultSet.getString("bairro"));
                 condominio.setUf(resultSet.getString("uf"));
                 condominio.setCidade(resultSet.getString("cidade"));
-                condominio.setQuant_blocos(resultSet.getInt("quant_blocos"));
-                condominio.setQuant_apt(resultSet.getInt("total_apartamentos"));
+                condominio.setQuantBlocos(resultSet.getInt("quant_blocos"));
+                condominio.setQuantApt(resultSet.getInt("total_apartamentos"));
                 condominio.setFoto(resultSet.getString("foto"));
                 condominio.setTelefone(resultSet.getString("telefone"));
                 condominio.setEmail(resultSet.getString("email"));
@@ -155,8 +155,8 @@ public class CondominioDAO {
                 condominio.setBairro(resultSet.getString("bairro"));
                 condominio.setUf(resultSet.getString("uf"));
                 condominio.setCidade(resultSet.getString("cidade"));
-                condominio.setQuant_blocos(resultSet.getInt("quant_blocos"));
-                condominio.setQuant_apt(resultSet.getInt("total_apartamentos"));
+                condominio.setQuantBlocos(resultSet.getInt("quant_blocos"));
+                condominio.setQuantApt(resultSet.getInt("total_apartamentos"));
                 condominio.setFoto(resultSet.getString("foto"));
                 condominio.setTelefone(resultSet.getString("telefone"));
                 condominio.setEmail(resultSet.getString("email"));

@@ -14,19 +14,19 @@
                 <a href="usucontroller.do?acao=ListarUsuarios">Usuários</a>
             </li>
             <li>
-                <a href="apartamentos.jsp">Apartamentos</a>
+                <a href="condocontroller.do?acao=ListarApartamentos">Apartamentos</a>
             </li>
             <li>
-                <a href="funcionarios.jsp">Funcionários</a>
+                <a href="condocontroller.do?acao=ListarFuncionarios">Funcionários</a>
             </li>
             <li>
-                <a href="documentos.jsp">Documentos </a>
+                <a href="condocontroller.do?acao=ListarDocumentos">Documentos </a>
             </li>
             <li>
-                <a href="visitantes.jsp">Visitantes</a>
+                <a href="listar_visitantes.jsp">Visitantes</a>
             </li>
             <li>
-                <a href="veiculos.jsp">Veículo</a>
+                <a href="listar_veiculos.jsp">Veículo</a>
             </li>
         </c:if>
     </ul>

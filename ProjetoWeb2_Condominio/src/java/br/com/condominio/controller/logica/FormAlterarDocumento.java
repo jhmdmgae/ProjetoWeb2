@@ -1,6 +1,8 @@
 package br.com.condominio.controller.logica;
 
+import br.com.condominio.entidades.Documento;
 import br.com.condominio.entidades.Usuario;
+import br.com.condominio.jdbc.DocumentoDAO;
 import br.com.condominio.jdbc.UsuarioDAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,21 +11,21 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author LOURIVALDO
  */
-public class FormAlterarUsuario implements Logica {
+public class FormAlterarDocumento implements Logica {
 
     @Override
     public String executa(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        DocumentoDAO documentoDAO = new DocumentoDAO();
 
         String id = request.getParameter("id");
-        Usuario usuario = usuarioDAO.buscar(Integer.parseInt(id));
+        Documento documento = documentoDAO.buscar(Integer.parseInt(id));
 
-        if (usuario != null) {
-            request.setAttribute("usuarioAlterar", usuario);
-            return "alterar_usuario.jsp";
+        if (documento != null) {
+            request.setAttribute("documentoAlterar", documento);
+            return "alterar_documento.jsp";
         }
 
-        return "listar_usuarios.jsp";
+        return "listar_documentos.jsp";
 
     }
 

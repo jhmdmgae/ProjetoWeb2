@@ -26,6 +26,7 @@
                         <div class="div-table">
                             <div class="div-table-caption">Apartamentos</div>
                             <div class="div-table-row">
+                                <div class="div-table-col">Ação</div>
                                 <div class="div-table-col">Número</div>
                                 <div class="div-table-col">Bloco</div>
                                 <div class="div-table-col">Proprietário</div>
@@ -34,6 +35,10 @@
                             <jsp:useBean id="aparts" class="br.com.condominio.jdbc.ApartamentoDAO"/>
                             <c:forEach items="${aparts.buscarTodos()}" var="apt">
                                 <div class="div-table-row">
+                                    <div class="div-table-col">
+                                        <a href="condocontroller.do?acao=ExcluirApartamento&id=${apt.id}">Excluir</a>
+                                        <a href="condocontroller.do?acao=FormAlterarApartamento&id=${apt.id}">Editar</a>
+                                    </div>
                                     <div class="div-table-col">${apt.numero}</div>
                                     <div class="div-table-col">${apt.bloco}</div>
                                     <div class="div-table-col">${apt.proprietario}</div>

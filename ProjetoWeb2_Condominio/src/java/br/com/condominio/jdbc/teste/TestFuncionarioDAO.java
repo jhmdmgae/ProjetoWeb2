@@ -3,7 +3,11 @@ package br.com.condominio.jdbc.teste;
 import br.com.condominio.entidades.Funcionario;
 import br.com.condominio.jdbc.FuncionarioDAO;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /** Testado
  *
@@ -16,8 +20,8 @@ public class TestFuncionarioDAO {
 
         funcionario.setMatricula("3");
         funcionario.setNome("1");
-        funcionario.setTel_residencial("1");
-        funcionario.setTel_celular("1");
+        funcionario.setTelResidencial("1");
+        funcionario.setTelCelular("1");
         funcionario.setCep("1");
         funcionario.setEndereco("1");
         funcionario.setNumero(1);
@@ -29,12 +33,16 @@ public class TestFuncionarioDAO {
         funcionario.setCpf("1");
         funcionario.setSexo("1");
 
-        java.util.Date today = new java.util.Date();
-        funcionario.setData_contratacao(new java.sql.Date(today.getTime()));//problema conversão de datas
+        String data = "08/01/1994";
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");  
+        try {
+            funcionario.setDataContratacao(new java.sql.Date(format.parse(data).getTime()));//problema conversão de datas
+        } catch (ParseException ex) {
+        }
 
 //        funcionario.setData_contratacao(11/11/2011);
         funcionario.setCargo("1");
-        funcionario.setTipo_contrato("1");
+        funcionario.setTipoContrato("1");
         funcionario.setTurno("1");
         funcionario.setFoto("1");
         funcionario.setObservacao("1");
@@ -48,8 +56,8 @@ public class TestFuncionarioDAO {
 
         funcionario.setMatricula("4");
         funcionario.setNome("1");
-        funcionario.setTel_residencial("1");
-        funcionario.setTel_celular("1");
+        funcionario.setTelResidencial("1");
+        funcionario.setTelCelular("1");
         funcionario.setCep("1");
         funcionario.setEndereco("1");
         funcionario.setNumero(1);
@@ -62,11 +70,11 @@ public class TestFuncionarioDAO {
         funcionario.setSexo("1");
 
         java.util.Date today = new java.util.Date();
-        funcionario.setData_contratacao(new java.sql.Date(today.getTime()));//problema conversão de datas
+        funcionario.setDataContratacao(new java.sql.Date(today.getTime()));//problema conversão de datas
 
 //        funcionario.setData_contratacao(11/11/2011);
         funcionario.setCargo("1");
-        funcionario.setTipo_contrato("1");
+        funcionario.setTipoContrato("1");
         funcionario.setTurno("1");
         funcionario.setFoto("1");
         funcionario.setObservacao("1");

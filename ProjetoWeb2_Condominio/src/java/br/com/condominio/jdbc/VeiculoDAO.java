@@ -25,7 +25,7 @@ public class VeiculoDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, veiculo.getApartamento());
-            ps.setInt(2, veiculo.getTipo_veiculo());
+            ps.setInt(2, veiculo.getTipoVeiculo());
             ps.setString(3, veiculo.getModelo());
             ps.setString(4, veiculo.getMarca());
             ps.setInt(5, veiculo.getCor());
@@ -46,7 +46,7 @@ public class VeiculoDAO {
             PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setInt(1, veiculo.getApartamento());
-            ps.setInt(2, veiculo.getTipo_veiculo());
+            ps.setInt(2, veiculo.getTipoVeiculo());
             ps.setString(3, veiculo.getModelo());
             ps.setString(4, veiculo.getMarca());
             ps.setInt(5, veiculo.getCor());
@@ -92,7 +92,7 @@ public class VeiculoDAO {
 
                 veiculo.setId(resultSet.getInt("id_veiculo"));
                 veiculo.setApartamento(resultSet.getInt("veiculo_apartamento"));
-                veiculo.setTipo_veiculo(resultSet.getInt("tipo_veiculo"));
+                veiculo.setTipoVeiculo(resultSet.getInt("tipo_veiculo"));
                 veiculo.setModelo(resultSet.getString("modelo"));
                 veiculo.setMarca(resultSet.getString("marca"));
                 veiculo.setCor(resultSet.getInt("cor"));
@@ -123,7 +123,7 @@ public class VeiculoDAO {
 
                 veiculo.setId(resultSet.getInt("id_veiculo"));
                 veiculo.setApartamento(resultSet.getInt("veiculo_apartamento"));
-                veiculo.setTipo_veiculo(resultSet.getInt("tipo_veiculo"));
+                veiculo.setTipoVeiculo(resultSet.getInt("tipo_veiculo"));
                 veiculo.setModelo(resultSet.getString("modelo"));
                 veiculo.setMarca(resultSet.getString("marca"));
                 veiculo.setCor(resultSet.getInt("cor"));

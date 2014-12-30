@@ -22,8 +22,8 @@ public class TestCondominioDAO {
         condominio.setBairro("1");
         condominio.setUf("1");
         condominio.setCidade("1");
-        condominio.setQuant_blocos(1);
-        condominio.setQuant_apt(1);
+        condominio.setQuantBlocos(1);
+        condominio.setQuantApt(1);
         condominio.setFoto("1");
         condominio.setTelefone("1");
         condominio.setEmail("1");
@@ -44,8 +44,8 @@ public class TestCondominioDAO {
         condominio.setBairro("2");
         condominio.setUf("2");
         condominio.setCidade("2");
-        condominio.setQuant_blocos(2);
-        condominio.setQuant_apt(2);
+        condominio.setQuantBlocos(2);
+        condominio.setQuantApt(2);
         condominio.setFoto("2");
         condominio.setTelefone("2");
         condominio.setEmail("2");

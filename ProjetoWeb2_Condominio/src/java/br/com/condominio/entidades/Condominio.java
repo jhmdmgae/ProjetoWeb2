@@ -7,10 +7,10 @@ import java.util.Objects;
  * @author João Henrique 2
  */
 public class Condominio {
-    
+
     private int id;
     private String cnpj;
-    private String  nome;
+    private String nome;
     private String cep;
     private String endereco;
     private String numero;
@@ -18,8 +18,8 @@ public class Condominio {
     private String bairro;
     private String cidade;
     private String uf;
-    private int quant_blocos;
-    private int quant_apt;
+    private int quantBlocos;
+    private int quantApt;
     private String foto;
     private String telefone;
     private String email;
@@ -104,20 +104,20 @@ public class Condominio {
         this.uf = uf;
     }
 
-    public int getQuant_blocos() {
-        return quant_blocos;
+    public int getQuantBlocos() {
+        return quantBlocos;
     }
 
-    public void setQuant_blocos(int quant_blocos) {
-        this.quant_blocos = quant_blocos;
+    public void setQuantBlocos(int quantBlocos) {
+        this.quantBlocos = quantBlocos;
     }
 
-    public int getQuant_apt() {
-        return quant_apt;
+    public int getQuantApt() {
+        return quantApt;
     }
 
-    public void setQuant_apt(int quant_apt) {
-        this.quant_apt = quant_apt;
+    public void setQuantApt(int quantApt) {
+        this.quantApt = quantApt;
     }
 
     public String getFoto() {
@@ -157,8 +157,8 @@ public class Condominio {
         hash = 97 * hash + Objects.hashCode(this.bairro);
         hash = 97 * hash + Objects.hashCode(this.cidade);
         hash = 97 * hash + Objects.hashCode(this.uf);
-        hash = 97 * hash + this.quant_blocos;
-        hash = 97 * hash + this.quant_apt;
+        hash = 97 * hash + this.quantBlocos;
+        hash = 97 * hash + this.quantApt;
         hash = 97 * hash + Objects.hashCode(this.foto);
         hash = 97 * hash + Objects.hashCode(this.telefone);
         hash = 97 * hash + Objects.hashCode(this.email);
@@ -204,10 +204,10 @@ public class Condominio {
         if (!Objects.equals(this.uf, other.uf)) {
             return false;
         }
-        if (this.quant_blocos != other.quant_blocos) {
+        if (this.quantBlocos != other.quantBlocos) {
             return false;
         }
-        if (this.quant_apt != other.quant_apt) {
+        if (this.quantApt != other.quantApt) {
             return false;
         }
         if (!Objects.equals(this.foto, other.foto)) {
@@ -226,5 +226,5 @@ public class Condominio {
     public String toString() {
         return "Model.Condominio[ id=" + id + " ]";
     }
-    
+
 }
