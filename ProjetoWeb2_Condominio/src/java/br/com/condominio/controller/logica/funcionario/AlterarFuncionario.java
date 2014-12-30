@@ -71,7 +71,7 @@ public class AlterarFuncionario implements Logica {
 
         funcionarioDAO.alterar(funcionario);
 
-        return "listar_apartamentos.jsp";
+        return "listar_funcionarios.jsp";
     }
 
 }

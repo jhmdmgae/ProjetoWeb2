@@ -35,11 +35,11 @@
                                 </div>
                                 <div class="campo">
                                     <label for='telefone_residencial'>Telefone Residencial:</label>
-                                    <input type='text' id='telefone_residencial' name='telefone_residencial' value='${funcionario.telefoneResidencial}' size="41"/>
+                                    <input type='text' id='telefone_residencial' name='telefone_residencial' value='${funcionario.telResidencial}' size="41"/>
                                 </div>
                                 <div class="campo">
                                     <label for='telefone_celular'>Telefone Celular:</label>
-                                    <input type='text' id='telefone_celular' name='telefone_celular' value='${funcionario.telefoneCelular}' size="41"/>
+                                    <input type='text' id='telefone_celular' name='telefone_celular' value='${funcionario.telCelular}' size="41"/>
                                 </div>
                                 <div class="campo">
                                     <label for='cep'>CEP:</label>
