@@ -11,10 +11,10 @@
         </li>
         <c:if test="${sessionScope.usuAutenticado != null}">
             <li>
-                <a href="usucontroller.do?acao=ListarUsuarios">Usuários</a>
+                <a href="usucontroller.do?acao=listar">Usuários</a>
             </li>
             <li>
-                <a href="condocontroller.do?acao=ListarApartamentos">Apartamentos</a>
+                <a href="apartcontroller.do?acao=ListarApartamentos">Apartamentos</a>
             </li>
             <li>
                 <a href="condocontroller.do?acao=ListarFuncionarios">Funcionários</a>

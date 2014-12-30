@@ -23,7 +23,7 @@
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
                         <div class="menu2">
-                            <a href="usucontroller.do?acao=FormCadastroUsuario">Adicionar usuário</a>
+                            <a href="usucontroller.do?acao=forcadastrar">Adicionar usuário</a>
                         </div>
                         <div class="div-table">
                             <div class="div-table-caption">Usuários</div>
@@ -34,12 +34,12 @@
                                 <div class="div-table-col">Perfil</div>
                                 <div class="div-table-col">Telefone</div>
                             </div>
-                            <jsp:useBean id="usudao" class="br.com.condominio.jdbc.UsuarioDAO"/>
+                            <jsp:useBean id="usudao" class="br.com.condominio.jdbc.dao.UsuarioDAO"/>
                             <c:forEach items="${usudao.buscarTodos()}" var="usu">
                                 <div class="div-table-row">
                                     <div class="div-table-col">
-                                        <a href="usucontroller.do?acao=ExcluirUsuario&id=${usu.id}">Excluir</a>
-                                        <a href="usucontroller.do?acao=FormAlterarUsuario&id=${usu.id}">Editar</a>
+                                        <a href="usucontroller.do?acao=excluir&id=${usu.id}">Excluir</a>
+                                        <a href="usucontroller.do?acao=foreditar&id=${usu.id}">Editar</a>
                                     </div>
                                     <div class="div-table-col">${usu.login}</div>
                                     <div class="div-table-col">${usu.nome}</div>

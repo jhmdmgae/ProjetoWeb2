@@ -20,13 +20,13 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
-                        <jsp:useBean id="veic" class="br.com.condominio.jdbc.VeiculoDAO"/>
+                        <jsp:useBean id="veic" class="br.com.condominio.jdbc.dao.VeiculoDAO"/>
                         <form action='' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de veículo</legend>
                                 <div class="campo">
                                     <label for='tipo'>Tipo:</label>
-                                    <select id="numero" name="numero" style="width:273px" >
+                                    <select id="numero" name="tipo" style="width:273px" >
                                         <option value="">Selecione</option>
                                         <c:forEach items="${veic.buscarTipoVeiculo()}" var="tipo">
                                             <option value="1">${tipo}</option>
@@ -42,8 +42,8 @@
                                     <input type='text' id='modelo' name='modelo' value=''/>
                                 </div>
                                 <div class="campo">
-                                    <label for='numero'>Cor:</label>
-                                    <select id="numero" name="numero" style="width:273px" >
+                                    <label for='cor'>Cor:</label>
+                                    <select id="cor" name="cor" style="width:273px" >
                                         <option value="">Selecione</option>
                                         <c:forEach items="${veic.buscarCor()}" var="cor">
                                             <option value="1">${cor}</option>
