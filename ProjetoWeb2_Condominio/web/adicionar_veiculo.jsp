@@ -20,7 +20,7 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
-                        <jsp:useBean id="veic" class="br.com.condominio.jdbc.VeiculoDAO"/>
+                        <jsp:useBean id="veic" class="br.com.condominio.jdbc.dao.VeiculoDAO"/>
                         <form action='' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de veículo</legend>

@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>-->
-<form name="alterarsenha" action="usucontroller.do?acao=AlterarSenha&email=<%=request.getAttribute("email")%>&cod=<%=request.getAttribute("cod")%>" method="POST">
+<form name="alterarsenha" action="usucontroller.do?acao=altsenha&email=<%=request.getAttribute("email")%>&cod=<%=request.getAttribute("cod")%>" method="POST">
     <label for="senha">Nova senha: </label><input type="password" id="senha" name="senha" value="123" size="45" /><br/>
     <label for="confirma" >Confirmar senha: </label><input type="password" id="confirma"  name="confirma" value="123" size="45" />
     <input type="submit" value="Alterar" name="alterar" />

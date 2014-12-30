@@ -93,7 +93,7 @@
                                     <label for='cargo'>Cargo:</label>
                                     <input type='text' id='cargo' name='cargo' value='' size="41"/>
                                 </div>
-                                <jsp:useBean id="func" class="br.com.condominio.jdbc.FuncionarioDAO"/>
+                                <jsp:useBean id="func" class="br.com.condominio.jdbc.dao.FuncionarioDAO"/>
                                 <div class="campo">
                                     <label for='tipo_contrato'>Tipo de Contrato:</label>
                                     <select id="tipo_contrato" name="tipo_contrato" style="width:273px" >

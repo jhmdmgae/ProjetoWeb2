@@ -20,7 +20,7 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
-                        <jsp:useBean id="func" class="br.com.condominio.jdbc.VisitanteDAO"/>
+                        <jsp:useBean id="func" class="br.com.condominio.jdbc.dao.VisitanteDAO"/>
                         <form action='' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de visitante</legend>

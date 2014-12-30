@@ -20,7 +20,7 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
-                        <jsp:useBean id="doc" class="br.com.condominio.jdbc.DocumentoDAO"/>
+                        <jsp:useBean id="doc" class="br.com.condominio.jdbc.dao.DocumentoDAO"/>
                         <form action='' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de documento</legend>

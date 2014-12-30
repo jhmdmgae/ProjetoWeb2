@@ -33,7 +33,7 @@
                                 <div class="div-table-col">Autor</div>
                                 <div class="div-table-col">Arquivo</div>
                             </div>
-                            <jsp:useBean id="docdao" class="br.com.condominio.jdbc.DocumentoDAO"/>
+                            <jsp:useBean id="docdao" class="br.com.condominio.jdbc.dao.DocumentoDAO"/>
                             <c:forEach items="${docdao.buscarTodos()}" var="doc">
                                 <div class="div-table-row">
                                     <div class="div-table-col">

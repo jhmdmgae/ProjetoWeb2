@@ -1,7 +1,7 @@
 package br.com.condominio.jdbc.teste;
 
 import br.com.condominio.entidades.Veiculo;
-import br.com.condominio.jdbc.VeiculoDAO;
+import br.com.condominio.jdbc.dao.VeiculoDAO;
 import java.util.List;
 
 /**

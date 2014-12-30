@@ -1,7 +1,7 @@
 package br.com.condominio.jdbc.teste;
 
 import br.com.condominio.entidades.Funcionario;
-import br.com.condominio.jdbc.FuncionarioDAO;
+import br.com.condominio.jdbc.dao.FuncionarioDAO;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
