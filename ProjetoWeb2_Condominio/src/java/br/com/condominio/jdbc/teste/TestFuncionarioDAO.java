@@ -5,6 +5,7 @@ import br.com.condominio.jdbc.FuncionarioDAO;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -112,33 +113,24 @@ public class TestFuncionarioDAO {
         }
     }
     
-    private static void buscarTipoContrato(int id) {
+    private static void buscarTipoContrato() {
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-        String TipoContrato = funcionarioDAO.buscarTipoContrato(id);
+        List<String> TipoContrato = funcionarioDAO.buscarTipoContrato();
 
-        if (TipoContrato != null) {
-            System.out.println("TipoContrato: " + TipoContrato);
-        }
-    }
-    
-    private static void buscarTurno(int id) {
-        FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-        String turno = funcionarioDAO.buscarTurno(id);
-
-        if (turno != null) {
-            System.out.println("turno: " + turno);
+        for (String tipo : TipoContrato) {
+            System.out.println(tipo);
         }
     }
 
     public static void main(String[] args) {
 
-//        cadastrar();
+        cadastrar();
 //        alterar();
 //        buscarTodos();
 //        buscar(3);
 //        excluir();
-        buscarTurno(1);
-//        buscarTipoContrato(1);
+//        buscarTurno(1);
+//        buscarTipoContrato();
 
     }
 

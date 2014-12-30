@@ -139,6 +139,60 @@ public class VeiculoDAO {
         return veiculo;
     }
     
+    public List<String> buscarCor() {
+
+        String sql = "SELECT nome FROM web2_condominio.cor";
+
+        List<String> cores = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            cores = new ArrayList();
+
+            while (resultSet.next()) {
+
+                cores.add(resultSet.getString("nome"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cores;
+    }
+    
+    public List<String> buscarTipoVeiculo() {
+
+        String sql = "SELECT tipo FROM web2_condominio.tipo_veiculo";
+
+        List<String> tipos = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            tipos = new ArrayList();
+
+            while (resultSet.next()) {
+
+                tipos.add(resultSet.getString("tipo"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tipos;
+    }
+    
     public String buscarCor(int chave) {
         
         String sql = "SELECT nome FROM web2_condominio.cor WHERE id_cor=?";

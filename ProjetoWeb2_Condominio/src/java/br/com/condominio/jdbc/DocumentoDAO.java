@@ -135,9 +135,88 @@ public class DocumentoDAO {
         return documento;
     }
     
+    public List<String> buscarCategoria() {
+
+        String sql = "SELECT nome FROM web2_condominio.categoria_documentos";
+
+        List<String> nomes = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            nomes = new ArrayList();
+
+            while (resultSet.next()) {
+
+                nomes.add(resultSet.getString("nome"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nomes;
+    }
+    
     public String buscarCategoria(int chave) {
         
         String sql = "SELECT nome FROM web2_condominio.categoria_documentos WHERE id_categoria_documentos=?";
+        
+        String nome = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                nome = resultSet.getString("nome"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nome;
+    }
+    
+    public List<String> buscarAutor() {
+
+        String sql = "SELECT nome FROM web2_condominio.usuario";
+
+        List<String> nomes = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            nomes = new ArrayList();
+
+            while (resultSet.next()) {
+
+                nomes.add(resultSet.getString("nome"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nomes;
+    }
+    
+    public String buscarAutor(int chave) {
+        
+        String sql = "SELECT nome FROM web2_condominio.usuario WHERE id_usuario=?";
         
         String nome = null;
 

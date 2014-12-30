@@ -20,12 +20,18 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
+                        <jsp:useBean id="veic" class="br.com.condominio.jdbc.VeiculoDAO"/>
                         <form action='' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de veículo</legend>
                                 <div class="campo">
                                     <label for='tipo'>Tipo:</label>
-                                    <input type='text' id='tipo' name='tipo' value=''/>
+                                    <select id="numero" name="numero" style="width:273px" >
+                                        <option value="">Selecione</option>
+                                        <c:forEach items="${veic.buscarTipoVeiculo()}" var="tipo">
+                                            <option value="1">${tipo}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
                                 <div class="campo">
                                     <label for='marca'>Marca:</label>
@@ -37,7 +43,12 @@
                                 </div>
                                 <div class="campo">
                                     <label for='numero'>Cor:</label>
-                                    <input type='text' id='Cor' name='Cor' value=''/>
+                                    <select id="numero" name="numero" style="width:273px" >
+                                        <option value="">Selecione</option>
+                                        <c:forEach items="${veic.buscarCor()}" var="cor">
+                                            <option value="1">${cor}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
                                 <div class="campo">
                                     <label for='placa'>Placa:</label>

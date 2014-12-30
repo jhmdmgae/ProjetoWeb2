@@ -61,11 +61,14 @@ public class CadastrarFuncionario implements Logica {
         funcionario.setTipoContrato(tipoContrato);
         funcionario.setObservacao(observacao);
 
-//        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-//        funcionario.setDataContratacao(new java.util.Date(format.parse(dataContratacao).getTime()));
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            funcionario.setDataContratacao(new java.sql.Date(format.parse(dataContratacao).getTime()));//problema conversão de datas
+        } catch (ParseException ex) {
+        }
 
         funcionarioDAO.cadastrar(funcionario);
-        
+
         return "listar_funcionarios.jsp";
     }
 }

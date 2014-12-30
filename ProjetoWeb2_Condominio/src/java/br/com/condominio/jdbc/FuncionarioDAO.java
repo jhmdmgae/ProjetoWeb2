@@ -80,7 +80,7 @@ public class FuncionarioDAO {
             ps.setString(18, funcionario.getTurno());
             ps.setString(19, funcionario.getFoto());
             ps.setString(20, funcionario.getObservacao());
-            
+
             ps.setInt(21, funcionario.getId());
 
             ps.execute();
@@ -194,6 +194,87 @@ public class FuncionarioDAO {
             Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return funcionario;
+    }
+    
+    public List<String> buscarCargo() {
+
+        String sql = "SELECT cargo FROM web2_condominio.cargo";
+
+        List<String> cargos = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            cargos = new ArrayList();
+
+            while (resultSet.next()) {
+
+                cargos.add(resultSet.getString("cargo"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cargos;
+    }
+
+    public List<String> buscarTipoContrato() {
+
+        String sql = "SELECT tipo_contrato FROM web2_condominio.tipo_contrato";
+
+        List<String> tipos = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            tipos = new ArrayList();
+
+            while (resultSet.next()) {
+
+                tipos.add(resultSet.getString("tipo_contrato"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tipos;
+    }
+
+    public List<String> buscarTurno() {
+
+        String sql = "SELECT turno FROM web2_condominio.turno";
+
+        List<String> turnos = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            turnos = new ArrayList();
+
+            while (resultSet.next()) {
+
+                turnos.add(resultSet.getString("turno"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return turnos;
     }
     
     public String buscarTipoContrato(int chave) {

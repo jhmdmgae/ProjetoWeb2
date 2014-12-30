@@ -140,6 +140,60 @@ public class VisitanteDAO {
         return visitante;
     }
     
+    public List<String> buscarTipoVisita() {
+
+        String sql = "SELECT tipo FROM web2_condominio.tipo_visita";
+
+        List<String> tipos = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            tipos = new ArrayList();
+
+            while (resultSet.next()) {
+
+                tipos.add(resultSet.getString("tipo"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return tipos;
+    }
+    
+    public List<String> buscarApartamento() {
+
+        String sql = "SELECT numero FROM web2_condominio.apartamento";
+
+        List<String> apts = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            apts = new ArrayList();
+
+            while (resultSet.next()) {
+
+                apts.add(resultSet.getString("numero"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return apts;
+    }
+    
     public String buscarTipoVisita(int chave) {
         
         String sql = "SELECT tipo FROM web2_condominio.tipo_visita WHERE id_tipo_visita=?";

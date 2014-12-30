@@ -21,6 +21,8 @@ public class UsuarioController extends HttpServlet {
 
         String parametro = request.getParameter("acao");
         String nomeDaClasse = "br.com.condominio.controller.logica." + parametro;
+        
+        System.out.println(parametro);
 
         try {
             Class<?> classe = Class.forName(nomeDaClasse);
