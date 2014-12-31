@@ -199,7 +199,7 @@ public class FuncionarioDAO {
     
     public List<String> buscarCargo() {
 
-        String sql = "SELECT cargo FROM web2_condominio.cargo";
+        String sql = "SELECT id_cargo FROM web2_condominio.cargo";
 
         List<String> cargos = null;
 
@@ -212,7 +212,7 @@ public class FuncionarioDAO {
 
             while (resultSet.next()) {
 
-                cargos.add(resultSet.getString("cargo"));
+                cargos.add(resultSet.getString("id_cargo"));
 
             }
 
@@ -226,7 +226,7 @@ public class FuncionarioDAO {
 
     public List<String> buscarTipoContrato() {
 
-        String sql = "SELECT tipo_contrato FROM web2_condominio.tipo_contrato";
+        String sql = "SELECT id_tipo_contrato FROM web2_condominio.tipo_contrato";
 
         List<String> tipos = null;
 
@@ -239,7 +239,7 @@ public class FuncionarioDAO {
 
             while (resultSet.next()) {
 
-                tipos.add(resultSet.getString("tipo_contrato"));
+                tipos.add(resultSet.getString("id_tipo_contrato"));
 
             }
 
@@ -253,7 +253,7 @@ public class FuncionarioDAO {
 
     public List<String> buscarTurno() {
 
-        String sql = "SELECT turno FROM web2_condominio.turno";
+        String sql = "SELECT id_turno FROM web2_condominio.turno";
 
         List<String> turnos = null;
 
@@ -266,7 +266,7 @@ public class FuncionarioDAO {
 
             while (resultSet.next()) {
 
-                turnos.add(resultSet.getString("turno"));
+                turnos.add(resultSet.getString("id_turno"));
 
             }
 
@@ -276,6 +276,31 @@ public class FuncionarioDAO {
             Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return turnos;
+    }
+    
+    public String buscarCargo(int chave) {
+        
+        String sql = "SELECT cargo FROM web2_condominio.cargo WHERE id_cargo=?";
+        
+        String cargo = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                cargo = resultSet.getString("cargo"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cargo;
     }
     
     public String buscarTipoContrato(int chave) {

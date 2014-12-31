@@ -95,7 +95,7 @@
                                     <select id="cargo" name="cargo" style="width:273px" >
                                         <option value="">Selecione</option>
                                         <c:forEach items="${func.buscarCargo()}" var="cargo">
-                                            <option value="1">${cargo}</option>
+                                            <option value="${cargo}">${func.buscarCargo(cargo)}</option>
                                         </c:forEach>
                                     </select>
                                 </div>
@@ -104,7 +104,7 @@
                                     <select id="tipo_contrato" name="tipo_contrato" style="width:273px" >
                                         <option value="">Selecione</option>
                                         <c:forEach items="${func.buscarTipoContrato()}" var="tipo">
-                                            <option value="1">${tipo}</option>
+                                           <option value="${tipo}">${func.buscarTipoContrato(tipo)}</option>
                                         </c:forEach>
                                     </select>
                                 </div>
@@ -113,7 +113,7 @@
                                     <select id="turno" name="turno" style="width:273px" >
                                         <option value="">Selecione</option>
                                         <c:forEach items="${func.buscarTurno()}" var="turno">
-                                            <option value="1">${turno}</option>
+                                            <option value="${turno}">${func.buscarTurno(turno)}</option>
                                         </c:forEach>
                                     </select>
                                 </div>

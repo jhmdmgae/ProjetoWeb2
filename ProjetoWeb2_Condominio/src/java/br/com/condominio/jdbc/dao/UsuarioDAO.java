@@ -21,7 +21,7 @@ public class UsuarioDAO {
     private String tabela = "web2_condominio.usuario";
 
     public void cadastrar(Usuario usuario) {
-        String sql = "INSERT INTO " + this.tabela + " ( nome, login, senha, perfil, telefone) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO " + this.tabela + " ( nome, login, senha, perfil, telefone, condominio) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -31,6 +31,7 @@ public class UsuarioDAO {
             ps.setString(3, usuario.getSenha());
             ps.setString(4, usuario.getPerfil());
             ps.setString(5, usuario.getTelefone());
+            ps.setInt(6, usuario.getCond());
 
             ps.execute();
             ps.close();
@@ -51,7 +52,8 @@ public class UsuarioDAO {
             ps.setString(3, usuario.getSenha());
             ps.setString(4, usuario.getPerfil());
             ps.setString(5, usuario.getTelefone());
-            ps.setInt(6, usuario.getId());
+//            ps.setInt(6, usuario.getCond());
+            ps.setInt(7, usuario.getId());
 
             ps.execute();
             ps.close();
@@ -76,7 +78,7 @@ public class UsuarioDAO {
     }
 
     public List<Usuario> buscarTodos() {
-        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM " + this.tabela;
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone, condominio FROM " + this.tabela;
 
         List<Usuario> usuarios = null;
 
@@ -95,6 +97,7 @@ public class UsuarioDAO {
                 usuario.setSenhaHash(resultSet.getString("senha"));
                 usuario.setPerfil(resultSet.getString("perfil"));
                 usuario.setTelefone(resultSet.getString("telefone"));
+                usuario.setCond(resultSet.getInt("condominio"));
 
                 usuarios.add(usuario);
             }
@@ -125,6 +128,7 @@ public class UsuarioDAO {
                 usuario.setSenhaHash(resultSet.getString("senha"));
                 usuario.setPerfil(resultSet.getString("perfil"));
                 usuario.setTelefone(resultSet.getString("telefone"));
+//                usuario.setCond(resultSet.getInt("condominio"));
             }
 
             ps.close();
@@ -141,7 +145,7 @@ public class UsuarioDAO {
      * @return
      */
     public Usuario buscarEmail(String email) {
-        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM " + this.tabela + " WHERE login=?";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone, condominio FROM " + this.tabela + " WHERE login=?";
         Usuario usuario = null;
 
         try {
@@ -158,6 +162,7 @@ public class UsuarioDAO {
                 usuario.setSenhaHash(resultSet.getString("senha"));
                 usuario.setPerfil(resultSet.getString("perfil"));
                 usuario.setTelefone(resultSet.getString("telefone"));
+                usuario.setCond(resultSet.getInt("condominio"));
             }
 
             ps.close();
@@ -174,7 +179,7 @@ public class UsuarioDAO {
      * @return
      */
     public Usuario autenticar(Usuario usuario) {
-        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone FROM web2_condominio.usuario WHERE login=? AND senha=?";
+        String sql = "SELECT id_usuario, nome, login, senha, perfil, telefone, condominio FROM web2_condominio.usuario WHERE login=? AND senha=?";
         Usuario usuarioRetorno = null;
 
         try {
@@ -193,6 +198,7 @@ public class UsuarioDAO {
                 usuario.setSenha(resultSet.getString("senha"));
                 usuario.setPerfil(resultSet.getString("perfil"));
                 usuario.setTelefone(resultSet.getString("telefone"));
+                usuario.setCond(resultSet.getInt("condominio"));
             }
 
             ps.close();
@@ -266,5 +272,57 @@ public class UsuarioDAO {
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public List<String> buscarCondominio() {
+
+        String sql = "SELECT id FROM web2_condominio.condominio";
+
+        List<String> conds = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+//          
+            ResultSet resultSet = ps.executeQuery();
+
+            conds = new ArrayList();
+
+            while (resultSet.next()) {
+
+                conds.add(resultSet.getString("id"));
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return conds;
+    }
+    
+    public String buscarCondominio(int chave) {
+        
+        String sql = "SELECT nome FROM web2_condominio.condominio WHERE id=?";
+        
+        String nome = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, chave);
+            ResultSet resultSet = ps.executeQuery();
+
+            if (resultSet.next()) {
+                
+                nome = resultSet.getString("nome"); 
+
+            }
+
+            ps.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DocumentoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return nome;
     }
 }

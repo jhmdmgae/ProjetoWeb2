@@ -19,6 +19,7 @@ public class Usuario {
     private String nome;
     private String perfil;
     private String telefone;
+    private int cond;
 
     public Integer getId() {
         return id;
@@ -89,6 +90,14 @@ public class Usuario {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public int getCond() {
+        return cond;
+    }
+
+    public void setCond(int cond) {
+        this.cond = cond;
     }
 
 }

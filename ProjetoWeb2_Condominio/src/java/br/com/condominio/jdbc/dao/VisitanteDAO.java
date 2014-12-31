@@ -143,7 +143,7 @@ public class VisitanteDAO {
     
     public List<String> buscarTipoVisita() {
 
-        String sql = "SELECT tipo FROM web2_condominio.tipo_visita";
+        String sql = "SELECT id_tipo_visita FROM web2_condominio.tipo_visita";
 
         List<String> tipos = null;
 
@@ -156,7 +156,7 @@ public class VisitanteDAO {
 
             while (resultSet.next()) {
 
-                tipos.add(resultSet.getString("tipo"));
+                tipos.add(resultSet.getString("id_tipo_visita"));
 
             }
 
@@ -170,7 +170,7 @@ public class VisitanteDAO {
     
     public List<String> buscarApartamento() {
 
-        String sql = "SELECT numero FROM web2_condominio.apartamento";
+        String sql = "SELECT idapartamento FROM web2_condominio.apartamento";
 
         List<String> apts = null;
 
@@ -183,7 +183,7 @@ public class VisitanteDAO {
 
             while (resultSet.next()) {
 
-                apts.add(resultSet.getString("numero"));
+                apts.add(resultSet.getString("idapartamento"));
 
             }
 

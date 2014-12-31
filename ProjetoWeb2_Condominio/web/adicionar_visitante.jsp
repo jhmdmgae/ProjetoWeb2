@@ -20,7 +20,7 @@
                     <c:import url="menu.jsp"/>
                     <div class="conteudo">
                         <%@include file="siderbar.jsp"%>
-                        <jsp:useBean id="func" class="br.com.condominio.jdbc.dao.VisitanteDAO"/>
+                        <jsp:useBean id="visi" class="br.com.condominio.jdbc.dao.VisitanteDAO"/>
                         <form action='visitcontroller.do?acao=cadastrar' method='post' name='formulario'>
                             <fieldset>
                                 <legend>Cadastro de visitante</legend>
@@ -33,12 +33,22 @@
                                     <input type='text' id='bloco' name='bloco' value=''/>
                                 </div>
                                 <div class="campo">
-                                    <label for='numero'>Apartamento:</label>
-                                    <input type='text' id='proprietario' name='proprietario' value=''/>
+                                    <label for='apt'>Apartamento:</label>
+                                    <select id="apt" name="apt" style="width:273px" >
+                                        <option value="">Selecione</option>
+                                        <c:forEach items="${visi.buscarApartamento()}" var="tipo">
+                                            <option value="${tipo}">${visi.buscarApartamento(tipo)}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
                                 <div class="campo">
                                     <label for='motivo_visita'>Motivo da visita:</label>
-                                    <input type='text' id='motivo_visita' name='motivo_visita' value=''/>
+                                    <select id="motivo_visita" name="motivo_visita" style="width:273px" >
+                                        <option value="">Selecione</option>
+                                        <c:forEach items="${visi.buscarTipoVisita()}" var="tipo">
+                                            <option value="${tipo}">${visi.buscarTipoVisita(tipo)}</option>
+                                        </c:forEach>
+                                    </select>
                                 </div>
                                 <div class="campo">
                                     <label for='data_hora'>Data e Hora da Visita:</label>

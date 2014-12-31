@@ -39,7 +39,16 @@
                         <label for='telefone'>Telefone:</label>
                         <input type="tel" id="telefone" name="telefone" value="" />
                     </div>
-
+                    <jsp:useBean id="usua" class="br.com.condominio.jdbc.dao.UsuarioDAO"/>
+                    <div class="campo">
+                        <label for='condominio'>Condominio:</label>
+                        <select id="condominio" name="condominio" style="width:273px" >
+                            <option value="">Selecione</option>
+                            <c:forEach items="${usua.buscarCondominio()}" var="nome">
+                                <option value="${nome}">${usua.buscarCondominio(nome)}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
                     <div class="campo">
                         <label for="perfil">Perfil:</label>
                         <select id="perfil" name="perfil" >

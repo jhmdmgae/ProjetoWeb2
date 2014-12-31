@@ -142,7 +142,7 @@ public class VeiculoDAO {
     
     public List<String> buscarCor() {
 
-        String sql = "SELECT nome FROM web2_condominio.cor";
+        String sql = "SELECT id_cor FROM web2_condominio.cor";
 
         List<String> cores = null;
 
@@ -155,7 +155,7 @@ public class VeiculoDAO {
 
             while (resultSet.next()) {
 
-                cores.add(resultSet.getString("nome"));
+                cores.add(resultSet.getString("id_cor"));
 
             }
 
@@ -169,7 +169,7 @@ public class VeiculoDAO {
     
     public List<String> buscarTipoVeiculo() {
 
-        String sql = "SELECT tipo FROM web2_condominio.tipo_veiculo";
+        String sql = "SELECT id_tipo_veiculo FROM web2_condominio.tipo_veiculo";
 
         List<String> tipos = null;
 
@@ -182,7 +182,7 @@ public class VeiculoDAO {
 
             while (resultSet.next()) {
 
-                tipos.add(resultSet.getString("tipo"));
+                tipos.add(resultSet.getString("id_tipo_veiculo"));
 
             }
 
