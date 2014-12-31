@@ -1,13 +1,12 @@
 package br.com.condominio.controller;
 
-import br.com.condominio.controller.logica.usuario.LogarSistema;
 import br.com.condominio.controller.logica.Logica;
-import br.com.condominio.controller.logica.apartamento.AlterarApartamento;
-import br.com.condominio.controller.logica.apartamento.CadastrarApartamento;
-import br.com.condominio.controller.logica.apartamento.ExcluirApartamento;
-import br.com.condominio.controller.logica.apartamento.FormAlterarApartamento;
-import br.com.condominio.controller.logica.apartamento.FormCadastroApartamento;
-import br.com.condominio.controller.logica.apartamento.ListarApartamentos;
+import br.com.condominio.controller.logica.condominio.AlterarCondominio;
+import br.com.condominio.controller.logica.condominio.CadastrarCondominio;
+import br.com.condominio.controller.logica.condominio.ExcluirCondominio;
+import br.com.condominio.controller.logica.condominio.FormAlterarCondominio;
+import br.com.condominio.controller.logica.condominio.FormCadastroCondominio;
+import br.com.condominio.controller.logica.condominio.ListarCondominios;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,12 +28,12 @@ public class CondominioController extends HttpServlet {
             throws ServletException, IOException {
 
         Map<String, Logica> logicas = new HashMap<String, Logica>();
-        logicas.put("AlterarApartamento", new AlterarApartamento());
-        logicas.put("CadastrarApartamento", new CadastrarApartamento());
-        logicas.put("ExcluirApartamento", new ExcluirApartamento());
-        logicas.put("FormAlterarApartamento", new FormAlterarApartamento());
-        logicas.put("FormCadastroApartamento", new FormCadastroApartamento());
-        logicas.put("ListarApartamentos", new ListarApartamentos());
+        logicas.put("alterar", new AlterarCondominio());
+        logicas.put("cadastrar", new CadastrarCondominio());
+        logicas.put("excluir", new ExcluirCondominio());
+        logicas.put("foreditar", new FormAlterarCondominio());
+        logicas.put("forcadastrar", new FormCadastroCondominio());
+        logicas.put("listar", new ListarCondominios());
         
         String parametro = request.getParameter("acao");
 
